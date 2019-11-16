@@ -14,6 +14,7 @@ public abstract class BaseUnit
     public virtual void TakeDamage(int damage, BaseUnit source)
     {
         HP -= damage;
+        Debug.Log($"{Name} takes {damage} damage.");
         if(HP <= 0)
         {
             Die(source);
