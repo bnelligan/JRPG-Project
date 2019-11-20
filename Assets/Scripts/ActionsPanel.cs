@@ -47,7 +47,7 @@ public class ActionsPanel : MonoBehaviour
 
     private void OnClick_AttackButton()
     {
-        party.ActivePartyCharacter.Attack();
+        party.ActivePartyCharacter.AttackActiveEnemy();
     }
     
     

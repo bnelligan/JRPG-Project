@@ -2,20 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UnitStats))]
-public class PartyCharacter : MonoBehaviour
+public enum CharacterType
 {
-    UnitStats stats = new UnitStats();
+    PARTY,
+    ENEMY,
+    NEUTRAL
+}
+
+[RequireComponent(typeof(UnitStats))]
+public class Character : MonoBehaviour
+{
+    [SerializeField]
+    CharacterType charType;
+    UnitStats stats;
     Party party;
 
-    private void Start()
+    public CharacterType CharacterType { get { return charType; } }
+
+    private void Awake()
     {
         party = FindObjectOfType<Party>();
+        stats = GetComponent<UnitStats>();
     }
 
-    public void Attack()
+    public void AttackActiveEnemy()
     {
-        EnemyCharacter activeEnemy = party.ActiveEnemyCharacter;
+        Character activeEnemy = party.ActiveEnemyCharacter;
         if(activeEnemy)
         {
             UnitStats enemyStats = activeEnemy.GetComponent<UnitStats>();
