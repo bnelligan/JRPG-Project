@@ -23,7 +23,8 @@ public class Party : MonoBehaviour
         EnemyParty = FindObjectsOfType<Party>().Where(p => p != this).First();
         PartyMembers = CharacterList.Where(c => c.CharacterType == partyType).ToList();
         ActivePartyCharacter = PartyMembers[0];
-        ActiveEnemyCharacter = PartyMembers.Where(t => t.CharacterType == EnemyType).First();
+        ActiveEnemyCharacter = CharacterList.Where(t => t.CharacterType == EnemyType).First();
+        PrintParty();
     }
 
     public void DoAttack()

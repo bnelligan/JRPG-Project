@@ -1246,8 +1246,8 @@ GameObject:
   - component: {fileID: 1169414295}
   - component: {fileID: 1169414297}
   - component: {fileID: 1169414296}
-  - component: {fileID: 1169414298}
   - component: {fileID: 1169414299}
+  - component: {fileID: 1169414298}
   m_Layer: 5
   m_Name: Enemy Portrait
   m_TagString: Untagged
@@ -1319,9 +1319,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169414294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a32b95768f49844948526f43f81fdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 80e26aefc7f8d004095c27f417253140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charType: 1
 --- !u!114 &1169414299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,6 +2025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c0713a644dd3d4fbfa81543984a269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partyType: 0
 --- !u!1 &1661021943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2037,8 @@ GameObject:
   - component: {fileID: 1661021944}
   - component: {fileID: 1661021946}
   - component: {fileID: 1661021945}
+  - component: {fileID: 1661021947}
+  - component: {fileID: 1661021948}
   m_Layer: 5
   m_Name: Battle Panel
   m_TagString: Untagged
@@ -2057,10 +2061,10 @@ RectTransform:
   m_Father: {fileID: 1328563587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -210.42}
-  m_SizeDelta: {x: 0, y: -83.174}
+  m_AnchorMin: {x: 0, y: 0.32900003}
+  m_AnchorMax: {x: 1, y: 0.748}
+  m_AnchoredPosition: {x: 0, y: -2.4199982}
+  m_SizeDelta: {x: 0, y: -3.1740112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661021945
 MonoBehaviour:
@@ -2098,6 +2102,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661021943}
   m_CullTransparentMesh: 0
+--- !u!114 &1661021947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661021943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995e3b145b1d7f649a46f8fd28f69a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1661021948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661021943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c0713a644dd3d4fbfa81543984a269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partyType: 1
 --- !u!1 &1945733830
 GameObject:
   m_ObjectHideFlags: 0
