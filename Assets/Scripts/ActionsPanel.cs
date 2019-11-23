@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +15,13 @@ public class ActionsPanel : MonoBehaviour
     Button itemsButton;
     [SerializeField]
     Button partyButton;
-
-    Party party;
+    
+    Battle battle;
     
     // Start is called before the first frame update
     void Start()
     {
+        battle = FindObjectOfType<Battle>();
         if(attackButton != null)
         {
             attackButton.onClick.AddListener(OnClick_AttackButton);
@@ -27,7 +29,6 @@ public class ActionsPanel : MonoBehaviour
             itemsButton.onClick.AddListener(OnClick_ItemsButton);
             partyButton.onClick.AddListener(OnClick_PartyButton);
         }
-        party = FindObjectOfType<Party>();
     }
 
     private void OnClick_PartyButton()
@@ -37,17 +38,22 @@ public class ActionsPanel : MonoBehaviour
 
     private void OnClick_ItemsButton()
     {
+        // Lead to items UI for selecting item
         throw new NotImplementedException();
     }
 
     private void OnClick_SkillsButton()
     {
+        // Lead to skills UI for selecting skill to activate
         throw new NotImplementedException();
     }
 
     private void OnClick_AttackButton()
     {
-        party.ActivePartyCharacter.AttackActiveEnemy();
+        if(battle.ActiveParty == battle.PlayerParty)
+        {
+            battle.PlayerParty.DoAttack();
+        }
     }
     
     
