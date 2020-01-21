@@ -16,8 +16,8 @@ public class CharacterHUD : MonoBehaviour
     GameObject BaseIconPrefab;
     UnitStats targetStats;
 
-    List<GameObject> heartList;
-    List<GameObject> stamList;
+    List<GameObject> heartList = new List<GameObject>();
+    List<GameObject> stamList = new List<GameObject>();
 
     // HUD Parameters
     public float IconOffsetX { get; private set; } = 0.625f;
@@ -58,11 +58,19 @@ public class CharacterHUD : MonoBehaviour
     private void DrawHearts()
     {
         int numHearts = targetStats.HP;
+        foreach(GameObject heart in heartList)
+        {
+            Destroy(heart);
+        }
         heartList = DrawIcons(heartIconPath, heartsRow, numHearts);
     }
     private void DrawStam()
     {
         int numStam = targetStats.MP;
+        foreach (GameObject stam in stamList)
+        {
+            Destroy(stam);
+        }
         stamList = DrawIcons(stamIconPath, stamRow, numStam);
     }
 
