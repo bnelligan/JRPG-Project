@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UnitStats))]
+[RequireComponent(typeof(Character))]
 public class CharacterHUD : MonoBehaviour
 {
     // Icon Paths
@@ -14,7 +14,7 @@ public class CharacterHUD : MonoBehaviour
     [SerializeField]
     GameObject HUD_Group;
     GameObject BaseIconPrefab;
-    UnitStats targetStats;
+    Character targetStats;
 
     List<GameObject> heartList = new List<GameObject>();
     List<GameObject> stamList = new List<GameObject>();
@@ -31,7 +31,7 @@ public class CharacterHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetStats = GetComponent<UnitStats>();
+        targetStats = GetComponent<Character>();
         BaseIconPrefab = Resources.Load<GameObject>(baseIconPrefabPath);
         if(BaseIconPrefab == null)
         {
@@ -57,7 +57,7 @@ public class CharacterHUD : MonoBehaviour
 
     private void DrawHearts()
     {
-        int numHearts = targetStats.HP;
+        int numHearts = targetStats.HP_Current;
         foreach(GameObject heart in heartList)
         {
             Destroy(heart);
@@ -66,7 +66,7 @@ public class CharacterHUD : MonoBehaviour
     }
     private void DrawStam()
     {
-        int numStam = targetStats.MP;
+        int numStam = targetStats.SP_Current;
         foreach (GameObject stam in stamList)
         {
             Destroy(stam);

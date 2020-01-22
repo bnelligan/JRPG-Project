@@ -32,8 +32,8 @@ public class Party : MonoBehaviour
 
     public void DoAttack()
     {
-        ActivePartyCharacter = PartyMembers.Where(p => p.Stats.IsDead == false).First();
-        TargetOpponentCharacter = OpponentParty.PartyMembers.Where(p => p.Stats.IsDead == false).First();
+        ActivePartyCharacter = PartyMembers.Where(p => p.IsDead == false).First();
+        TargetOpponentCharacter = OpponentParty.PartyMembers.Where(p => p.IsDead == false).First();
         if(ActivePartyCharacter)
         {
             ActivePartyCharacter.AttackActiveEnemy();

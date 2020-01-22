@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(UnitStats))]
 public class UnitPanel : MonoBehaviour
 {
     [SerializeField]
@@ -18,22 +17,22 @@ public class UnitPanel : MonoBehaviour
     [SerializeField]
     Image portraitImage;
 
-    UnitStats stats;
+    // Stats stats;
 
     private void Awake()
     {
-        stats = GetComponent<UnitStats>();
+        //stats = GetComponent<Stats>();
     }
 
-    private void Update()
-    {
-        UpdateStatsUI();
-    }
+    //private void Update()
+    //{
+    //    UpdateStatsUI();
+    //}
 
     public void UpdateStatsUI()
     {
-        hpText.text = stats.HP.ToString();
-        mpText.text = stats.MP.ToString();
-        lvlText.text = stats.Lvl.ToString();
+        //hpText.text = stats.Health.ToString();
+        //mpText.text = stats.Stam.ToString();
+        //lvlText.text = stats.Lvl.ToString();
     }
 }
