@@ -36,7 +36,7 @@ public class Party : MonoBehaviour
         TargetOpponentCharacter = OpponentParty.PartyMembers.Where(p => p.IsDead == false).First();
         if(ActivePartyCharacter)
         {
-            ActivePartyCharacter.AttackActiveEnemy();
+            //ActivePartyCharacter.AttackActiveEnemy();
         }
         battle.NextTurn();
     }
