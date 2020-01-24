@@ -26,12 +26,6 @@ public class CombatEvents : MonoBehaviour
     {
         OnDeath?.Invoke(sender, deathInfo);
     }
-
-    public void AlertCombat()
-    {
-
-    }
-    
 }
 
 public class DamageArgs : EventArgs
@@ -61,4 +55,10 @@ public class AttackArgs : EventArgs
     public float DamageMod;
     public float AccuracyMod;
     DamageType AttackDamageType;
+}
+
+public class CombatArgs : EventArgs
+{
+    Party PlayerParty;
+    Party EnemyParty;
 }
