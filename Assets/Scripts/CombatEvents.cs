@@ -16,6 +16,7 @@ public class CombatEvents : MonoBehaviour
     public event DamageEventHandler OnDamage;
     public delegate void DeathEventHandler(object sender, DeathArgs deathArgs);
     public event DeathEventHandler OnDeath;
+    // Add combat start event
 
     public void AlertDamage(object sender, DamageArgs dmgInfo)
     {
@@ -26,6 +27,8 @@ public class CombatEvents : MonoBehaviour
     {
         OnDeath?.Invoke(sender, deathInfo);
     }
+
+    // Add combat start event
 }
 
 public class DamageArgs : EventArgs

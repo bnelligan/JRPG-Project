@@ -11,11 +11,11 @@ public class Character : MonoBehaviour
     private string characterID;
     public string CharacterName { get; private set; }
 
-    // Base stats for this character
-    Stats baseStats;
-    // Final stats after adding all buffs, items, and levels
-    Stats calculatedStats;
+    Stats baseStats; // Base stats for this character
+    Stats calculatedStats; // Final stats after adding all buffs, items, and levels
     Party party;
+    BaseSkill[] Skills;
+
     // Image sprite;
     CombatEvents combatEvents;
     Color origColor;
@@ -25,13 +25,14 @@ public class Character : MonoBehaviour
     public int SP_Current { get; protected set; }
     public int SP_Max { get; protected set; }
 
+    public int Armor { get; protected set; }
     public int Lvl { get; private set; }
     public bool IsDead { get; private set; }
     public bool IsActive { get { return party.ActivePartyCharacter == this && party.IsActiveParty; } }
     public float TurnTimer { get; private set; }
     
-    // linear speed mod calculation. This will cause problems if dexterity is more than 10, but 9 will be the max anyways
-    private float speedMod { get { return (10f - Stats.Dexterity) / 10f; } }
+    // linear speed mod calculation
+    private float speedMod { get { return Mathf.Max((10f - Stats.Dexterity), 1f) / 10f; } }
 
     private void Awake()
     {
@@ -42,33 +43,66 @@ public class Character : MonoBehaviour
         //stats.OnTakeDamage += (dmg, src) => StartCoroutine(Flash(Color.yellow));
         InitEvents();
         InitStats();
+        InitSkills();
     }
-    public void InitEvents()
+    private void InitEvents()
     {
         CombatEvents combatEvents = FindObjectOfType<CombatEvents>();
     }
-    public void InitStats()
+    private void InitStats()
     {
-        calculatedStats = new Stats();
-        calculatedStats.HP = 4;
-        calculatedStats.SP = 3;
-        HP_Current = calculatedStats.HP;
-        SP_Current = calculatedStats.SP;
+        LoadBaseStats_DEFAULT();
         CalculateStats();
+    }
+    private void InitSkills()
+    {
+        Skills = GetComponents<BaseSkill>();
+    }
+    
+    public void LoadBaseStats_DEFAULT()
+    {
+        baseStats = new Stats();
+        baseStats.HP = 4;
+        baseStats.SP = 3;
+        baseStats.Armor = 0;
+
+        baseStats.Dodge = 20;
+        baseStats.Accuracy = 90;
+        baseStats.MeleeDamage = 0;
+        baseStats.RangedDamage = 0;
+        baseStats.MagicDamage = 0;
+
+        baseStats.Strength = 0;
+        baseStats.Dexterity = 0;
+        baseStats.Speed = 0;
+        baseStats.Mind = 0;
+        baseStats.Experience = 0;
     }
     public void CalculateStats()
     {
+        calculatedStats = baseStats.Clone();
+        // TODO -- Add ite, buff, and equipment calculations
         HP_Max = calculatedStats.HP;
-        
         SP_Max = calculatedStats.SP;
+
+        if(HP_Current > HP_Max)
+        {
+            HP_Current = calculatedStats.HP;
+        }
+        
+        if(SP_Current > SP_Max)
+        {
+            SP_Current = calculatedStats.SP;
+        }
     }
     public void ActivateSkill(int skillIndex)
     {
-        Character activeEnemy = party.TargetOpponentCharacter;
-        if(activeEnemy)
+        if(skillIndex < Skills.Length)
         {
-            
-            //enemyStats.TakeDamage(stats.Attack, stats);
+            if(Skills[skillIndex].TryActivate())
+            {
+                Debug.Log($"{CharacterName} activated skill[{skillIndex}] ({Skills[0].SkillID}");
+            }
         }
     }
 
@@ -147,7 +181,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void AttackTargetEnemy(float damageMod, float accuracyMod, DamageType dmgType)
+    public void AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageType dmgType)
     {
         Character targetEnemy = GetTargetEnemy();
 
@@ -171,6 +205,8 @@ public class Character : MonoBehaviour
 
         // ROLL FOR ACCURACY! (To Do...)
         bool IsHit = true;
+
+        // ROLL FOR CRIT! (To Do...)
 
         // Create damage args and deliver to target
         DamageArgs dmgArgs = new DamageArgs()
@@ -199,6 +235,15 @@ public class Character : MonoBehaviour
 
     public void ResolveTurn()
     {
-        // Call this after a skill is finished executing so the character can return to idle and the party can advance with the next turn
+        // Call this after a skill is finished executing so the character
+        // can return to idle and the party can advance with the next turn
+    }
+
+    public void GainArmor()
+    {
+        if(Armor < HP_Max)
+        {
+            Armor++;
+        }
     }
 }
