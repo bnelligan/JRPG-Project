@@ -17,18 +17,27 @@ public class CombatEvents : MonoBehaviour
     public delegate void DeathEventHandler(object sender, DeathArgs deathArgs);
     public event DeathEventHandler OnDeath;
     // Add combat start event
+    public delegate void CombatEventHandler(object sender, CombatArgs combatArgs);
+    public event CombatEventHandler OnCombat;
 
     public void AlertDamage(object sender, DamageArgs dmgInfo)
     {
+        Debug.LogWarning($"{dmgInfo.Target.CharacterName} takes {dmgInfo.DamageAmount} {dmgInfo.DamageType} damage from {dmgInfo.Source.CharacterName}");
         OnDamage?.Invoke(sender, dmgInfo);
     }
 
     public void AlertDeath(object sender, DeathArgs deathInfo)
     {
+        Debug.LogWarning($"{deathInfo.Target.CharacterName} is killed by {deathInfo.Source.CharacterName}");
         OnDeath?.Invoke(sender, deathInfo);
     }
 
     // Add combat start event
+    public void AlertCombat(object sender, CombatArgs combatInfo)
+    {
+        Debug.LogWarning("Combat initiated!");
+       
+    }
 }
 
 public class DamageArgs : EventArgs
@@ -42,12 +51,12 @@ public class DamageArgs : EventArgs
 
 public class DeathArgs : EventArgs
 {
-    public DeathArgs(Character killer, Character target)
+    public DeathArgs(Character source, Character target)
     {
-        Killer = killer;
+        this.Source = source;
         Target = target;
     }
-    public Character Killer;
+    public Character Source;
     public Character Target;
 }
 
@@ -62,6 +71,6 @@ public class AttackArgs : EventArgs
 
 public class CombatArgs : EventArgs
 {
-    Party PlayerParty;
-    Party EnemyParty;
+    public Party PlayerParty;
+    public Party EnemyParty;
 }

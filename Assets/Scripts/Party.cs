@@ -17,6 +17,7 @@ public class Party : MonoBehaviour
     //public CharacterType OpponentType { get { return partyType == CharacterType.ENEMY ? CharacterType.PARTY : CharacterType.ENEMY; } }
 
     public bool IsActiveParty { get { return ActiveParty == this; } }
+    public bool IsPlayerParty;
 
     private void Awake()
     {

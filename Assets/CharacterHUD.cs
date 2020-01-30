@@ -20,6 +20,7 @@ public class CharacterHUD : MonoBehaviour
     List<GameObject> stamList = new List<GameObject>();
 
     // HUD Parameters
+    public float HudOffsetY;
     public float IconOffsetX { get; private set; } = 0.625f;
     public float IconOffsetY { get; private set; } = 0.625f;
     
@@ -76,7 +77,7 @@ public class CharacterHUD : MonoBehaviour
 
     private List<GameObject> DrawIcons(string iconSpritePath, int row, int count)
     {
-        Vector3 startPosition = new Vector3((1f - count) / 2f * IconOffsetX, IconOffsetY * row, HUD_Group.transform.position.z);
+        Vector3 startPosition = new Vector3((1f - count) / 2f * IconOffsetX, HudOffsetY + IconOffsetY * row, HUD_Group.transform.position.z);
         Sprite iconSprite = Resources.Load<Sprite>(iconSpritePath);
         List<GameObject> iconsDrawn = new List<GameObject>();
         if (iconSprite != null)

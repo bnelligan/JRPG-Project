@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     Stats baseStats; // Base stats for this character
     Stats calculatedStats; // Final stats after adding all buffs, items, and levels
     Party party;
-    BaseSkill[] Skills;
+    public BaseSkill[] Skills { get; private set; }
 
     // Image sprite;
     CombatEvents combatEvents;
@@ -36,7 +36,6 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        // party = GetComponentInParent<Party>();
         // sprite = GetComponent<Image>();
         // origColor = sprite.color;
 
@@ -44,19 +43,25 @@ public class Character : MonoBehaviour
         InitEvents();
         InitStats();
         InitSkills();
+        party = GetComponentInParent<Party>();
     }
     private void InitEvents()
     {
         CombatEvents combatEvents = FindObjectOfType<CombatEvents>();
     }
+
+
     private void InitStats()
     {
         LoadBaseStats_DEFAULT();
         CalculateStats();
+        HP_Current = HP_Max;
+        SP_Current = SP_Max;
     }
     private void InitSkills()
     {
         Skills = GetComponents<BaseSkill>();
+        
     }
     
     public void LoadBaseStats_DEFAULT()
@@ -68,16 +73,18 @@ public class Character : MonoBehaviour
 
         baseStats.Dodge = 20;
         baseStats.Accuracy = 90;
-        baseStats.MeleeDamage = 0;
-        baseStats.RangedDamage = 0;
-        baseStats.MagicDamage = 0;
+        baseStats.MeleeDamage = 2;
+        baseStats.RangedDamage = 2;
+        baseStats.MagicDamage = 2;
 
-        baseStats.Strength = 0;
-        baseStats.Dexterity = 0;
-        baseStats.Speed = 0;
-        baseStats.Mind = 0;
+        baseStats.Strength = 1;
+        baseStats.Dexterity = 1;
+        baseStats.Speed = 1;
+        baseStats.Mind = 1;
         baseStats.Experience = 0;
     }
+
+
     public void CalculateStats()
     {
         calculatedStats = baseStats.Clone();
@@ -244,6 +251,27 @@ public class Character : MonoBehaviour
         if(Armor < HP_Max)
         {
             Armor++;
+        }
+    }
+
+    // Encounter collision could be at the party level instead of character level
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (this.party.IsPlayerParty)
+        {
+            Character otherCharacter = collision.gameObject.GetComponent<Character>();
+            if (otherCharacter != null)
+            {
+                if (otherCharacter.party.IsPlayerParty != this.party.IsPlayerParty)
+                {
+                    CombatArgs combatArgs = new CombatArgs()
+                    {
+                        PlayerParty = this.party,
+                        EnemyParty = otherCharacter.party
+                    };
+                }
+
+            }
         }
     }
 }
