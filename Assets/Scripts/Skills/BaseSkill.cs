@@ -49,7 +49,7 @@ public abstract class BaseSkill : MonoBehaviour
     public virtual void Activate()
     {
         owner.DrainSP(SpCost);
-        owner.IncreaseTurnTimer(RecoveryTime);
+        owner.DelayTurnTimer(RecoveryTime);
     }
     
     /// <summary>

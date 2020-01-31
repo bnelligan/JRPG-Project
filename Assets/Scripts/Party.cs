@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Party : MonoBehaviour
 {
-    public Character[] PartyMembers { get; private set; }
+    public Character[] PartyCharacters { get; private set; }
     public Character ActivePartyCharacter { get; private set; }
     public Character TargetOpponentCharacter { get; private set; }
     Party OpponentParty;
@@ -22,7 +22,7 @@ public class Party : MonoBehaviour
     private void Awake()
     {
         battle = FindObjectOfType<Battle>();
-        PartyMembers = GetComponentsInChildren<Character>();
+        PartyCharacters = GetComponentsInChildren<Character>();
         OpponentParty = FindObjectsOfType<Party>().Where(p => p != this).First();
     }
 
@@ -33,15 +33,35 @@ public class Party : MonoBehaviour
 
     public void DoAttack()
     {
-        ActivePartyCharacter = PartyMembers.Where(p => p.IsDead == false).First();
-        TargetOpponentCharacter = OpponentParty.PartyMembers.Where(p => p.IsDead == false).First();
+        ActivePartyCharacter = PartyCharacters.Where(p => p.IsDead == false).First();
+        TargetOpponentCharacter = OpponentParty.PartyCharacters.Where(p => p.IsDead == false).First();
         if(ActivePartyCharacter)
         {
             //ActivePartyCharacter.AttackActiveEnemy();
         }
-        battle.NextTurn();
+        battle.BeginNextTurn();
     }
 
+    public void SetActiveCharacter(Character character)
+    {
+        if(PartyCharacters.Contains(character))
+        {
+            ActivePartyCharacter = character;
+        }
+        else
+        {
+            Debug.LogError("Cannot activate character for this party because it is not a member.");
+        }
+
+    }
+
+    public void AdvanceTurnTimers(float timerAmount)
+    {
+        foreach(Character c in PartyCharacters)
+        {
+            c.AdvanceTurnTimer(timerAmount);
+        }
+    }
     //public void AddCharacter(Character newCharacter)
     //{
     //    if(!PartyMembers.Contains(newCharacter))
@@ -53,6 +73,6 @@ public class Party : MonoBehaviour
 
     public void PrintParty()
     {
-        Debug.Log($"Party: {PartyMembers.ToString()}");
+        Debug.Log($"Party: {PartyCharacters.ToString()}");
     }
 }

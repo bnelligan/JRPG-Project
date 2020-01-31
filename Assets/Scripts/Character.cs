@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
 
     Stats baseStats; // Base stats for this character
     Stats calculatedStats; // Final stats after adding all buffs, items, and levels
-    Party party;
+    public Party Party { get; private set; }
     public BaseSkill[] Skills { get; private set; }
 
     // Image sprite;
@@ -28,7 +28,8 @@ public class Character : MonoBehaviour
     public int Armor { get; protected set; }
     public int Lvl { get; private set; }
     public bool IsDead { get; private set; }
-    public bool IsActive { get { return party.ActivePartyCharacter == this && party.IsActiveParty; } }
+    public bool IsAlive { get { return !IsDead; } }
+    public bool IsActive { get { return Party.ActivePartyCharacter == this && Party.IsActiveParty; } }
     public float TurnTimer { get; private set; }
     
     // linear speed mod calculation
@@ -43,7 +44,7 @@ public class Character : MonoBehaviour
         InitEvents();
         InitStats();
         InitSkills();
-        party = GetComponentInParent<Party>();
+        Party = GetComponentInParent<Party>();
     }
     private void InitEvents()
     {
@@ -139,14 +140,14 @@ public class Character : MonoBehaviour
         combatEvents.AlertDeath(this, new DeathArgs(killer, this));
     }
 
-    public void IncreaseTurnTimer(float flatDelay)
+    public void DelayTurnTimer(float flatDelay)
     {
         TurnTimer += flatDelay * speedMod;
     }
 
-    public void DecreaseTurnTimer(float flatSpeedup)
+    public void AdvanceTurnTimer(float flatreduction)
     {
-        TurnTimer -= flatSpeedup;
+        TurnTimer -= flatreduction;
     }
 
     public void DrainSP(int spCost)
@@ -237,7 +238,7 @@ public class Character : MonoBehaviour
     // This should change to a character specific targeting system
     public Character GetTargetEnemy()
     {
-        return party.TargetOpponentCharacter;
+        return Party.TargetOpponentCharacter;
     }
 
     public void ResolveTurn()
@@ -257,17 +258,17 @@ public class Character : MonoBehaviour
     // Encounter collision could be at the party level instead of character level
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.party.IsPlayerParty)
+        if (this.Party.IsPlayerParty)
         {
             Character otherCharacter = collision.gameObject.GetComponent<Character>();
             if (otherCharacter != null)
             {
-                if (otherCharacter.party.IsPlayerParty != this.party.IsPlayerParty)
+                if (otherCharacter.Party.IsPlayerParty != this.Party.IsPlayerParty)
                 {
                     CombatArgs combatArgs = new CombatArgs()
                     {
-                        PlayerParty = this.party,
-                        EnemyParty = otherCharacter.party
+                        PlayerParty = this.Party,
+                        EnemyParty = otherCharacter.Party
                     };
                 }
 
