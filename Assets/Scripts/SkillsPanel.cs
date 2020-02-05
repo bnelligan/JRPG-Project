@@ -9,12 +9,12 @@ public class SkillsPanel : MonoBehaviour
     Button[] skillButtons;
     private void Awake()
     {
+        skillButtons = GetComponentsInChildren<Button>();
         foreach(Button button in skillButtons)
         {
             button.gameObject.SetActive(false);
         }
-        CombatEvents combatEvents = FindObjectOfType<CombatEvents>();
-        combatEvents.OnCombat += CombatEvents_OnCombat;
+        CombatEvents.OnCombat += CombatEvents_OnCombat;
     }
 
     private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)

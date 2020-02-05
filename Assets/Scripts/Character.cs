@@ -16,8 +16,7 @@ public class Character : MonoBehaviour
     public Party Party { get; private set; }
     public BaseSkill[] Skills { get; private set; }
 
-    // Image sprite;
-    CombatEvents combatEvents;
+    Battle battle;
     Color origColor;
     public Stats Stats { get { return calculatedStats; } }
     public int HP_Current { get; protected set; }
@@ -45,10 +44,11 @@ public class Character : MonoBehaviour
         InitStats();
         InitSkills();
         Party = GetComponentInParent<Party>();
+        battle = FindObjectOfType<Battle>();
     }
     private void InitEvents()
     {
-        CombatEvents combatEvents = FindObjectOfType<CombatEvents>();
+
     }
 
 
@@ -125,7 +125,7 @@ public class Character : MonoBehaviour
     public void TakeDamage(DamageArgs damageInfo)
     {
         HP_Current -= damageInfo.DamageAmount;
-        combatEvents.AlertDamage(this, damageInfo);
+        CombatEvents.AlertDamage(this, damageInfo);
 
         if(HP_Current <= 0)
         {
@@ -137,7 +137,7 @@ public class Character : MonoBehaviour
     {
         HP_Current = 0;
         IsDead = true;
-        combatEvents.AlertDeath(this, new DeathArgs(killer, this));
+        CombatEvents.AlertDeath(this, new DeathArgs(killer, this));
     }
 
     public void DelayTurnTimer(float flatDelay)
@@ -211,10 +211,12 @@ public class Character : MonoBehaviour
         // Modify by the damage mod, floor to int
         damageCalc = Mathf.FloorToInt(damageCalc * damageMod);
 
-        // ROLL FOR ACCURACY! (To Do...)
+        // ROLL FOR ACCURACY! 
+        // (To Do...)
         bool IsHit = true;
 
-        // ROLL FOR CRIT! (To Do...)
+        // ROLL FOR CRIT! 
+        // (To Do...)
 
         // Create damage args and deliver to target
         DamageArgs dmgArgs = new DamageArgs()
@@ -261,17 +263,20 @@ public class Character : MonoBehaviour
         if (this.Party.IsPlayerParty)
         {
             Character otherCharacter = collision.gameObject.GetComponent<Character>();
-            if (otherCharacter != null)
+            // Check that we hit a player 
+            if (otherCharacter != null )
             {
-                if (otherCharacter.Party.IsPlayerParty != this.Party.IsPlayerParty)
+                // Start combat if we hit an enemy and there is not an active battle
+                if (otherCharacter.Party.IsPlayerParty != this.Party.IsPlayerParty 
+                    && battle.IsBattleActive == false)
                 {
                     CombatArgs combatArgs = new CombatArgs()
                     {
                         PlayerParty = this.Party,
                         EnemyParty = otherCharacter.Party
                     };
+                    CombatEvents.AlertCombat(this, combatArgs);
                 }
-
             }
         }
     }

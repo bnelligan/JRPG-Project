@@ -24,11 +24,11 @@ public class Party : MonoBehaviour
         battle = FindObjectOfType<Battle>();
         PartyCharacters = GetComponentsInChildren<Character>();
         OpponentParty = FindObjectsOfType<Party>().Where(p => p != this).First();
+        PrintParty();
     }
 
     private void Start()
     {
-        PrintParty();
     }
 
     public void DoAttack()
@@ -62,6 +62,7 @@ public class Party : MonoBehaviour
             c.AdvanceTurnTimer(timerAmount);
         }
     }
+
     //public void AddCharacter(Character newCharacter)
     //{
     //    if(!PartyMembers.Contains(newCharacter))
@@ -70,7 +71,25 @@ public class Party : MonoBehaviour
     //    }
     //    PrintParty();
     //}
+    public void PrepareParty(Vector2 layout)
+    {
+        if (IsPlayerParty)
+        {
+            Debug.Log("Preparing Player party...");
+        }
+        else
+        {
+            Debug.Log("Preparing Enemy party...");
+        }
 
+        Vector3 startPosition = new Vector3((1f - PartyCharacters.Length) / 2f * layout.x, layout.y, 0);
+
+        for(int i = 0; i < PartyCharacters.Length; i++)
+        {
+            // partyMember.CombatPrepare();
+            PartyCharacters[i].transform.position = startPosition + new Vector3(layout.x * i, 0f, 0f);
+        }
+    }
     public void PrintParty()
     {
         Debug.Log($"Party: {PartyCharacters.ToString()}");

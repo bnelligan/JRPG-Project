@@ -18,9 +18,18 @@ public class Battle : MonoBehaviour
 
     private SkillsPanel skillsPanel;
 
+    [SerializeField]
+    Vector2 LayoutSpread;
+
     private void Start()
     {
         skillsPanel = FindObjectOfType<SkillsPanel>();
+        CombatEvents.OnCombat += (sender, e) => BeginBattle(e.PlayerParty, e.EnemyParty);
+    }
+
+    private void Update()
+    {
+        // Start next player turn if it's completed
     }
     public Character[] AllCharactersInBattle
     {
@@ -38,10 +47,22 @@ public class Battle : MonoBehaviour
 
     public void BeginBattle(Party playerParty, Party enemyParty)
     {
-        this.playerParty = playerParty;
-        this.enemyParty = enemyParty;
-        ActiveParty = PlayerParty;
+        if(!IsBattleActive)
+        {
+            IsBattleActive = true;
+            this.playerParty = playerParty;
+            this.enemyParty = enemyParty;
+            ActiveParty = PlayerParty;
+
+            PrepareCharacters();
+        }
+    }
+
+    private void PrepareCharacters()
+    {
         
+        PlayerParty.PrepareParty(new Vector2(LayoutSpread.x, -LayoutSpread.y));
+        EnemyParty.PrepareParty(new Vector2(LayoutSpread.x, LayoutSpread.y));
     }
     
     public void BeginNextTurn()
@@ -58,25 +79,30 @@ public class Battle : MonoBehaviour
         {
             ActiveParty = nextCharacter.Party;
             ActiveParty.SetActiveCharacter(nextCharacter);
+            // Friendly AI may need implementation
             EnemyController enemyAi = nextCharacter.GetComponent<EnemyController>();
-            if(enemyAi == null)
+            if(enemyAi != null)
             {
                 enemyAi.Activate();
             }
-
+            else
+            {
+                skillsPanel.RefreshSkillButtons();
+            }
         }
     }
 
     public void EndBattle()
     {
         // NEEDS IMPLEMENTATION
+        IsBattleActive = false;
     }
 
-    public bool IsBattleComplete()
-    {
-    // NEEDS IMPLEMENTATION
-        return false;
-    }
+    //public bool IsBattleComplete()
+    //{
+    //    // NEEDS IMPLEMENTATION
+    //    return false;
+    //}
     private Character FindNextActiveCharacter()
     {
         float bestRecoveryTimer = float.MaxValue;
