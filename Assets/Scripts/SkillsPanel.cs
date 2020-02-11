@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -19,6 +20,7 @@ public class SkillsPanel : MonoBehaviour
 
     private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
     {
+        playerParty = FindObjectsOfType<Party>().Where(p => p.IsPlayerParty == true).First();
         RefreshSkillButtons();
     }
 
@@ -33,8 +35,8 @@ public class SkillsPanel : MonoBehaviour
             {
                 skillButton.gameObject.SetActive(true);
                 BaseSkill skill = playerSkills[i];
-                string buttonText = $"{skill.SpCost}sp - {skill.name} - {skill.SkillType}";
-                skillButton.GetComponent<TextMeshProUGUI>().text = skill.name;
+                string buttonText = $"{skill.SpCost}sp - {skill.SkillName} - {skill.SkillType}";
+                skillButton.GetComponentInChildren<TextMeshProUGUI>().text = skill.SkillName;
             }
             else
             {

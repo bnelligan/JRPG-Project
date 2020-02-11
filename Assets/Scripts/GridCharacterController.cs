@@ -35,7 +35,7 @@ public class GridCharacterController : MonoBehaviour
         {
             MoveVec += Vector3.up;
         }
-        if(inputY < 0)
+        else if(inputY < 0)
         {
             MoveVec += Vector3.down;
         }

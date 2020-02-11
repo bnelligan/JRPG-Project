@@ -29,11 +29,11 @@ public class Party : MonoBehaviour
 
     private void Start()
     {
+        ActivePartyCharacter = PartyCharacters.Where(p => p.IsDead == false).First();
     }
 
     public void DoAttack()
     {
-        ActivePartyCharacter = PartyCharacters.Where(p => p.IsDead == false).First();
         TargetOpponentCharacter = OpponentParty.PartyCharacters.Where(p => p.IsDead == false).First();
         if(ActivePartyCharacter)
         {
@@ -87,7 +87,7 @@ public class Party : MonoBehaviour
         for(int i = 0; i < PartyCharacters.Length; i++)
         {
             // partyMember.CombatPrepare();
-            PartyCharacters[i].transform.position = startPosition + new Vector3(layout.x * i, 0f, 0f);
+            PartyCharacters[i].transform.localPosition = startPosition + new Vector3(layout.x * i, 0f, 0f);
         }
     }
     public void PrintParty()
