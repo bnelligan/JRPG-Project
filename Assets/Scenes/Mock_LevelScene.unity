@@ -4323,7 +4323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerParty: {fileID: 0}
   enemyParty: {fileID: 0}
-  LayoutSpread: {x: 0, y: 0}
+  LayoutSpread: {x: 1, y: 3}
 --- !u!1 &1710146159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4425,6 +4425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkSpeed: 0.25
+  EnableInput: 1
 --- !u!114 &1710146163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4523,7 +4524,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!1 &1785637520
 GameObject:
   m_ObjectHideFlags: 0
