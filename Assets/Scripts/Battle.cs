@@ -52,17 +52,17 @@ public class Battle : MonoBehaviour
             IsBattleActive = true;
             this.playerParty = playerParty;
             this.enemyParty = enemyParty;
-            ActiveParty = PlayerParty;
 
             PrepareCharacters();
+            BeginNextTurn();
         }
     }
 
     private void PrepareCharacters()
     {
         
-        PlayerParty.PrepareParty(new Vector2(LayoutSpread.x, -LayoutSpread.y));
-        EnemyParty.PrepareParty(new Vector2(LayoutSpread.x, LayoutSpread.y));
+        PlayerParty.PrepareForBattle(this, new Vector2(LayoutSpread.x, -LayoutSpread.y));
+        EnemyParty.PrepareForBattle(this, new Vector2(LayoutSpread.x, LayoutSpread.y));
     }
     
     public void BeginNextTurn()

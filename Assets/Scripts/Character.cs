@@ -30,9 +30,9 @@ public class Character : MonoBehaviour
     public bool IsAlive { get { return !IsDead; } }
     public bool IsActive { get { return Party.ActivePartyCharacter == this && Party.IsActiveParty; } }
     public float TurnTimer { get; private set; }
-    
+
     // linear speed mod calculation
-    private float speedMod { get { return Mathf.Max((10f - Stats.Dexterity), 1f) / 10f; } }
+    private float speedMod { get { return Mathf.Max((10f - Stats.Speed), 1f) / 10f; } }
 
     private void Awake()
     {
@@ -105,6 +105,7 @@ public class Character : MonoBehaviour
     }
     public void ActivateSkill(int skillIndex)
     {
+        Debug.Log($"{CharacterName} activating skill at index {skillIndex}");
         if(skillIndex < Skills.Length)
         {
             if(Skills[skillIndex].TryActivate())
@@ -112,6 +113,7 @@ public class Character : MonoBehaviour
                 Debug.Log($"{CharacterName} activated skill[{skillIndex}] ({Skills[0].SkillID}");
             }
         }
+        battle.BeginNextTurn();
     }
 
     //IEnumerator Flash(Color flashColor, float msDelay = 200)
@@ -139,7 +141,10 @@ public class Character : MonoBehaviour
         IsDead = true;
         CombatEvents.AlertDeath(this, new DeathArgs(killer, this));
     }
-
+    public void ResetTurnTimer()
+    {
+        TurnTimer = 1f * speedMod;
+    }
     public void DelayTurnTimer(float flatDelay)
     {
         TurnTimer += flatDelay * speedMod;

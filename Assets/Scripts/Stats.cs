@@ -23,12 +23,12 @@ public class Stats
     public int Strength = 0;
 
     /// <summary>
-    /// Increase Ranged Damage and Attack Speed
+    /// Increase Ranged Damage and SP
     /// </summary>
     public int Dexterity = 0;
 
     /// <summary>
-    /// Increase Dodge and SP
+    /// Increase Dodge and Attack Speed
     /// </summary>
     public int Speed = 0;
 

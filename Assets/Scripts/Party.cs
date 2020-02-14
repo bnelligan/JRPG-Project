@@ -8,7 +8,6 @@ public class Party : MonoBehaviour
     public Character ActivePartyCharacter { get; private set; }
     public Character TargetOpponentCharacter { get; private set; }
     Party OpponentParty;
-    public static Party ActiveParty;
     Battle battle;
     
     //[SerializeField]
@@ -16,7 +15,7 @@ public class Party : MonoBehaviour
     //public CharacterType PartyType { get { return partyType;  } }
     //public CharacterType OpponentType { get { return partyType == CharacterType.ENEMY ? CharacterType.PARTY : CharacterType.ENEMY; } }
 
-    public bool IsActiveParty { get { return ActiveParty == this; } }
+    public bool IsActiveParty { get { return battle != null && battle.ActiveParty == this; } }
     public bool IsPlayerParty;
 
     private void Awake()
@@ -71,8 +70,9 @@ public class Party : MonoBehaviour
     //    }
     //    PrintParty();
     //}
-    public void PrepareParty(Vector2 layout)
+    public void PrepareForBattle(Battle battle, Vector2 layout)
     {
+        this.battle = battle;
         if (IsPlayerParty)
         {
             Debug.Log("Preparing Player party...");
