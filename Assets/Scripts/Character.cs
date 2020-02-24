@@ -14,10 +14,13 @@ public class Character : MonoBehaviour
     Stats baseStats; // Base stats for this character
     Stats calculatedStats; // Final stats after adding all buffs, items, and levels
     public Party Party { get; private set; }
+    public Character TargetEnemy { get; private set; }
     public BaseSkill[] Skills { get; private set; }
 
     Battle battle;
+    SpriteRenderer sprite;
     Color origColor;
+    Coroutine flashingCoroutine;
     public Stats Stats { get { return calculatedStats; } }
     public int HP_Current { get; protected set; }
     public int HP_Max { get; protected set; }
@@ -28,7 +31,7 @@ public class Character : MonoBehaviour
     public int Lvl { get; private set; }
     public bool IsDead { get; private set; }
     public bool IsAlive { get { return !IsDead; } }
-    public bool IsActive { get { return Party.ActivePartyCharacter == this && Party.IsActiveParty; } }
+    public bool IsActive { get { return battle.ActiveCharacter == this; } }
     public float TurnTimer { get; private set; }
 
     // linear speed mod calculation
@@ -36,8 +39,9 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        // sprite = GetComponent<Image>();
-        // origColor = sprite.color;
+        sprite = GetComponent<SpriteRenderer>();
+        origColor = sprite.color;
+        CharacterName = characterID;
 
         //stats.OnTakeDamage += (dmg, src) => StartCoroutine(Flash(Color.yellow));
         InitEvents();
@@ -54,7 +58,15 @@ public class Character : MonoBehaviour
 
     private void InitStats()
     {
-        LoadBaseStats_DEFAULT();
+        if (characterID == "FLAN_GREEN")
+        {
+            LoadBaseStats_ENEMY_DEFAULT();
+        }
+        else if(characterID == "EXAMPLE_CHAR")
+        {
+            LoadBaseStats_PLAYER_DEFAULT();
+
+        }
         CalculateStats();
         HP_Current = HP_Max;
         SP_Current = SP_Max;
@@ -65,18 +77,38 @@ public class Character : MonoBehaviour
         
     }
     
-    public void LoadBaseStats_DEFAULT()
+    public void LoadBaseStats_PLAYER_DEFAULT()
     {
         baseStats = new Stats();
-        baseStats.HP = 4;
+        baseStats.HP = 5;
         baseStats.SP = 3;
         baseStats.Armor = 0;
 
         baseStats.Dodge = 20;
         baseStats.Accuracy = 90;
-        baseStats.MeleeDamage = 2;
-        baseStats.RangedDamage = 2;
-        baseStats.MagicDamage = 2;
+        baseStats.MeleeDamage = 1;
+        baseStats.RangedDamage = 1;
+        baseStats.MagicDamage = 1;
+
+        baseStats.Strength = 3;
+        baseStats.Dexterity = 3;
+        baseStats.Speed = 3;
+        baseStats.Mind = 3;
+        baseStats.Experience = 0;
+    }
+
+    private void LoadBaseStats_ENEMY_DEFAULT()
+    {
+        baseStats = new Stats();
+        baseStats.HP = 3;
+        baseStats.SP = 2;
+        baseStats.Armor = 0;
+
+        baseStats.Dodge = 20;
+        baseStats.Accuracy = 90;
+        baseStats.MeleeDamage = 1;
+        baseStats.RangedDamage = 1;
+        baseStats.MagicDamage = 1;
 
         baseStats.Strength = 1;
         baseStats.Dexterity = 1;
@@ -128,7 +160,7 @@ public class Character : MonoBehaviour
     {
         HP_Current -= damageInfo.DamageAmount;
         CombatEvents.AlertDamage(this, damageInfo);
-
+        flashingCoroutine = StartCoroutine("ShakeAndFlash");
         if(HP_Current <= 0)
         {
             Die(damageInfo.Source);
@@ -196,8 +228,6 @@ public class Character : MonoBehaviour
 
     public void AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageType dmgType)
     {
-        Character targetEnemy = GetTargetEnemy();
-
         // Get base damage from type
         int damageCalc = 0;
         if(dmgType == DamageType.MELEE)
@@ -229,12 +259,12 @@ public class Character : MonoBehaviour
             DamageAmount = damageCalc,
             DamageType = dmgType,
             Source = this,
-            Target = targetEnemy
+            Target = TargetEnemy
         };
         if(IsHit)
         {
             Debug.Log("Hit!");
-            targetEnemy.TakeDamage(dmgArgs);
+            TargetEnemy.TakeDamage(dmgArgs);
         }
         else
         {
@@ -243,9 +273,26 @@ public class Character : MonoBehaviour
     }
 
     // This should change to a character specific targeting system
-    public Character GetTargetEnemy()
+    public void FindTargetOpponent()
     {
-        return Party.TargetOpponentCharacter;
+        Party opponentParty = battle.GetOpposingParty(Party);
+        TargetEnemy = null;
+        foreach(Character c in opponentParty.PartyCharacters)
+        {
+            // Choose only the first alive enemy for now
+            if(c.IsDead == false)
+            {
+                TargetEnemy = c;
+                break;
+            }
+        }
+    }
+
+    public void Activate()
+    {
+        FindTargetOpponent();
+        RecoverSP(1); // Recover 1 SP each turn
+        // TO DO -- Move forward in party rank
     }
 
     public void ResolveTurn()
@@ -260,6 +307,38 @@ public class Character : MonoBehaviour
         {
             Armor++;
         }
+    }
+
+    private IEnumerator ShakeAndFlash()
+    {
+        Vector2 InitPosition = transform.localPosition;
+        Color flashColor = Color.red;
+        float shakeRadius = 0.3f;
+        float duration = 0.6f;
+        float startTime = Time.time;
+        float flashInterval = 0.2f;
+        float flashTime = startTime;
+        
+        while(Time.time < startTime + duration)
+        {
+            transform.localPosition = InitPosition + UnityEngine.Random.insideUnitCircle * shakeRadius;
+            if(Time.time >= flashTime)
+            {
+                if(sprite.color != flashColor)
+                {
+                    sprite.color = flashColor;
+                }
+                else
+                {
+                    sprite.color = origColor;
+                }
+                flashTime += flashInterval;
+            }
+            yield return new WaitForEndOfFrame();
+
+        }
+        transform.localPosition = InitPosition;
+        sprite.color = origColor;
     }
 
     // Encounter collision could be at the party level instead of character level

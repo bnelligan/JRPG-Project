@@ -45,8 +45,12 @@ public class CharacterHUD : MonoBehaviour
     {
         if(RefreshHUD)
         {
+            //heartList.ForEach(Destroy);
+            //stamList.ForEach(Destroy);
+            //heartList.Clear();
+            //stamList.Clear();
             DrawHUD();
-            RefreshHUD = false;
+            // RefreshHUD = false;
         }
     }
 
@@ -88,6 +92,7 @@ public class CharacterHUD : MonoBehaviour
                 GameObject iconInstance = GameObject.Instantiate(BaseIconPrefab, HUD_Group.transform);
                 iconInstance.transform.localPosition = pos;
                 iconInstance.GetComponent<SpriteRenderer>().sprite = iconSprite;
+                iconsDrawn.Add(iconInstance);
             }
         }
         else

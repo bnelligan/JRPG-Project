@@ -5,9 +5,6 @@ using System.Collections.Generic;
 public class Party : MonoBehaviour
 {
     public Character[] PartyCharacters { get; private set; }
-    public Character ActivePartyCharacter { get; private set; }
-    public Character TargetOpponentCharacter { get; private set; }
-    Party OpponentParty;
     Battle battle;
     
     //[SerializeField]
@@ -22,37 +19,11 @@ public class Party : MonoBehaviour
     {
         battle = FindObjectOfType<Battle>();
         PartyCharacters = GetComponentsInChildren<Character>();
-        OpponentParty = FindObjectsOfType<Party>().Where(p => p != this).First();
         PrintParty();
     }
 
-    private void Start()
-    {
-        ActivePartyCharacter = PartyCharacters.Where(p => p.IsDead == false).First();
-    }
 
-    public void DoAttack()
-    {
-        TargetOpponentCharacter = OpponentParty.PartyCharacters.Where(p => p.IsDead == false).First();
-        if(ActivePartyCharacter)
-        {
-            //ActivePartyCharacter.AttackActiveEnemy();
-        }
-        battle.BeginNextTurn();
-    }
-
-    public void SetActiveCharacter(Character character)
-    {
-        if(PartyCharacters.Contains(character))
-        {
-            ActivePartyCharacter = character;
-        }
-        else
-        {
-            Debug.LogError("Cannot activate character for this party because it is not a member.");
-        }
-
-    }
+    
 
     public void AdvanceTurnTimers(float timerAmount)
     {
@@ -70,9 +41,8 @@ public class Party : MonoBehaviour
     //    }
     //    PrintParty();
     //}
-    public void PrepareForBattle(Battle battle, Vector2 layout)
+    public void PrepareForBattle(Vector2 layout)
     {
-        this.battle = battle;
         if (IsPlayerParty)
         {
             Debug.Log("Preparing Player party...");

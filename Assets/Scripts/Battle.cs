@@ -1,26 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 
 public class Battle : MonoBehaviour
 {
-    [SerializeField]
-    private Party playerParty;
-    [SerializeField]
-    private Party enemyParty;
 
-    public Party PlayerParty { get { return playerParty; } }
-    public Party EnemyParty { get { return enemyParty; } }
+    public Party PlayerParty { get; private set; }
+    public Party EnemyParty { get; private set; }
 
     public Party ActiveParty { get; private set; }
     public Party InactiveParty { get { return ActiveParty == PlayerParty ? EnemyParty : PlayerParty; } }
+    public Character LastActiveCharacter { get; private set; }
+    public Character ActiveCharacter { get; private set; }
 
     private SkillsPanel skillsPanel;
 
     [SerializeField]
     Vector2 LayoutSpread;
-
+    [SerializeField]
+    GameObject BattleResultsGUI;
     private void Start()
     {
         skillsPanel = FindObjectOfType<SkillsPanel>();
@@ -36,8 +36,8 @@ public class Battle : MonoBehaviour
         get
         {
             List<Character> comboList = new List<Character>();
-            comboList.AddRange(playerParty.PartyCharacters);
-            comboList.AddRange(enemyParty.PartyCharacters);
+            comboList.AddRange(PlayerParty.PartyCharacters);
+            comboList.AddRange(EnemyParty.PartyCharacters);
             return comboList.ToArray();
         }
     }
@@ -50,8 +50,8 @@ public class Battle : MonoBehaviour
         if(!IsBattleActive)
         {
             IsBattleActive = true;
-            this.playerParty = playerParty;
-            this.enemyParty = enemyParty;
+            PlayerParty = playerParty;
+            EnemyParty = enemyParty;
 
             PrepareCharacters();
             BeginNextTurn();
@@ -60,43 +60,69 @@ public class Battle : MonoBehaviour
 
     private void PrepareCharacters()
     {
-        
-        PlayerParty.PrepareForBattle(this, new Vector2(LayoutSpread.x, -LayoutSpread.y));
-        EnemyParty.PrepareForBattle(this, new Vector2(LayoutSpread.x, LayoutSpread.y));
+        ActiveCharacter = null;
+        PlayerParty.PrepareForBattle(new Vector2(LayoutSpread.x, -LayoutSpread.y));
+        EnemyParty.PrepareForBattle(new Vector2(LayoutSpread.x, LayoutSpread.y));
     }
     
     public void BeginNextTurn()
     {
-        Character nextCharacter = FindNextActiveCharacter();
-        playerParty.AdvanceTurnTimers(nextCharacter.TurnTimer);
-        enemyParty.AdvanceTurnTimers(nextCharacter.TurnTimer);
-
-        if(nextCharacter == null)
+        LastActiveCharacter = ActiveCharacter;
+        ActiveCharacter = FindNextActiveCharacter();
+        if(ActiveCharacter == null)
         {
             EndBattle();
         }
         else
         {
-            ActiveParty = nextCharacter.Party;
-            ActiveParty.SetActiveCharacter(nextCharacter);
+            PlayerParty.AdvanceTurnTimers(ActiveCharacter.TurnTimer);
+            EnemyParty.AdvanceTurnTimers(ActiveCharacter.TurnTimer);
+
+            ActiveParty = ActiveCharacter.Party;
+            ActiveCharacter.Activate();
+
             // Friendly AI may need implementation
-            EnemyController enemyAi = nextCharacter.GetComponent<EnemyController>();
+            EnemyController enemyAi = ActiveCharacter.GetComponent<EnemyController>();
             if(enemyAi != null)
             {
+                skillsPanel.DisableSkillButtons();
                 enemyAi.Activate();
             }
             else
             {
                 skillsPanel.RefreshSkillButtons();
+                skillsPanel.EnableSkillButtons();
             }
         }
     }
 
     public void EndBattle()
     {
-        // NEEDS IMPLEMENTATION
+        bool victory = true;
+        foreach(Character c in EnemyParty.PartyCharacters)
+        {
+            // Only win if all characters are dead
+            if(!c.IsDead)
+            {
+                victory = false;
+            }
+        }
+
+        // Show results text
+        // TO DO -- More detailed results
+        BattleResultsGUI.gameObject.SetActive(true);
+        if(victory)
+        {
+            BattleResultsGUI.GetComponentInChildren<TextMeshProUGUI>().text = "WIN!";
+        }
+        else
+        {
+            BattleResultsGUI.GetComponentInChildren<TextMeshProUGUI>().text = "LOSE...";
+        }
         IsBattleActive = false;
     }
+
+    
 
     //public bool IsBattleComplete()
     //{
@@ -109,12 +135,18 @@ public class Battle : MonoBehaviour
         Character nextCharacter = null;
         foreach(Character c in AllCharactersInBattle)
         {
-            if(c.IsAlive && c.TurnTimer < bestRecoveryTimer)
+            if(c.IsAlive && c.TurnTimer < bestRecoveryTimer && c != LastActiveCharacter)
             {
                 nextCharacter = c;
             }
         }
         return nextCharacter;
+    }
+
+
+    public Party GetOpposingParty(Party party)
+    {
+        return party == PlayerParty ? EnemyParty : PlayerParty;
     }
 
     //EnemyCharacter enemy;

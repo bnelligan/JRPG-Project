@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         int skillIdx = ChooseSkill();
         if(skillIdx >= 0)
         {
-            DoAttackAfterDelay(skillIdx);
+            StartCoroutine("DoAttackAfterDelay", skillIdx);
         }
         else
         {
@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
 
     private void EndTurn()
     {
-        battle.BeginNextTurn();
+        // battle.BeginNextTurn();
     }
 
     private int ChooseSkill()
