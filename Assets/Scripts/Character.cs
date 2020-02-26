@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
         //stats.OnTakeDamage += (dmg, src) => StartCoroutine(Flash(Color.yellow));
         InitEvents();
         InitStats();
-        InitSkills();
+        Skills = GetComponents<BaseSkill>();
         Party = GetComponentInParent<Party>();
         battle = FindObjectOfType<Battle>();
     }
@@ -70,11 +70,6 @@ public class Character : MonoBehaviour
         CalculateStats();
         HP_Current = HP_Max;
         SP_Current = SP_Max;
-    }
-    private void InitSkills()
-    {
-        Skills = GetComponents<BaseSkill>();
-        
     }
     
     public void LoadBaseStats_PLAYER_DEFAULT()
@@ -214,7 +209,7 @@ public class Character : MonoBehaviour
             spRecovery = 0;
         }
 
-        if(spRecovery + SP_Current > SP_Max)
+        if(SP_Current + spRecovery > SP_Max)
         {
             Debug.LogWarning($"{CharacterName} SP is at the max! Cannot exceed maximum SP with a recovery.");
             SP_Current = SP_Max;
@@ -222,7 +217,7 @@ public class Character : MonoBehaviour
         else
         {
             Debug.Log($"{CharacterName} recovered {spRecovery} SP!");
-            SP_Current += SP_Max;
+            SP_Current += spRecovery;
         }
     }
 

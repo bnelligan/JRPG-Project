@@ -107,7 +107,7 @@ public class Battle : MonoBehaviour
                 victory = false;
             }
         }
-
+        CombatEvents.AlertBattleResult(this, new BattleResultArgs() { IsPlayerVictory = victory });
         // Show results text
         // TO DO -- More detailed results
         BattleResultsGUI.gameObject.SetActive(true);

@@ -16,19 +16,15 @@ public class MusicManager : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         audio.loop = true;
-        CombatEvents.OnCombat += CombatEvents_OnCombat;
-
+        CombatEvents.OnCombat += (sender, combatArgs) => PlayClip(BattleTheme);
+        CombatEvents.OnBattleComplete += (sender, resultsArgs) => PlayClip(AdventureTheme);
         PlayClip(AdventureTheme);
     }
 
 
-    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
-    {
-        PlayClip(BattleTheme);
-    }
-
     private void PlayClip(AudioClip clip)
     {
+        Debug.Log("Playing music: " + clip.name);
         audio.clip = clip;
         audio.Play();
     }

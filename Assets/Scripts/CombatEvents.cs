@@ -20,6 +20,9 @@ public static class CombatEvents
     public delegate void CombatEventHandler(object sender, CombatArgs combatArgs);
     public static event CombatEventHandler OnCombat;
 
+    public delegate void BattleResultHandler(object sender, BattleResultArgs combatArgs);
+    public static event BattleResultHandler OnBattleComplete;
+
     public static void AlertDamage(object sender, DamageArgs dmgInfo)
     {
         Debug.LogWarning($"{dmgInfo.Target.CharacterName} takes {dmgInfo.DamageAmount} {dmgInfo.DamageType} damage from {dmgInfo.Source.CharacterName}");
@@ -32,11 +35,16 @@ public static class CombatEvents
         OnDeath?.Invoke(sender, deathInfo);
     }
 
-    // Add combat start event
     public static void AlertCombat(object sender, CombatArgs combatInfo)
     {
         Debug.LogWarning("Combat initiated!");
         OnCombat?.Invoke(sender, combatInfo);
+    }
+
+    public static void AlertBattleResult(object sender, BattleResultArgs resultArgs)
+    {
+        Debug.LogWarning($"Battle complete! Victory: {resultArgs.IsPlayerVictory}");
+        OnBattleComplete?.Invoke(sender, resultArgs);
     }
 }
 
@@ -73,4 +81,9 @@ public class CombatArgs : EventArgs
 {
     public Party PlayerParty;
     public Party EnemyParty;
+}
+
+public class BattleResultArgs : EventArgs
+{
+    public bool IsPlayerVictory;
 }
