@@ -11,6 +11,8 @@ public class GridCharacterController : MonoBehaviour
     Vector3 moveStartPosition;
     Vector3 targetPos;
     public bool EnableInput = true;
+    [SerializeField]
+    GameObject TargetCharacter;
 
     private void Start()
     {
