@@ -10,33 +10,41 @@ public enum DamageType
     RANGED,
     MAGIC
 }
-public class CombatEvents : MonoBehaviour
+public static class CombatEvents
 {
     public delegate void DamageEventHandler(object sender, DamageArgs dmgArgs);
-    public event DamageEventHandler OnDamage;
+    public static event DamageEventHandler OnDamage;
     public delegate void DeathEventHandler(object sender, DeathArgs deathArgs);
-    public event DeathEventHandler OnDeath;
+    public static event DeathEventHandler OnDeath;
     // Add combat start event
     public delegate void CombatEventHandler(object sender, CombatArgs combatArgs);
-    public event CombatEventHandler OnCombat;
+    public static event CombatEventHandler OnCombat;
 
-    public void AlertDamage(object sender, DamageArgs dmgInfo)
+    public delegate void BattleResultHandler(object sender, BattleResultArgs combatArgs);
+    public static event BattleResultHandler OnBattleComplete;
+
+    public static void AlertDamage(object sender, DamageArgs dmgInfo)
     {
         Debug.LogWarning($"{dmgInfo.Target.CharacterName} takes {dmgInfo.DamageAmount} {dmgInfo.DamageType} damage from {dmgInfo.Source.CharacterName}");
         OnDamage?.Invoke(sender, dmgInfo);
     }
 
-    public void AlertDeath(object sender, DeathArgs deathInfo)
+    public static void AlertDeath(object sender, DeathArgs deathInfo)
     {
         Debug.LogWarning($"{deathInfo.Target.CharacterName} is killed by {deathInfo.Source.CharacterName}");
         OnDeath?.Invoke(sender, deathInfo);
     }
 
-    // Add combat start event
-    public void AlertCombat(object sender, CombatArgs combatInfo)
+    public static void AlertCombat(object sender, CombatArgs combatInfo)
     {
         Debug.LogWarning("Combat initiated!");
-       
+        OnCombat?.Invoke(sender, combatInfo);
+    }
+
+    public static void AlertBattleResult(object sender, BattleResultArgs resultArgs)
+    {
+        Debug.LogWarning($"Battle complete! Victory: {resultArgs.IsPlayerVictory}");
+        OnBattleComplete?.Invoke(sender, resultArgs);
     }
 }
 
@@ -73,4 +81,9 @@ public class CombatArgs : EventArgs
 {
     public Party PlayerParty;
     public Party EnemyParty;
+}
+
+public class BattleResultArgs : EventArgs
+{
+    public bool IsPlayerVictory;
 }

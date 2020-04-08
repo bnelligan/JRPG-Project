@@ -16,7 +16,7 @@ public class Skill_Strike : BaseSkill
         SkillType = E_SkillType.MELEE;
         SpCost = 1;
         RecoveryTime = 1f;
-        DamageMod = 0.8f;
+        DamageMod = 1f;
         AccuracyMod = -0.1f;
         CritMod = 0f;
     }

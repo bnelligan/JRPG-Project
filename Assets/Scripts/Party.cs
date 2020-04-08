@@ -4,11 +4,7 @@ using System.Collections.Generic;
 
 public class Party : MonoBehaviour
 {
-    public Character[] PartyMembers { get; private set; }
-    public Character ActivePartyCharacter { get; private set; }
-    public Character TargetOpponentCharacter { get; private set; }
-    Party OpponentParty;
-    public static Party ActiveParty;
+    public Character[] PartyCharacters { get; private set; }
     Battle battle;
     
     //[SerializeField]
@@ -16,30 +12,25 @@ public class Party : MonoBehaviour
     //public CharacterType PartyType { get { return partyType;  } }
     //public CharacterType OpponentType { get { return partyType == CharacterType.ENEMY ? CharacterType.PARTY : CharacterType.ENEMY; } }
 
-    public bool IsActiveParty { get { return ActiveParty == this; } }
+    public bool IsActiveParty { get { return battle != null && battle.ActiveParty == this; } }
     public bool IsPlayerParty;
 
     private void Awake()
     {
         battle = FindObjectOfType<Battle>();
-        PartyMembers = GetComponentsInChildren<Character>();
-        OpponentParty = FindObjectsOfType<Party>().Where(p => p != this).First();
-    }
-
-    private void Start()
-    {
+        PartyCharacters = GetComponentsInChildren<Character>();
         PrintParty();
     }
 
-    public void DoAttack()
+
+    
+
+    public void AdvanceTurnTimers(float timerAmount)
     {
-        ActivePartyCharacter = PartyMembers.Where(p => p.IsDead == false).First();
-        TargetOpponentCharacter = OpponentParty.PartyMembers.Where(p => p.IsDead == false).First();
-        if(ActivePartyCharacter)
+        foreach(Character c in PartyCharacters)
         {
-            //ActivePartyCharacter.AttackActiveEnemy();
+            c.AdvanceTurnTimer(timerAmount);
         }
-        battle.NextTurn();
     }
 
     //public void AddCharacter(Character newCharacter)
@@ -50,9 +41,32 @@ public class Party : MonoBehaviour
     //    }
     //    PrintParty();
     //}
+    public void PrepareForBattle(Vector2 layout)
+    {
+        if (IsPlayerParty)
+        {
+            Debug.Log("Preparing Player party...");
+        }
+        else
+        {
+            Debug.Log("Preparing Enemy party...");
+        }
 
+        Vector3 startPosition = new Vector3((1f - PartyCharacters.Length) / 2f * layout.x, layout.y, 0);
+
+        for(int i = 0; i < PartyCharacters.Length; i++)
+        {
+            // partyMember.CombatPrepare();
+            PartyCharacters[i].transform.localPosition = startPosition + new Vector3(layout.x * i, 0f, 0f);
+            GridCharacterController controller = PartyCharacters[i].GetComponent<GridCharacterController>();
+            if(controller)
+            {
+                controller.EnableInput = false;
+            }
+        }
+    }
     public void PrintParty()
     {
-        Debug.Log($"Party: {PartyMembers.ToString()}");
+        Debug.Log($"Party: {PartyCharacters.ToString()}");
     }
 }

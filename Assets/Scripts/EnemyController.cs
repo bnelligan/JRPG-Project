@@ -4,23 +4,71 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    Party party;
+    public enum SkillPattern
+    {
+        RANDOM_SKILL,
+        FIRST_SKILL
+    }
+    Character controlledCharacter;
     Battle battle;
+    public bool UseRandomSkill = true;
+    public float AttackDelay = 0.8f;
+    SkillPattern attackPattern = SkillPattern.RANDOM_SKILL;
 
     private void Awake()
     {
         battle = FindObjectOfType<Battle>();
-        party = GetComponent<Party>();
+        controlledCharacter = GetComponent<Character>();
     }
     
-    public void DoAttack()
+    public void Activate()
     {
-        party.DoAttack();
+        int skillIdx = ChooseSkill();
+        if(skillIdx >= 0)
+        {
+            StartCoroutine("DoAttackAfterDelay", skillIdx);
+        }
+        else
+        {
+            // No skills can be activated
+            EndTurn();
+        }
     }
 
-    IEnumerator DoAttackAfterDelay(float delay)
+    private void EndTurn()
     {
-        yield return new WaitForSeconds(delay);
-        party.DoAttack();
+        // battle.BeginNextTurn();
+    }
+
+    private int ChooseSkill()
+    {
+        List<BaseSkill> availableSkills = new List<BaseSkill>();
+        int idx = -1;
+        foreach(BaseSkill skill in controlledCharacter.Skills)
+        {
+            if(skill.CanActivate())
+            {
+                availableSkills.Add(skill);
+            }
+        }
+
+        if(availableSkills.Count > 0)
+        {
+            switch (attackPattern)
+            {
+                case SkillPattern.RANDOM_SKILL:
+                    idx = Random.Range(0, availableSkills.Count);
+                    break;
+                case SkillPattern.FIRST_SKILL:
+                    idx = 0;
+                    break;
+            }
+        }
+        return idx;
+    }
+    IEnumerator DoAttackAfterDelay(int skillIndex)
+    {
+        yield return new WaitForSeconds(AttackDelay);
+        controlledCharacter.ActivateSkill(skillIndex);
     }
 }
