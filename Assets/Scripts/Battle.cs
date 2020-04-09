@@ -85,13 +85,7 @@ public class Battle : MonoBehaviour
             EnemyController enemyAi = ActiveCharacter.GetComponent<EnemyController>();
             if(enemyAi != null)
             {
-                skillsPanel.DisableSkillButtons();
                 enemyAi.Activate();
-            }
-            else
-            {
-                skillsPanel.RefreshSkillButtons();
-                skillsPanel.EnableSkillButtons();
             }
         }
     }

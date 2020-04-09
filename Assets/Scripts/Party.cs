@@ -58,7 +58,7 @@ public class Party : MonoBehaviour
         {
             // partyMember.CombatPrepare();
             PartyCharacters[i].transform.localPosition = startPosition + new Vector3(layout.x * i, 0f, 0f);
-            GridCharacterController controller = PartyCharacters[i].GetComponent<GridCharacterController>();
+            GridMovementController controller = PartyCharacters[i].GetComponent<GridMovementController>();
             if(controller)
             {
                 controller.EnableInput = false;
