@@ -10,9 +10,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private string characterID;
     public string CharacterName { get; private set; }
-
-    Stats baseStats; // Base stats for this character
-    Stats calculatedStats; // Final stats after adding all buffs, items, and levels
+    
+    public CharacterStats Stats { get; private set; }
     public Party Party { get; private set; }
     public Character TargetEnemy { get; private set; }
     public BaseSkill[] Skills { get; private set; }
@@ -21,13 +20,10 @@ public class Character : MonoBehaviour
     SpriteRenderer sprite;
     Color origColor;
     Coroutine flashingCoroutine;
-    public Stats Stats { get { return calculatedStats; } }
-    public int HP_Current { get; protected set; }
-    public int HP_Max { get; protected set; }
-    public int SP_Current { get; protected set; }
-    public int SP_Max { get; protected set; }
 
     public int Armor { get; protected set; }
+
+    
     public int Lvl { get; private set; }
     public bool IsDead { get; private set; }
     public bool IsAlive { get { return !IsDead; } }
@@ -35,24 +31,26 @@ public class Character : MonoBehaviour
     public float TurnTimer { get; private set; }
 
     // linear speed mod calculation
-    private float speedMod { get { return Mathf.Max((10f - Stats.Speed), 1f) / 10f; } }
+    private float speedMod { get { return Mathf.Max((10f - Stats.Reflex), 1f) / 10f; } }
 
     private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
+        Skills = GetComponents<BaseSkill>();
+        Party = GetComponentInParent<Party>();
+        battle = FindObjectOfType<Battle>();
+        Stats = GetComponent<CharacterStats>();
+
         origColor = sprite.color;
         CharacterName = characterID;
 
         //stats.OnTakeDamage += (dmg, src) => StartCoroutine(Flash(Color.yellow));
         InitEvents();
         InitStats();
-        Skills = GetComponents<BaseSkill>();
-        Party = GetComponentInParent<Party>();
-        battle = FindObjectOfType<Battle>();
     }
     private void InitEvents()
     {
-
+        
     }
 
 
@@ -67,78 +65,60 @@ public class Character : MonoBehaviour
             LoadBaseStats_PLAYER_DEFAULT();
 
         }
-        CalculateStats();
-        HP_Current = HP_Max;
-        SP_Current = SP_Max;
     }
     
     public void LoadBaseStats_PLAYER_DEFAULT()
     {
-        baseStats = new Stats();
-        baseStats.HP = 5;
-        baseStats.SP = 3;
-        baseStats.Armor = 0;
-
-        baseStats.Dodge = 20;
-        baseStats.Accuracy = 90;
-        baseStats.MeleeDamage = 1;
-        baseStats.RangedDamage = 1;
-        baseStats.MagicDamage = 1;
-
-        baseStats.Strength = 3;
-        baseStats.Dexterity = 3;
-        baseStats.Speed = 3;
-        baseStats.Mind = 3;
-        baseStats.Experience = 0;
+        Stats.HP = 5;
+        Stats.Max_HP = 5;
+        Stats.SP = 3;
+        Stats.Armor = 0;
+       
+        Stats.Dodge = 20;
+        Stats.Accuracy = 90;
+        Stats.MeleeDamage = 1;
+        Stats.RangedDamage = 1;
+        Stats.MagicDamage = 1;
+       
+        Stats.Strength = 3;
+        Stats.Dexterity = 3;
+        Stats.Reflex = 3;
+        Stats.Mind = 3;
+        Stats.Experience = 0;
     }
 
     private void LoadBaseStats_ENEMY_DEFAULT()
     {
-        baseStats = new Stats();
-        baseStats.HP = 3;
-        baseStats.SP = 2;
-        baseStats.Armor = 0;
-
-        baseStats.Dodge = 20;
-        baseStats.Accuracy = 90;
-        baseStats.MeleeDamage = 1;
-        baseStats.RangedDamage = 1;
-        baseStats.MagicDamage = 1;
-
-        baseStats.Strength = 1;
-        baseStats.Dexterity = 1;
-        baseStats.Speed = 1;
-        baseStats.Mind = 1;
-        baseStats.Experience = 0;
-    }
-
-
-    public void CalculateStats()
-    {
-        calculatedStats = baseStats.Clone();
-        // TODO -- Add ite, buff, and equipment calculations
-        HP_Max = calculatedStats.HP;
-        SP_Max = calculatedStats.SP;
-
-        if(HP_Current > HP_Max)
-        {
-            HP_Current = calculatedStats.HP;
-        }
+        Stats = GetComponent<CharacterStats>();
+        Stats.HP = 5;
+        Stats.Max_HP = 5;
+        Stats.SP = 2;
+        Stats.Armor = 0;
         
-        if(SP_Current > SP_Max)
-        {
-            SP_Current = calculatedStats.SP;
-        }
+        Stats.Dodge = 20;
+        Stats.Accuracy = 90;
+        Stats.MeleeDamage = 1;
+        Stats.RangedDamage = 1;
+        Stats.MagicDamage = 1;
+        
+        Stats.Strength = 1;
+        Stats.Dexterity = 1;
+        Stats.Reflex = 1;
+        Stats.Mind = 1;
+        Stats.Experience = 0;
     }
+
+
+    
     public void ActivateSkill(int skillIndex)
     {
         Debug.Log($"{CharacterName} activating skill at index {skillIndex}");
+        bool activated = false;
         if(skillIndex < Skills.Length)
         {
-            if(Skills[skillIndex].TryActivate())
-            {
-                Debug.Log($"{CharacterName} activated skill[{skillIndex}] ({Skills[0].SkillID}");
-            }
+            activated = Skills[skillIndex].TryActivate();
+            
+            
         }
         battle.BeginNextTurn();
     }
@@ -151,22 +131,36 @@ public class Character : MonoBehaviour
     //    sprite.color = origColor;
     //}
     
+    /// <summary>
+    /// Called by abilities, environment, and anything else that can deal damage to a character
+    /// </summary>
+    /// <param name="damageInfo"></param>
     public void TakeDamage(DamageArgs damageInfo)
     {
-        HP_Current -= damageInfo.DamageAmount;
-        CombatEvents.AlertDamage(this, damageInfo);
-        flashingCoroutine = StartCoroutine("ShakeAndFlash");
-        if(HP_Current <= 0)
-        {
-            Die(damageInfo.Source);
-        }
+        // TODO - Check for immunity and debuffs before taking damage
+        CombatEvents.AlertDamageTaken(this, damageInfo);
+        
+        flashingCoroutine = StartCoroutine("ShakeAndFlash"); // TODO - move to combat event handler
+    }
+
+    //public void LoseHealth(uint amount, Character source)
+    //{
+    //    HP_Current -= (int)amount;
+    //    if (HP_Current <= 0)
+    //    {
+    //        Die(source);
+    //    }
+    //}
+
+    public void GainHealth(uint amount)
+    {
+
     }
 
     public void Die(Character killer)
     {
-        HP_Current = 0;
         IsDead = true;
-        CombatEvents.AlertDeath(this, new DeathArgs(killer, this));
+        CombatEvents.AlertCharacterKilled(this, new DeathArgs(killer, this));
     }
     public void ResetTurnTimer()
     {
@@ -182,66 +176,66 @@ public class Character : MonoBehaviour
         TurnTimer -= flatreduction;
     }
 
-    public void DrainSP(int spCost)
-    {
-        if(spCost < 0)
-        {
-            Debug.LogWarning("Negative SP drain is not allowed. No SP will be lost.");
-            spCost = 0;
-        }
+    //public void DrainSP(int spCost)
+    //{
+    //    if(spCost < 0)
+    //    {
+    //        Debug.LogWarning("Negative SP drain is not allowed. No SP will be lost.");
+    //        spCost = 0;
+    //    }
 
-        if(spCost > SP_Current)
-        {
-            Debug.LogWarning("Excessive SP drain attempted! Setting SP_Current to zero.");
-            SP_Current = 0;
-        }
-        else
-        {
-            SP_Current -= spCost;
-        }
-    }
+    //    if(spCost > 0)
+    //    {
+    //        Debug.LogWarning("Excessive SP drain attempted! Setting SP_Current to zero.");
+    //       // SP_Current = 0;
+    //    }
+    //    else
+    //    {
+    //      //  SP_Current -= spCost;
+    //    }
+    //}
 
-    public void RecoverSP(int spRecovery)
-    {
-        if(spRecovery < 0)
-        {
-            Debug.LogWarning("Negative SP recovery not allowed. No SP will be recovered.");
-            spRecovery = 0;
-        }
+    //public void RecoverSP(int spRecovery)
+    //{
+    //    if(spRecovery < 0)
+    //    {
+    //        Debug.LogWarning("Negative SP recovery not allowed. No SP will be recovered.");
+    //        spRecovery = 0;
+    //    }
 
-        if(SP_Current + spRecovery > SP_Max)
-        {
-            Debug.LogWarning($"{CharacterName} SP is at the max! Cannot exceed maximum SP with a recovery.");
-            SP_Current = SP_Max;
-        }
-        else
-        {
-            Debug.Log($"{CharacterName} recovered {spRecovery} SP!");
-            SP_Current += spRecovery;
-        }
-    }
+    //    if(SP_Current + spRecovery > SP_Max)
+    //    {
+    //        Debug.LogWarning($"{CharacterName} SP is at the max! Cannot exceed maximum SP with a recovery.");
+    //        SP_Current = SP_Max;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log($"{CharacterName} recovered {spRecovery} SP!");
+    //        SP_Current += spRecovery;
+    //    }
+    //}
 
-    public void AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageType dmgType)
+    public void AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageVariant dmgType)
     {
         // Get base damage from type
-        int damageCalc = 0;
-        if(dmgType == DamageType.MELEE)
+        uint damageCalc = 0;
+        if(dmgType == DamageVariant.MELEE)
         {
             damageCalc = Stats.MeleeDamage;
         }
-        else if(dmgType == DamageType.RANGED)
+        else if(dmgType == DamageVariant.RANGED)
         {
             damageCalc = Stats.RangedDamage;
         }
-        else if(dmgType == DamageType.MAGIC)
+        else if(dmgType == DamageVariant.MAGIC)
         {
             damageCalc = Stats.MagicDamage;
         }
 
         // Modify by the damage mod, floor to int
-        damageCalc = Mathf.FloorToInt(damageCalc * damageMod);
+        damageCalc = (uint)Mathf.FloorToInt(damageCalc * damageMod);
 
-        // ROLL FOR ACCURACY! 
+        // ROLL FOR ACCURACY!
         // (To Do...)
         bool IsHit = true;
 
@@ -286,8 +280,7 @@ public class Character : MonoBehaviour
     public void Activate()
     {
         FindTargetOpponent();
-        RecoverSP(1); // Recover 1 SP each turn
-        // TO DO -- Move forward in party rank
+        
     }
 
     public void ResolveTurn()
@@ -298,10 +291,10 @@ public class Character : MonoBehaviour
 
     public void GainArmor()
     {
-        if(Armor < HP_Max)
-        {
-            Armor++;
-        }
+        //if(Armor < HP_Max)
+        //{
+        //    Armor++;
+        //}
     }
 
     private IEnumerator ShakeAndFlash()
@@ -336,6 +329,7 @@ public class Character : MonoBehaviour
         sprite.color = origColor;
     }
 
+    // TODO - Move this to a new Collision Controller
     // Encounter collision could be at the party level instead of character level
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -354,7 +348,7 @@ public class Character : MonoBehaviour
                         PlayerParty = this.Party,
                         EnemyParty = otherCharacter.Party
                     };
-                    CombatEvents.AlertCombat(this, combatArgs);
+                    CombatEvents.AlertCombatInitiated(this, combatArgs);
                 }
             }
         }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Character))]
+[RequireComponent(typeof(CharacterStats))]
 public abstract class BaseSkill : MonoBehaviour
 {
     public enum E_SkillType
@@ -20,12 +21,14 @@ public abstract class BaseSkill : MonoBehaviour
     public float DamageMod { get; protected set; }
     public float AccuracyMod { get; protected set; }
     public float CritMod { get; protected set; }
+    protected CharacterStats ownerStats;
     protected Character owner;
     
     
     void Awake()
     {
         owner = GetComponent<Character>();
+        ownerStats = GetComponent<CharacterStats>();
         InitSkillInfo();
     }
     
@@ -48,7 +51,15 @@ public abstract class BaseSkill : MonoBehaviour
     /// </summary>
     public virtual void Activate()
     {
-        owner.DrainSP(SpCost);
+        if(SpCost > 0)
+        {
+            ownerStats.LoseSP((uint)SpCost);
+        }
+        // Gain SP when cost is negative
+        else if(SpCost < 0)
+        {
+            ownerStats.GainSP((uint)SpCost);
+        }
         owner.DelayTurnTimer(RecoveryTime);
     }
     
@@ -57,7 +68,7 @@ public abstract class BaseSkill : MonoBehaviour
     /// </summary>
     public virtual bool CanActivate()
     {
-        return owner.IsActive && owner.SP_Current >= SpCost;
+        return owner.IsActive && ownerStats.SP >= SpCost;
     }
 
     /// <summary>

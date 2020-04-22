@@ -7,8 +7,8 @@ public class GridMovementController : MonoBehaviour
 
     // How long does it take to move 1 space
     public float WalkSpeed = 1f;
-    public float UpperMoveThreshold = 0.5f;
-    public float LowerMoveThreshold = 0.05f;
+    public float UpperMoveThreshold = 1.0f;
+    public float LowerMoveThreshold = 0.25f;
     public bool EnableInput = true;
     Vector3 targetPos;
     TileManager tileManager;
@@ -20,6 +20,25 @@ public class GridMovementController : MonoBehaviour
         tileManager = FindObjectOfType<TileManager>();
     }
     void Update()
+    {
+        //if (transform.position == targetPos)
+        //{
+        //    moveStartPosition = transform.position;
+        //    targetPos = transform.position + MoveVec;
+        //    moveStartTime = Time.time;
+        //}
+
+        //float t = (Time.time - moveStartTime) / WalkSpeed;
+        //if(t > 1f)
+        //{
+        //    t = 1f;
+        //}
+        //float posX = Mathf.Lerp(moveStartPosition.x, targetPos.x, t);
+        //float posY = Mathf.Lerp(moveStartPosition.y, targetPos.y, t);
+        //transform.position = new Vector3(posX, posY, transform.position.z);
+    }
+
+    private void FixedUpdate()
     {
         Vector2Int MoveVec = Vector2Int.zero;
         if (EnableInput == true)
@@ -44,43 +63,26 @@ public class GridMovementController : MonoBehaviour
                 MoveVec += Vector2Int.down;
             }
         }
+
         targetPos = tileManager.FindMove(transform.position, MoveVec, 1);
-        
-        
-
-        //if (transform.position == targetPos)
-        //{
-        //    moveStartPosition = transform.position;
-        //    targetPos = transform.position + MoveVec;
-        //    moveStartTime = Time.time;
-        //}
-
-        //float t = (Time.time - moveStartTime) / WalkSpeed;
-        //if(t > 1f)
-        //{
-        //    t = 1f;
-        //}
-        //float posX = Mathf.Lerp(moveStartPosition.x, targetPos.x, t);
-        //float posY = Mathf.Lerp(moveStartPosition.y, targetPos.y, t);
-        //transform.position = new Vector3(posX, posY, transform.position.z);
-    }
-
-    private void FixedUpdate()
-    {
         float moveDistance = Vector3.Distance(transform.position, targetPos);
         Vector3 moveDirection = targetPos - transform.position;
+        moveDirection.Normalize();
+        // Snapping to position is choppy af
         if (moveDistance < LowerMoveThreshold)
         {
             transform.position = targetPos;
         }
-        else if (moveDistance > UpperMoveThreshold)
+        else if (moveDistance > LowerMoveThreshold)
         {
-            transform.position += moveDirection * WalkSpeed * Time.fixedDeltaTime;
+            rb.velocity = moveDirection * WalkSpeed * Time.fixedDeltaTime;
+            Debug.Log($"Full Speed! ({moveDirection})");
         }
         else
         {
-            float lerpSpeed = Mathf.Lerp(WalkSpeed , WalkSpeed * 0.5f, moveDistance / UpperMoveThreshold + LowerMoveThreshold);
-            transform.position += lerpSpeed * moveDirection * Time.fixedDeltaTime;
+            float lerpSpeed = Mathf.Lerp(WalkSpeed, 0f, moveDistance / LowerMoveThreshold);// moveDistance / UpperMoveThreshold + LowerMoveThreshold);
+            Debug.Log($"Lerp Speed: {lerpSpeed} ({moveDistance} / {LowerMoveThreshold}");
+            rb.velocity = lerpSpeed * moveDirection * Time.fixedDeltaTime;
         }
     }
 }

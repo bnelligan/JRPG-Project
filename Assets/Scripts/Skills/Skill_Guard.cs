@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skill_Guard : BaseSkill
 {
+    public uint ArmorGain = 2;
     protected override void InitSkillInfo()
     {
         // Base skill info
@@ -19,11 +20,11 @@ public class Skill_Guard : BaseSkill
     }
     public override void Activate()
     {
-        owner.GainArmor();
+        ownerStats.GainArmor(ArmorGain);
         base.Activate();
     }
     public override bool CanActivate()
     {
-        return base.CanActivate() && (owner.Armor < owner.HP_Max);
+        return base.CanActivate() && (ownerStats.Armor < ownerStats.Max_HP);
     }
 }

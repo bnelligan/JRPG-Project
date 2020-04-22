@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7719677285927311547}
   - component: {fileID: 7719677285927311546}
+  - component: {fileID: 3784335643564809305}
   m_Layer: 0
   m_Name: Player Party
   m_TagString: Untagged
@@ -45,6 +46,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPlayerParty: 1
+--- !u!50 &3784335643564809305
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719677285927311544}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &7719677286443391227
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,10 +109,8 @@ GameObject:
   - component: {fileID: 7719677286582850465}
   - component: {fileID: 7719677286582850466}
   - component: {fileID: 7719677286582850469}
-  - component: {fileID: 7719677286582850468}
   - component: {fileID: 7719677286582850471}
   - component: {fileID: 7719677286582850470}
-  - component: {fileID: 7719677286582850473}
   m_Layer: 0
   m_Name: RPG_Character_Practice
   m_TagString: Untagged
@@ -127,6 +147,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -148,8 +169,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -316790287
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 33d0c2d6439f4af429550fb6e95b6be8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -190,32 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterID: EXAMPLE_CHAR
---- !u!61 &7719677286582850468
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719677286582850494}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 4}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 4}
-  m_EdgeRadius: 0
 --- !u!114 &7719677286582850471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,24 +235,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f18325901fdd64eaa754afe1dbb2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &7719677286582850473
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719677286582850494}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7

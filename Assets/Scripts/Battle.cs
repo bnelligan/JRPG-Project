@@ -24,7 +24,12 @@ public class Battle : MonoBehaviour
     private void Start()
     {
         skillsPanel = FindObjectOfType<SkillsPanel>();
-        CombatEvents.OnCombat += (sender, e) => BeginBattle(e.PlayerParty, e.EnemyParty);
+        CombatEvents.OnCombat += CombatEvents_OnCombat; // BeginBattle(e.PlayerParty, e.EnemyParty);
+    }
+
+    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
+    {
+        BeginBattle(combatArgs.PlayerParty, combatArgs.EnemyParty);
     }
 
     private void Update()
@@ -45,7 +50,7 @@ public class Battle : MonoBehaviour
     public bool IsBattleActive { get; private set; }
 
 
-    public void BeginBattle(Party playerParty, Party enemyParty)
+    private void BeginBattle(Party playerParty, Party enemyParty)
     {
         if(!IsBattleActive)
         {
@@ -101,7 +106,7 @@ public class Battle : MonoBehaviour
                 victory = false;
             }
         }
-        CombatEvents.AlertBattleResult(this, new BattleResultArgs() { IsPlayerVictory = victory });
+        CombatEvents.AlertCombatResolved(this, new BattleResultArgs() { IsPlayerVictory = victory });
         // Show results text
         // TO DO -- More detailed results
         BattleResultsGUI.gameObject.SetActive(true);

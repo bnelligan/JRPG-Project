@@ -121,6 +121,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &373199658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7719677286582850494, guid: 77bb47b4f12a5bc44bad2afae694d433,
+    type: 3}
+  m_PrefabInstance: {fileID: 7719677284889842129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &373199665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373199658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c503c65d7d58f74abf6f5fdcc598ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileSource: 
+  LoadFromFile: 0
 --- !u!1 &471093546
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +335,7 @@ GameObject:
   - component: {fileID: 534487215}
   - component: {fileID: 534487214}
   - component: {fileID: 534487216}
+  - component: {fileID: 534487217}
   m_Layer: 0
   m_Name: Green_Spotted_Flan
   m_TagString: Untagged
@@ -397,8 +418,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -316790287
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fbb517cff167d8f4394c6546444250bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -488,6 +509,20 @@ MonoBehaviour:
   HUD_Group: {fileID: 1996200832}
   HudOffsetY: 1.25
   RefreshHUD: 1
+--- !u!114 &534487217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534487208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c503c65d7d58f74abf6f5fdcc598ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileSource: 
+  LoadFromFile: 0
 --- !u!1 &667298584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,8 +1056,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2128580065
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2547,9 +2582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d451e7c1b507a942a13b7f06c064d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 5
-  UpperMoveThreshold: 0.2
-  LowerMoveThreshold: 0.01
+  WalkSpeed: 20
+  UpperMoveThreshold: 1
+  LowerMoveThreshold: 0.15
   EnableInput: 1
 --- !u!1 &1303435362
 GameObject:
@@ -3667,7 +3702,7 @@ GameObject:
   - component: {fileID: 1825882972}
   - component: {fileID: 1825882971}
   - component: {fileID: 1825882976}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3737,7 +3772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996200832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 534487212}
@@ -3795,15 +3830,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3784335643564809305, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784335643564809305, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311544, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_Name
       value: Player Party
       objectReference: {fileID: 0}
+    - target: {fileID: 7719677285927311544, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.17
       objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
@@ -3854,6 +3904,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719677286443391226, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719677286443391227, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719677286582850494, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
