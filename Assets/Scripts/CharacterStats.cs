@@ -162,6 +162,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
+    
     public uint LoseArmor(uint amount)
     {
         uint overflowAmount = 0;

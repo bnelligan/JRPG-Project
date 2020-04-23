@@ -65,6 +65,7 @@ public class GridMovementController : MonoBehaviour
         }
 
         targetPos = tileManager.FindMove(transform.position, MoveVec, 1);
+        
         float moveDistance = Vector3.Distance(transform.position, targetPos);
         Vector3 moveDirection = targetPos - transform.position;
         moveDirection.Normalize();
@@ -75,14 +76,14 @@ public class GridMovementController : MonoBehaviour
         }
         else if (moveDistance > LowerMoveThreshold)
         {
-            rb.velocity = moveDirection * WalkSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(transform.position + moveDirection * WalkSpeed * Time.fixedDeltaTime);
             Debug.Log($"Full Speed! ({moveDirection})");
         }
         else
         {
             float lerpSpeed = Mathf.Lerp(WalkSpeed, 0f, moveDistance / LowerMoveThreshold);// moveDistance / UpperMoveThreshold + LowerMoveThreshold);
             Debug.Log($"Lerp Speed: {lerpSpeed} ({moveDistance} / {LowerMoveThreshold}");
-            rb.velocity = lerpSpeed * moveDirection * Time.fixedDeltaTime;
+            rb.MovePosition(transform.position + lerpSpeed * moveDirection * Time.fixedDeltaTime);
         }
     }
 }

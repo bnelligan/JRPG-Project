@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
 
     
     public int Lvl { get; private set; }
-    public bool IsDead { get; private set; }
+    public bool IsDead { get { return Stats.IsDead; } }
     public bool IsAlive { get { return !IsDead; } }
     public bool IsActive { get { return battle.ActiveCharacter == this; } }
     public float TurnTimer { get; private set; }
@@ -50,9 +50,16 @@ public class Character : MonoBehaviour
     }
     private void InitEvents()
     {
-        
+        CombatEvents.OnDamage += CombatEvents_OnDamage;
     }
 
+    private void CombatEvents_OnDamage(object sender, DamageArgs dmgArgs)
+    {
+        if(dmgArgs.Target == this)
+        {
+            StartCoroutine(ShakeAndFlash());
+        }
+    }
 
     private void InitStats()
     {
@@ -138,9 +145,21 @@ public class Character : MonoBehaviour
     public void TakeDamage(DamageArgs damageInfo)
     {
         // TODO - Check for immunity and debuffs before taking damage
-        CombatEvents.AlertDamageTaken(this, damageInfo);
+        // Lose armor first
+        damageInfo.DamageAmount = Stats.LoseArmor(damageInfo.DamageAmount);
+
+        // Lose health if there is overflow damage
+        if(damageInfo.DamageAmount > 0)
+        {
+            Stats.LoseHealth(damageInfo.DamageAmount);
+            CombatEvents.AlertDamageTaken(this, damageInfo);
+        }
         
-        flashingCoroutine = StartCoroutine("ShakeAndFlash"); // TODO - move to combat event handler
+        // Check for death after taking damage
+        if(Stats.IsDead)
+        {
+            Die(damageInfo.Source);
+        }
     }
 
     //public void LoseHealth(uint amount, Character source)
@@ -159,7 +178,6 @@ public class Character : MonoBehaviour
 
     public void Die(Character killer)
     {
-        IsDead = true;
         CombatEvents.AlertCharacterKilled(this, new DeathArgs(killer, this));
     }
     public void ResetTurnTimer()

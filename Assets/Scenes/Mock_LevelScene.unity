@@ -2582,7 +2582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d451e7c1b507a942a13b7f06c064d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 20
+  WalkSpeed: 9
   UpperMoveThreshold: 1
   LowerMoveThreshold: 0.15
   EnableInput: 1
@@ -3853,7 +3853,7 @@ PrefabInstance:
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.17
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
