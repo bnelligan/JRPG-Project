@@ -7,9 +7,9 @@ public class GridMovementController : MonoBehaviour
 
     // How long does it take to move 1 space
     public float WalkSpeed = 1f;
-    public float UpperMoveThreshold = 1.0f;
-    public float LowerMoveThreshold = 0.25f;
     public bool EnableInput = true;
+    private float lastMoveTime;
+    public float lerpDuration = 5;
     Vector3 targetPos;
     TileManager tileManager;
     Rigidbody2D rb;
@@ -70,20 +70,24 @@ public class GridMovementController : MonoBehaviour
         Vector3 moveDirection = targetPos - transform.position;
         moveDirection.Normalize();
         // Snapping to position is choppy af
-        if (moveDistance < LowerMoveThreshold)
+        if(MoveVec.magnitude == 0)
         {
-            transform.position = targetPos;
-        }
-        else if (moveDistance > LowerMoveThreshold)
-        {
-            rb.MovePosition(transform.position + moveDirection * WalkSpeed * Time.fixedDeltaTime);
-            Debug.Log($"Full Speed! ({moveDirection})");
+
+            transform.position = Vector3.Lerp(transform.position, targetPos, (Time.time - lastMoveTime) / lerpDuration);
+            
         }
         else
         {
-            float lerpSpeed = Mathf.Lerp(WalkSpeed, 0f, moveDistance / LowerMoveThreshold);// moveDistance / UpperMoveThreshold + LowerMoveThreshold);
-            Debug.Log($"Lerp Speed: {lerpSpeed} ({moveDistance} / {LowerMoveThreshold}");
-            rb.MovePosition(transform.position + lerpSpeed * moveDirection * Time.fixedDeltaTime);
+            lastMoveTime = Time.time;
+            // rb.MovePosition(transform.position + moveDirection * WalkSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, WalkSpeed * Time.deltaTime);
+            Debug.Log($"Full Speed! ({moveDirection})");
         }
+        //else
+        //{
+        //    float lerpSpeed = Mathf.Lerp(WalkSpeed, 0f, moveDistance / LowerMoveThreshold);// moveDistance / UpperMoveThreshold + LowerMoveThreshold);
+        //    Debug.Log($"Lerp Speed: {lerpSpeed} ({moveDistance} / {LowerMoveThreshold}");
+        //    rb.MovePosition(transform.position + lerpSpeed * moveDirection * Time.fixedDeltaTime);
+        //}
     }
 }
