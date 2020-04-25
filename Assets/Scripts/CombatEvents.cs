@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DamageType
+public enum DamageVariant
 {
     STATUS,
     MELEE,
@@ -23,25 +23,25 @@ public static class CombatEvents
     public delegate void BattleResultHandler(object sender, BattleResultArgs combatArgs);
     public static event BattleResultHandler OnBattleComplete;
 
-    public static void AlertDamage(object sender, DamageArgs dmgInfo)
+    public static void AlertDamageTaken(object sender, DamageArgs dmgInfo)
     {
         Debug.LogWarning($"{dmgInfo.Target.CharacterName} takes {dmgInfo.DamageAmount} {dmgInfo.DamageType} damage from {dmgInfo.Source.CharacterName}");
         OnDamage?.Invoke(sender, dmgInfo);
     }
 
-    public static void AlertDeath(object sender, DeathArgs deathInfo)
+    public static void AlertCharacterKilled(object sender, DeathArgs deathInfo)
     {
         Debug.LogWarning($"{deathInfo.Target.CharacterName} is killed by {deathInfo.Source.CharacterName}");
         OnDeath?.Invoke(sender, deathInfo);
     }
 
-    public static void AlertCombat(object sender, CombatArgs combatInfo)
+    public static void AlertCombatInitiated(object sender, CombatArgs combatInfo)
     {
         Debug.LogWarning("Combat initiated!");
         OnCombat?.Invoke(sender, combatInfo);
     }
 
-    public static void AlertBattleResult(object sender, BattleResultArgs resultArgs)
+    public static void AlertCombatResolved(object sender, BattleResultArgs resultArgs)
     {
         Debug.LogWarning($"Battle complete! Victory: {resultArgs.IsPlayerVictory}");
         OnBattleComplete?.Invoke(sender, resultArgs);
@@ -52,8 +52,8 @@ public class DamageArgs : EventArgs
 {
     public Character Source;
     public Character Target;
-    public int DamageAmount;
-    public DamageType DamageType;
+    public uint DamageAmount;
+    public DamageVariant DamageType;
     // TODO -- Include effects such as element type
 }
 
@@ -74,7 +74,7 @@ public class AttackArgs : EventArgs
     public List<Character> TargetList;
     public float DamageMod;
     public float AccuracyMod;
-    DamageType AttackDamageType;
+    public DamageVariant DmgVariant;
 }
 
 public class CombatArgs : EventArgs

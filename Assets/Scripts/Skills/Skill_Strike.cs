@@ -22,7 +22,7 @@ public class Skill_Strike : BaseSkill
     }
     public override void Activate()
     {
-        owner.AttackTargetEnemy(DamageMod, AccuracyMod, CritMod, DamageType.MELEE);
+        owner.AttackTargetEnemy(DamageMod, AccuracyMod, CritMod, DamageVariant.MELEE);
         base.Activate();
     }
 }

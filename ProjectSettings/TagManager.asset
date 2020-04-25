@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Character
   - Base
   - 
   - 
@@ -24,14 +24,14 @@ TagManager:
   - Environment
   - 
   - 
-  - 
+  - Interactable
   - 
   - Walls
   - 
   - 
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 
@@ -41,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 2166387231
+    locked: 0
+  - name: Environment
+    uniqueID: 1173814393
+    locked: 0
+  - name: Interactable
+    uniqueID: 3772883967
+    locked: 0
+  - name: Characters
+    uniqueID: 3978177009
+    locked: 0
+  - name: HUD
+    uniqueID: 2155478133
     locked: 0

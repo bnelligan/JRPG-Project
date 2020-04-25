@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Character))]
+[RequireComponent(typeof(CharacterStats))]
 public class CharacterHUD : MonoBehaviour
 {
     // Icon Paths
@@ -14,7 +14,7 @@ public class CharacterHUD : MonoBehaviour
     [SerializeField]
     GameObject HUD_Group;
     GameObject BaseIconPrefab;
-    Character targetStats;
+    CharacterStats targetStats;
 
     List<GameObject> heartList = new List<GameObject>();
     List<GameObject> stamList = new List<GameObject>();
@@ -24,15 +24,15 @@ public class CharacterHUD : MonoBehaviour
     public float IconOffsetX { get; private set; } = 0.625f;
     public float IconOffsetY { get; private set; } = 0.625f;
     
-    int heartsRow = 1;
-    int stamRow = 0;
+    uint heartsRow = 1;
+    uint stamRow = 0;
 
     public bool RefreshHUD = true;
     
     // Start is called before the first frame update
     void Start()
     {
-        targetStats = GetComponent<Character>();
+        targetStats = GetComponent<CharacterStats>();
         BaseIconPrefab = Resources.Load<GameObject>(baseIconPrefabPath);
         if(BaseIconPrefab == null)
         {
@@ -62,7 +62,7 @@ public class CharacterHUD : MonoBehaviour
 
     private void DrawHearts()
     {
-        int numHearts = targetStats.HP_Current;
+        uint numHearts = targetStats.HP;
         foreach(GameObject heart in heartList)
         {
             Destroy(heart);
@@ -71,7 +71,7 @@ public class CharacterHUD : MonoBehaviour
     }
     private void DrawStam()
     {
-        int numStam = targetStats.SP_Current;
+        uint numStam = targetStats.SP;
         foreach (GameObject stam in stamList)
         {
             Destroy(stam);
@@ -79,7 +79,7 @@ public class CharacterHUD : MonoBehaviour
         stamList = DrawIcons(stamIconPath, stamRow, numStam);
     }
 
-    private List<GameObject> DrawIcons(string iconSpritePath, int row, int count)
+    private List<GameObject> DrawIcons(string iconSpritePath, uint row, uint count)
     {
         Vector3 startPosition = new Vector3((1f - count) / 2f * IconOffsetX, HudOffsetY + IconOffsetY * row, HUD_Group.transform.position.z);
         Sprite iconSprite = Resources.Load<Sprite>(iconSpritePath);
