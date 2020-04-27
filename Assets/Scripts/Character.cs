@@ -63,6 +63,7 @@ public class Character : MonoBehaviour
 
     private void InitStats()
     {
+        Stats = GetComponent<CharacterStats>();
         if (characterID == "FLAN_GREEN")
         {
             LoadBaseStats_ENEMY_DEFAULT();
@@ -96,7 +97,6 @@ public class Character : MonoBehaviour
 
     private void LoadBaseStats_ENEMY_DEFAULT()
     {
-        Stats = GetComponent<CharacterStats>();
         Stats.HP = 5;
         Stats.Max_HP = 5;
         Stats.SP = 2;

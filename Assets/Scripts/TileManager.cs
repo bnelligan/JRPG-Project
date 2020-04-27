@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 
 public class TileManager : MonoBehaviour
 {
-    private enum TileLayer
+    private enum TileLayerKey
     {
         INTERACTABLE,
         FLOOR,
@@ -16,26 +16,26 @@ public class TileManager : MonoBehaviour
     }
 
     Grid grid;
-    Dictionary<TileLayer, Tilemap> MapLookup;
-    Dictionary<TileLayer, int> LayerLookup = new Dictionary<TileLayer, int>()
+    Dictionary<TileLayerKey, Tilemap> MapLookup;
+    Dictionary<TileLayerKey, int> LayerLookup = new Dictionary<TileLayerKey, int>()
     {
-        [TileLayer.CHARACTER] = 15,
-        [TileLayer.INTERACTABLE] = 18,
-        [TileLayer.WALL] = 20,
-        [TileLayer.FLOOR] = 25,
+        [TileLayerKey.CHARACTER] = 15,
+        [TileLayerKey.INTERACTABLE] = 18,
+        [TileLayerKey.WALL] = 20,
+        [TileLayerKey.FLOOR] = 25,
     };
 
     // Layer props
-    public int CharacterLayer { get { return LayerLookup[TileLayer.CHARACTER]; } }
-    public int InteractableLayer { get { return LayerLookup[TileLayer.INTERACTABLE]; } }
-    public int WallLayer { get { return LayerLookup[TileLayer.WALL]; } }
-    public int FloorLayer { get { return LayerLookup[TileLayer.FLOOR]; } }
+    public int CharacterLayer { get { return LayerLookup[TileLayerKey.CHARACTER]; } }
+    public int InteractableLayer { get { return LayerLookup[TileLayerKey.INTERACTABLE]; } }
+    public int WallLayer { get { return LayerLookup[TileLayerKey.WALL]; } }
+    public int FloorLayer { get { return LayerLookup[TileLayerKey.FLOOR]; } }
 
     // Tilemap props
-    Tilemap CharacterMap { get { return MapLookup[TileLayer.CHARACTER]; } }
-    Tilemap InteractableMap { get { return MapLookup[TileLayer.INTERACTABLE]; } }
-    Tilemap WallMap { get { return MapLookup[TileLayer.WALL]; } }
-    Tilemap FloorMap { get { return MapLookup[TileLayer.FLOOR]; } }
+    Tilemap CharacterMap { get { return MapLookup[TileLayerKey.CHARACTER]; } }
+    Tilemap InteractableMap { get { return MapLookup[TileLayerKey.INTERACTABLE]; } }
+    Tilemap WallMap { get { return MapLookup[TileLayerKey.WALL]; } }
+    Tilemap FloorMap { get { return MapLookup[TileLayerKey.FLOOR]; } }
     
     // Used for hitscan and rotation
     Dictionary<Vector2Int, string> moves_L = new Dictionary<Vector2Int, string>()
@@ -71,16 +71,16 @@ public class TileManager : MonoBehaviour
 
     private void InitMapLookup()
     {
-        MapLookup = new Dictionary<TileLayer, Tilemap>()
+        MapLookup = new Dictionary<TileLayerKey, Tilemap>()
         {
-            [TileLayer.FLOOR] = FindMap(TileLayer.FLOOR),
-            [TileLayer.INTERACTABLE] = FindMap(TileLayer.INTERACTABLE),
-            [TileLayer.WALL] = FindMap(TileLayer.WALL),
-            [TileLayer.CHARACTER] = FindMap(TileLayer.CHARACTER),
+            [TileLayerKey.FLOOR] = FindMap(TileLayerKey.FLOOR),
+            [TileLayerKey.INTERACTABLE] = FindMap(TileLayerKey.INTERACTABLE),
+            [TileLayerKey.WALL] = FindMap(TileLayerKey.WALL),
+            [TileLayerKey.CHARACTER] = FindMap(TileLayerKey.CHARACTER),
 
         };
     }
-    private Tilemap FindMap(TileLayer mapLayer)
+    private Tilemap FindMap(TileLayerKey mapLayer)
     {
         return GetComponentsInChildren<Tilemap>().Where(t => t.gameObject.layer == LayerLookup[mapLayer]).FirstOrDefault();
     }
@@ -97,7 +97,7 @@ public class TileManager : MonoBehaviour
     /// <param name="direction">Normalized direction of hitscan</param>
     /// <param name="spread">0-4 where 0 is straight ahead and 4 is full circle</param>
     /// <returns>World position for the hit tile</returns>
-    List<Vector3> TileHitscan(TileLayer layer, Vector3 worldPosition, Vector2Int direction, uint spread)
+    List<Vector3> TileHitscan(TileLayerKey layer, Vector3 worldPosition, Vector2Int direction, uint spread)
     {
         uint MaxSpread = 4;
         List<Vector3> scanResults = new List<Vector3>();
@@ -143,8 +143,31 @@ public class TileManager : MonoBehaviour
 
     public Vector3 FindMove(Vector3 worldPosition, Vector2Int direction, uint spread)
     {
-        List<Vector3> FloorHits = TileHitscan(TileLayer.FLOOR, worldPosition, direction, spread);
-        return FloorHits[0];
+        Vector3 availableMove = worldPosition;
+        // Find floor tiles
+        List<Vector3> FloorHits = TileHitscan(TileLayerKey.FLOOR, worldPosition, direction, spread);
+        availableMove = FloorHits[0];
+        Debug.Log($"Floor tiles: {FloorHits}");
+        // Find wall tiles 
+        List<Vector3> WallHits = TileHitscan(TileLayerKey.WALL, worldPosition, direction, spread);
+        Debug.Log($"Wall tiles: {WallHits}");
+
+        // Find floors that are not shared with walls
+        foreach (Vector3 FloorMove in FloorHits)
+        {
+            bool blocked = WallHits.Contains(FloorMove);
+            if(blocked)
+            {
+                Debug.Log("Blocked move: " + FloorMove);
+            }
+            else
+            {
+                availableMove = FloorMove;
+                break;
+            }
+        }
+
+        return availableMove;
     }
     
     // +X, +Y, -X, -Y

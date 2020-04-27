@@ -64,8 +64,9 @@ public class GridMovementController : MonoBehaviour
             }
         }
 
+        Debug.Log($"Move vector: " + MoveVec);
         targetPos = tileManager.FindMove(transform.position, MoveVec, 1);
-        
+        Debug.Log($"Target position: {targetPos}");
         float moveDistance = Vector3.Distance(transform.position, targetPos);
         Vector3 moveDirection = targetPos - transform.position;
         moveDirection.Normalize();
