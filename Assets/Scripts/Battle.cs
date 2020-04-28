@@ -24,13 +24,13 @@ public class Battle : MonoBehaviour
     private void Start()
     {
         skillsPanel = FindObjectOfType<SkillsPanel>();
-        CombatEvents.OnCombat += CombatEvents_OnCombat; // BeginBattle(e.PlayerParty, e.EnemyParty);
+        // CombatEvents.OnCombat += CombatEvents_OnCombat; // BeginBattle(e.PlayerParty, e.EnemyParty);
     }
 
-    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
-    {
-        BeginBattle(combatArgs.PlayerParty, combatArgs.EnemyParty);
-    }
+    //private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
+    //{
+    //    BeginBattle(combatArgs.PlayerParty, combatArgs.EnemyParty);
+    //}
 
     private void Update()
     {
@@ -48,20 +48,6 @@ public class Battle : MonoBehaviour
     }
 
     public bool IsBattleActive { get; private set; }
-
-
-    private void BeginBattle(Party playerParty, Party enemyParty)
-    {
-        if(!IsBattleActive)
-        {
-            IsBattleActive = true;
-            PlayerParty = playerParty;
-            EnemyParty = enemyParty;
-
-            PrepareCharacters();
-            BeginNextTurn();
-        }
-    }
 
     private void PrepareCharacters()
     {
@@ -92,6 +78,29 @@ public class Battle : MonoBehaviour
             {
                 enemyAi.Activate();
             }
+        }
+    }
+
+    public void StartBattle(Party playerParty, Party enemyParty)
+    {
+        if (!IsBattleActive)
+        {
+            IsBattleActive = true;
+            PlayerParty = playerParty;
+            EnemyParty = enemyParty;
+            CombatArgs combatArgs = new CombatArgs()
+            {
+                PlayerParty = playerParty,
+                EnemyParty = enemyParty
+            };
+
+            PrepareCharacters();
+            BeginNextTurn();
+            CombatEvents.AlertCombatInitiated(this, combatArgs);
+        }
+        else
+        {
+            Debug.LogWarning("Failed to start battle, one already in progress!");
         }
     }
 

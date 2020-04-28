@@ -57,3 +57,6 @@ TagManager:
   - name: HUD
     uniqueID: 2155478133
     locked: 0
+  - name: Walls
+    uniqueID: 1550748787
+    locked: 0

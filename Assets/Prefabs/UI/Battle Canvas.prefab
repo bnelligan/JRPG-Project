@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8082658380292319566}
   - component: {fileID: 8082658380292319602}
   m_Layer: 5
-  m_Name: BattleResultsPanel
+  m_Name: Battle Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

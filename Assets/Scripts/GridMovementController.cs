@@ -64,25 +64,26 @@ public class GridMovementController : MonoBehaviour
             }
         }
 
-        Debug.Log($"Move vector: " + MoveVec);
+        //Debug.Log($"Move vector: " + MoveVec);
         targetPos = tileManager.FindMove(transform.position, MoveVec, 1);
-        Debug.Log($"Target position: {targetPos}");
+        //Debug.Log($"Target position: {targetPos}");
         float moveDistance = Vector3.Distance(transform.position, targetPos);
         Vector3 moveDirection = targetPos - transform.position;
         moveDirection.Normalize();
         // Snapping to position is choppy af
         if(MoveVec.magnitude == 0)
         {
-
+            rb.velocity = Vector2.zero;
             transform.position = Vector3.Lerp(transform.position, targetPos, (Time.time - lastMoveTime) / lerpDuration);
             
         }
         else
         {
             lastMoveTime = Time.time;
+            rb.velocity = (targetPos - transform.position).normalized * WalkSpeed;
             // rb.MovePosition(transform.position + moveDirection * WalkSpeed * Time.fixedDeltaTime);
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, WalkSpeed * Time.deltaTime);
-            Debug.Log($"Full Speed! ({moveDirection})");
+            // transform.position = Vector3.MoveTowards(transform.position, targetPos, WalkSpeed * Time.deltaTime);
+            //Debug.Log($"Full Speed! ({moveDirection})");
         }
         //else
         //{

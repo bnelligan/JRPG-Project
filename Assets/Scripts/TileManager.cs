@@ -11,7 +11,7 @@ public class TileManager : MonoBehaviour
     {
         INTERACTABLE,
         FLOOR,
-        WALL,
+        ENVIRONMENT,
         CHARACTER
     }
 
@@ -19,22 +19,22 @@ public class TileManager : MonoBehaviour
     Dictionary<TileLayerKey, Tilemap> MapLookup;
     Dictionary<TileLayerKey, int> LayerLookup = new Dictionary<TileLayerKey, int>()
     {
-        [TileLayerKey.CHARACTER] = 15,
+        [TileLayerKey.CHARACTER] = 9,
+        [TileLayerKey.ENVIRONMENT] = 15,
         [TileLayerKey.INTERACTABLE] = 18,
-        [TileLayerKey.WALL] = 20,
         [TileLayerKey.FLOOR] = 25,
     };
 
     // Layer props
     public int CharacterLayer { get { return LayerLookup[TileLayerKey.CHARACTER]; } }
     public int InteractableLayer { get { return LayerLookup[TileLayerKey.INTERACTABLE]; } }
-    public int WallLayer { get { return LayerLookup[TileLayerKey.WALL]; } }
+    public int WallLayer { get { return LayerLookup[TileLayerKey.ENVIRONMENT]; } }
     public int FloorLayer { get { return LayerLookup[TileLayerKey.FLOOR]; } }
 
     // Tilemap props
     Tilemap CharacterMap { get { return MapLookup[TileLayerKey.CHARACTER]; } }
     Tilemap InteractableMap { get { return MapLookup[TileLayerKey.INTERACTABLE]; } }
-    Tilemap WallMap { get { return MapLookup[TileLayerKey.WALL]; } }
+    Tilemap WallMap { get { return MapLookup[TileLayerKey.ENVIRONMENT]; } }
     Tilemap FloorMap { get { return MapLookup[TileLayerKey.FLOOR]; } }
     
     // Used for hitscan and rotation
@@ -75,7 +75,7 @@ public class TileManager : MonoBehaviour
         {
             [TileLayerKey.FLOOR] = FindMap(TileLayerKey.FLOOR),
             [TileLayerKey.INTERACTABLE] = FindMap(TileLayerKey.INTERACTABLE),
-            [TileLayerKey.WALL] = FindMap(TileLayerKey.WALL),
+            [TileLayerKey.ENVIRONMENT] = FindMap(TileLayerKey.ENVIRONMENT),
             [TileLayerKey.CHARACTER] = FindMap(TileLayerKey.CHARACTER),
 
         };
@@ -102,6 +102,7 @@ public class TileManager : MonoBehaviour
         uint MaxSpread = 4;
         List<Vector3> scanResults = new List<Vector3>();
         Tilemap map = MapLookup[layer];
+
         // Constrain spread to the max
         spread = (uint)Mathf.Min(spread, MaxSpread);
         direction.Clamp(new Vector2Int(-1, -1), new Vector2Int(1, 1));
@@ -149,7 +150,7 @@ public class TileManager : MonoBehaviour
         availableMove = FloorHits[0];
         Debug.Log($"Floor tiles: {FloorHits}");
         // Find wall tiles 
-        List<Vector3> WallHits = TileHitscan(TileLayerKey.WALL, worldPosition, direction, spread);
+        List<Vector3> WallHits = TileHitscan(TileLayerKey.ENVIRONMENT, worldPosition, direction, spread);
         Debug.Log($"Wall tiles: {WallHits}");
 
         // Find floors that are not shared with walls

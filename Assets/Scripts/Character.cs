@@ -80,6 +80,7 @@ public class Character : MonoBehaviour
         Stats.HP = 5;
         Stats.Max_HP = 5;
         Stats.SP = 3;
+        Stats.Max_SP = 4;
         Stats.Armor = 0;
        
         Stats.Dodge = 20;
@@ -100,6 +101,7 @@ public class Character : MonoBehaviour
         Stats.HP = 5;
         Stats.Max_HP = 5;
         Stats.SP = 2;
+        Stats.Max_SP = 4;
         Stats.Armor = 0;
         
         Stats.Dodge = 20;
@@ -298,7 +300,7 @@ public class Character : MonoBehaviour
     public void Activate()
     {
         FindTargetOpponent();
-        
+        Stats.GainSP(1);
     }
 
     public void ResolveTurn()
@@ -349,11 +351,12 @@ public class Character : MonoBehaviour
 
     // TODO - Move this to a new Collision Controller
     // Encounter collision could be at the party level instead of character level
-    private void OnCollisionEnter2D(Collision2D collision)
+   
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (this.Party.IsPlayerParty)
         {
-            Character otherCharacter = collision.gameObject.GetComponent<Character>();
+            Character otherCharacter = other.gameObject.GetComponent<Character>();
             // Check that we hit a player 
             if (otherCharacter != null )
             {
@@ -361,12 +364,7 @@ public class Character : MonoBehaviour
                 if (otherCharacter.Party.IsPlayerParty != this.Party.IsPlayerParty 
                     && battle.IsBattleActive == false)
                 {
-                    CombatArgs combatArgs = new CombatArgs()
-                    {
-                        PlayerParty = this.Party,
-                        EnemyParty = otherCharacter.Party
-                    };
-                    CombatEvents.AlertCombatInitiated(this, combatArgs);
+                    battle.StartBattle(Party, otherCharacter.Party);
                 }
             }
         }
