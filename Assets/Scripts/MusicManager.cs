@@ -5,17 +5,25 @@ using UnityEngine.Audio;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField]
-    AudioClip AdventureTheme;
-    [SerializeField]
-    AudioClip BattleTheme;
+    public AudioClip AdventureTheme;
+    public AudioClip BattleTheme;
+    public AudioClip EvilTheme;
 
-    AudioSource audio;
+    public AudioClip TavernBand_1;
+    public AudioClip TavernBand_2;
+
+    public AudioClip VictoryTheme_Full;
+    public AudioClip VictoryTheme_1;
+    public AudioClip VictoryTheme_2;
+
+    public AudioClip VillageTheme;
+    public AudioClip VillageTheme_SFX;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
-        audio.loop = true;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
         CombatEvents.OnCombat += (sender, combatArgs) => PlayClip(BattleTheme);
         CombatEvents.OnBattleComplete += (sender, resultsArgs) => PlayClip(AdventureTheme);
         PlayClip(AdventureTheme);
@@ -25,7 +33,7 @@ public class MusicManager : MonoBehaviour
     private void PlayClip(AudioClip clip)
     {
         Debug.Log("Playing music: " + clip.name);
-        audio.clip = clip;
-        audio.Play();
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }

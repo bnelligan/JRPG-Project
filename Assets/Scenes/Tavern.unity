@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Party
       objectReference: {fileID: 0}
+    - target: {fileID: 3739557985574324053, guid: d87acad16c9edbb4889e0fedebb01d78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d87acad16c9edbb4889e0fedebb01d78, type: 3}
 --- !u!1 &137470523
@@ -281,7 +286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137470523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
   m_Name: 
@@ -2135,11 +2140,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5256406796806349870, guid: 31fd315eeaa0cdd4898e416091c3488c,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f0a62bf4d26955749b0af445d907de22, type: 3}
     - target: {fileID: 5256406796806349871, guid: 31fd315eeaa0cdd4898e416091c3488c,
         type: 3}
       propertyPath: m_Name

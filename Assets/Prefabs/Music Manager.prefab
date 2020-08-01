@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5256406796806349871}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f79e1a124f58d174a8ecde5d4c158513, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f0a62bf4d26955749b0af445d907de22, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -142,3 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AdventureTheme: {fileID: 8300000, guid: f79e1a124f58d174a8ecde5d4c158513, type: 3}
   BattleTheme: {fileID: 8300000, guid: 6a801feacfcb0624687decfe7bc9dcfe, type: 3}
+  EvilTheme: {fileID: 8300000, guid: 6a801feacfcb0624687decfe7bc9dcfe, type: 3}
+  TavernBand_1: {fileID: 8300000, guid: 38ebf007d165e774f972ea53dab0604c, type: 3}
+  TavernBand_2: {fileID: 8300000, guid: cbd36618b5861cc4790c3442ca3eeb27, type: 3}
+  VictoryTheme_Full: {fileID: 8300000, guid: 53e9e048e21ec124aa9a91c1cdb2f55c, type: 3}
+  VictoryTheme_1: {fileID: 8300000, guid: 67c45afa1ee12ac4c9fddbee5ad3e0e2, type: 3}
+  VictoryTheme_2: {fileID: 8300000, guid: 3eb099da64c72e54d8068a1fcba6b96c, type: 3}
+  VillageTheme: {fileID: 8300000, guid: 265d0ea36ff40e841a9aced64e58f1dd, type: 3}
+  VillageTheme_SFX: {fileID: 8300000, guid: ef9aad33024de8d4a9c4b1c642358593, type: 3}

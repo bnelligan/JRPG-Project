@@ -45,6 +45,7 @@ public class GridMovementController : MonoBehaviour
         {
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
+            // Check x-axis input
             if (inputX > 0)
             {
                 MoveVec += Vector2Int.right;
@@ -54,6 +55,7 @@ public class GridMovementController : MonoBehaviour
                 MoveVec += Vector2Int.left;
             }
 
+            // Check y-axis input
             if (inputY > 0)
             {
                 MoveVec += Vector2Int.up;

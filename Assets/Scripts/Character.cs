@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
     public bool IsDead { get { return Stats.IsDead; } }
     public bool IsAlive { get { return !IsDead; } }
     public bool IsActive { get { return battle.ActiveCharacter == this; } }
+    public bool IsHostile = false;
     public float TurnTimer { get; private set; }
 
     // linear speed mod calculation
@@ -303,20 +304,6 @@ public class Character : MonoBehaviour
         Stats.GainSP(1);
     }
 
-    public void ResolveTurn()
-    {
-        // Call this after a skill is finished executing so the character
-        // can return to idle and the party can advance with the next turn
-    }
-
-    public void GainArmor()
-    {
-        //if(Armor < HP_Max)
-        //{
-        //    Armor++;
-        //}
-    }
-
     private IEnumerator ShakeAndFlash()
     {
         Vector2 InitPosition = transform.localPosition;
@@ -369,4 +356,17 @@ public class Character : MonoBehaviour
             }
         }
     }
+
+    // Static Methods
+    //public static List<Character> GetAllEnemies()
+    //{
+    //    List<Character> enemyCharacters = new List<Character>();
+    //    foreach(Character character in FindObjectsOfType<Character>())
+    //    {
+    //        if(character.IsEnemy && character.IsAlive)
+    //        {
+
+    //        }
+    //    }
+    //}
 }
