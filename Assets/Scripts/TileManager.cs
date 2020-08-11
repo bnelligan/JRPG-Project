@@ -148,10 +148,10 @@ public class TileManager : MonoBehaviour
         // Find floor tiles
         List<Vector3> FloorHits = TileHitscan(TileLayerKey.FLOOR, worldPosition, direction, spread);
         availableMove = FloorHits[0];
-        Debug.Log($"Floor tiles: {FloorHits}");
+        Debug.Log($"Floor tiles: {FloorHits.ToString()}");
         // Find wall tiles 
         List<Vector3> WallHits = TileHitscan(TileLayerKey.ENVIRONMENT, worldPosition, direction, spread);
-        Debug.Log($"Wall tiles: {WallHits}");
+        Debug.Log($"Wall tiles: {WallHits.ToString()}");
 
         // Find floors that are not shared with walls
         foreach (Vector3 FloorMove in FloorHits)
