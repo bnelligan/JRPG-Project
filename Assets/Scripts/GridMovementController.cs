@@ -6,7 +6,10 @@ public class GridMovementController : MonoBehaviour
 {
 
     // How long does it take to move 1 space
-    public float WalkSpeed = 1f;
+    [SerializeField]
+    private float WalkSpeed = 1f;
+    [SerializeField]
+    private float LowMoveThreshold = 0.5f;
     public bool EnableInput = true;
     private float lastMoveTime;
     public float lerpDuration = 5;
@@ -45,6 +48,8 @@ public class GridMovementController : MonoBehaviour
         {
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
+            Debug.Log($"InputX: {inputX}");
+            Debug.Log($"InputY: {inputY}");
             // Check x-axis input
             if (inputX > 0)
             {
@@ -71,27 +76,23 @@ public class GridMovementController : MonoBehaviour
         //Debug.Log($"Target position: {targetPos}");
         float moveDistance = Vector3.Distance(transform.position, targetPos);
         Vector3 moveDirection = targetPos - transform.position;
+        Vector3 moveVec3 = new Vector3(MoveVec.x, MoveVec.y, 0);
         moveDirection.Normalize();
-        // Snapping to position is choppy af
-        if(MoveVec.magnitude == 0)
+        bool isOppositeMovement = Vector3.Dot(moveVec3, moveDirection) < 0;
+
+        if (moveVec3 != Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement)
         {
             rb.velocity = Vector2.zero;
-            transform.position = Vector3.Lerp(transform.position, targetPos, (Time.time - lastMoveTime) / lerpDuration);
-            
+            // lastMoveTime -= moveDistance * Time.deltaTime; // Go back in time to speed up lerp
+            float lerpAmount = (Time.time - lastMoveTime) / (lerpDuration);
+            transform.position = Vector3.Lerp(transform.position, targetPos, lerpAmount);
+            //rb.velocity = Vector2.zero;
+            //transform.position = Vector3.Lerp(transform.position, targetPos, (Time.time - lastMoveTime) / lerpDuration);
         }
         else
         {
             lastMoveTime = Time.time;
-            rb.velocity = (targetPos - transform.position).normalized * WalkSpeed;
-            // rb.MovePosition(transform.position + moveDirection * WalkSpeed * Time.fixedDeltaTime);
-            // transform.position = Vector3.MoveTowards(transform.position, targetPos, WalkSpeed * Time.deltaTime);
-            //Debug.Log($"Full Speed! ({moveDirection})");
+            rb.velocity = moveVec3 * WalkSpeed;
         }
-        //else
-        //{
-        //    float lerpSpeed = Mathf.Lerp(WalkSpeed, 0f, moveDistance / LowerMoveThreshold);// moveDistance / UpperMoveThreshold + LowerMoveThreshold);
-        //    Debug.Log($"Lerp Speed: {lerpSpeed} ({moveDistance} / {LowerMoveThreshold}");
-        //    rb.MovePosition(transform.position + lerpSpeed * moveDirection * Time.fixedDeltaTime);
-        //}
     }
 }

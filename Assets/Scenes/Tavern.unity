@@ -3056,6 +3056,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 373199668, guid: 77bb47b4f12a5bc44bad2afae694d433, type: 3}
+      propertyPath: LowMoveThreshold
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 373199668, guid: 77bb47b4f12a5bc44bad2afae694d433, type: 3}
+      propertyPath: WalkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 373199668, guid: 77bb47b4f12a5bc44bad2afae694d433, type: 3}
+      propertyPath: lerpDuration
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3784335643564809305, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_BodyType
@@ -3069,12 +3081,12 @@ PrefabInstance:
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.48
       objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.33
       objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311547, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}

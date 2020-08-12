@@ -105,6 +105,7 @@ public class TileManager : MonoBehaviour
 
         // Constrain spread to the max
         spread = (uint)Mathf.Min(spread, MaxSpread);
+
         direction.Clamp(new Vector2Int(-1, -1), new Vector2Int(1, 1));
 
         // Find closest tile on floor
@@ -148,7 +149,7 @@ public class TileManager : MonoBehaviour
         // Find floor tiles
         List<Vector3> FloorHits = TileHitscan(TileLayerKey.FLOOR, worldPosition, direction, spread);
         availableMove = FloorHits[0];
-        Debug.Log($"Floor tiles: {FloorHits.ToString()}");
+        Debug.Log($"Floor tiles: {FloorHits}");
         // Find wall tiles 
         List<Vector3> WallHits = TileHitscan(TileLayerKey.ENVIRONMENT, worldPosition, direction, spread);
         Debug.Log($"Wall tiles: {WallHits.ToString()}");
