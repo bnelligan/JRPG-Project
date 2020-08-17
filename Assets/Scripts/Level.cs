@@ -6,20 +6,34 @@ using System.Linq;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField]
-    string NextScene = "";
-    bool AllCleared = false;
-    bool ImportantCleared = false;
+    public string CurrentLevelName { get; private set; }
+    public string CurrentLevelID { get; private set; }
+    public bool AllCleared { get; private set; }
+    public bool ImportantCleared { get; private set; }
     Encounter[] EncounterList;
-    
+    Dictionary<string, string> LevelSceneLookup = new Dictionary<string, string>
+    {
+        ["Tavern"] = "Tavern",
+        ["Surface"] = "Mock_LevelScene",
+        [""] = "",
+        [""] = "",
+        [""] = "",
+    };
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        InitEvents();
+    }
+    private void Start()
     {
         FindEncounters();
+    }
+    private void InitEvents()
+    {
         Encounter.OnClear += Encounter_OnClear;
     }
-
     private void Encounter_OnClear(Encounter encounter)
     {
         UpdateClearStatus();
@@ -46,8 +60,9 @@ public class Level : MonoBehaviour
             }
         }
     }
-    public void LoadNextLevel()
-    {
-        SceneManager.LoadScene(NextScene);
-    }
+    //public void LoadLevel(string LevelID)
+    //{
+    //    Debug.Log($"Load level: ({LevelID}) {nextScene.name}");
+    //    SceneManager.LoadScene(nextScene.name);
+    //}
 }

@@ -6,13 +6,11 @@ public class GridMovementController : MonoBehaviour
 {
 
     // How long does it take to move 1 space
-    [SerializeField]
-    private float WalkSpeed = 1f;
-    [SerializeField]
-    private float LowMoveThreshold = 0.5f;
+    private float WalkSpeed = 5f;
+    private float LowMoveThreshold = 0.3f;
     public bool EnableInput = true;
     private float lastMoveTime;
-    public float lerpDuration = 5;
+    private float lerpDuration = .4f;
     Vector3 targetPos;
     TileManager tileManager;
     Rigidbody2D rb;
@@ -80,7 +78,7 @@ public class GridMovementController : MonoBehaviour
         moveDirection.Normalize();
         bool isOppositeMovement = Vector3.Dot(moveVec3, moveDirection) < 0;
 
-        if (moveVec3 != Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement)
+        if (moveVec3 == Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement)
         {
             rb.velocity = Vector2.zero;
             // lastMoveTime -= moveDistance * Time.deltaTime; // Go back in time to speed up lerp
@@ -92,7 +90,7 @@ public class GridMovementController : MonoBehaviour
         else
         {
             lastMoveTime = Time.time;
-            rb.velocity = moveVec3 * WalkSpeed;
+            rb.velocity = moveDirection * WalkSpeed;
         }
     }
 }

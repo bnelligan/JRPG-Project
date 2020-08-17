@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip BattleTheme;
     public AudioClip EvilTheme;
 
+    public AudioClip TavernTheme;
     public AudioClip TavernBand_1;
     public AudioClip TavernBand_2;
 
@@ -19,10 +20,12 @@ public class MusicManager : MonoBehaviour
     public AudioClip VillageTheme;
     public AudioClip VillageTheme_SFX;
     AudioSource audioSource;
+    Level level;
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        level = FindObjectOfType<Level>();
         audioSource.loop = true;
         CombatEvents.OnCombat += (sender, combatArgs) => PlayClip(BattleTheme);
         CombatEvents.OnBattleComplete += (sender, resultsArgs) => PlayClip(AdventureTheme);
@@ -35,5 +38,12 @@ public class MusicManager : MonoBehaviour
         Debug.Log("Playing music: " + clip.name);
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    private AudioClip GetLevelTheme()
+    {
+        AudioClip levelTheme = AdventureTheme;
+        // To Do -- Get theme from lookup
+        return levelTheme;
     }
 }
