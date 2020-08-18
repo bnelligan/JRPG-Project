@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Battle : MonoBehaviour
+public class Battle : Encounter
 {
 
     public Party PlayerParty { get; private set; }

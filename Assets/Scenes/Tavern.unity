@@ -1750,10 +1750,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Important: 0
   TriggerCondition: 0
-  variant: 0
   description: I don't have time for a seat
   bountyExp: 0
   bountyMoney: 0
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
   promptOffset_Y: 1
 --- !u!4 &268612540
 Transform:
@@ -1849,10 +1857,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Important: 0
   TriggerCondition: 0
-  variant: 0
   description: This beer keg is empty
   bountyExp: 0
   bountyMoney: 0
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
   promptOffset_Y: 1
 --- !u!4 &510383138
 Transform:
@@ -2231,11 +2247,11 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 4294967295
-      m_TileMatrixIndex: 1
-      m_TileColorIndex: 10
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 11
       m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -2315,8 +2331,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 32ae2ab919c4d3b42a6a92da1143dd01, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 6ff6519d1f45452468c4169120224db7, type: 3}
   - m_RefCount: 4
@@ -2338,7 +2354,7 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 549378a21c9549f44bd8357ccff64197, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 34
+  - m_RefCount: 35
     m_Data:
       e00: 1
       e01: 0
@@ -2356,24 +2372,24 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data:
-      e00: -1.3106477e+34
-      e01: 1e-45
-      e02: 1.4e-43
-      e03: 100
-      e10: 9.57e-43
-      e11: NaN
-      e12: 0
-      e13: 100
-      e20: 1e-45
+      e00: 4e-45
+      e01: -6.1982197e+19
+      e02: 0
+      e03: 0
+      e10: 4.5905e-41
+      e11: 6.17e-43
+      e12: 6.15e-43
+      e13: 0
+      e20: 3.126617e+13
       e21: 0
-      e22: 100
-      e23: 0
-      e30: 0
-      e31: 1.4e-43
-      e32: 100
-      e33: 0
+      e22: 0
+      e23: -1.1912152e+9
+      e30: 6.17e-43
+      e31: 0
+      e32: 0
+      e33: 2.4e-44
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 2.0902e-41, g: 2.0902e-41, b: 2.0902e-41, a: 2.0902e-41}
@@ -2404,9 +2420,9 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: -0.000000001505672, g: -0.000000001505672, b: -0.000000001505672,
       a: -0.000000001505672}
-  - m_RefCount: 1
-    m_Data: {r: 1e-45, g: 0, b: 1e-45, a: 0}
-  - m_RefCount: 34
+  - m_RefCount: 0
+    m_Data: {r: 4.9211864, g: 4.9211864, b: 4.9211864, a: 4.9211864}
+  - m_RefCount: 35
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2455,6 +2471,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5256406796806349864, guid: 31fd315eeaa0cdd4898e416091c3488c,
+        type: 3}
+      propertyPath: TavernTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 12ff6cd1706c71b43853f5eecaea867c, type: 3}
     - target: {fileID: 5256406796806349865, guid: 31fd315eeaa0cdd4898e416091c3488c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2597,10 +2618,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Important: 0
   TriggerCondition: 0
-  variant: 0
   description: Just some dusty old books...
   bountyExp: 0
   bountyMoney: 0
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
   promptOffset_Y: 1
 --- !u!4 &772176682
 Transform:
@@ -2708,13 +2737,121 @@ RectTransform:
   m_Children:
   - {fileID: 1722477593}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &928823802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928823806}
+  - component: {fileID: 928823805}
+  - component: {fileID: 928823804}
+  - component: {fileID: 928823803}
+  m_Layer: 0
+  m_Name: Encounter_Keg (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &928823803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928823802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bea0fe68482e347bb019d99b9f4d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Important: 1
+  TriggerCondition: 1
+  description: Exit this level
+  bountyExp: 0
+  bountyMoney: 0
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
+  promptOffset_Y: 1.5
+  nextLevel: 2
+--- !u!61 &928823804
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928823802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &928823805
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928823802}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!4 &928823806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928823802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: -4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &956968397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,6 +3730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7879333e15ba8c748a227b2135b31275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevelID: 0
 --- !u!4 &1056288597
 Transform:
   m_ObjectHideFlags: 0
@@ -3601,7 +3739,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056288595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.173461, y: -13.531544, z: -742.1242}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3671,7 +3809,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1596962341
 PrefabInstance:

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Encounter : MonoBehaviour
 {
@@ -38,19 +39,29 @@ public class Encounter : MonoBehaviour
 
     // Private Encounter Details
     [SerializeField] private Trigger TriggerCondition = Trigger.ActivateButton;
-    [SerializeField] private Variant variant = Variant.Interact;
-    protected State state = State.Secret;
+    // [SerializeField] private Variant variant = Variant.Interact;
+    protected State state = State.Visible;
     [SerializeField] private string description;
     [SerializeField] private int bountyExp;
     [SerializeField] private int bountyMoney;
 
     // Event Handlers
-    public delegate void EncounterEventHandler(Encounter encounter);
-    public static event EncounterEventHandler OnActivate;
-    public static event EncounterEventHandler OnVisible;
-    public static event EncounterEventHandler OnClear;
+    //public delegate void EncounterEventHandler(Encounter encounter);
+    //public static event EncounterEventHandler OnActivate;
+    //public static event EncounterEventHandler OnVisible;
+    //public static event EncounterEventHandler OnClear;
+    [System.Serializable]
+    public class EncounterEvent : UnityEvent<Encounter> { };
 
+    [SerializeField]
+    public EncounterEvent OnActivate;
+    [SerializeField]
+    public EncounterEvent OnVisible;
+    [SerializeField]
+    public EncounterEvent OnClear;
+    
     // Public Encounter Accessors
+    // public Variant EncounterVariant { get { return variant; } protected set { variant = value; } }
     public string Name { get { return gameObject.name; } protected set { gameObject.name = value; } }
     public int BountyExp { get { return bountyExp; } protected set { bountyExp = value; } }
     public int BountyMoney { get { return bountyMoney; } protected set { bountyMoney = value; } }
@@ -75,7 +86,7 @@ public class Encounter : MonoBehaviour
     }
     public void Activate()
     {
-        // Don't activate active or clear encounters
+        // Don't activate active or cleared encounters
         if(state != State.Active && state != State.Cleared)
         {
             Debug.Log($"Encounter activated: {Name}");
@@ -91,7 +102,7 @@ public class Encounter : MonoBehaviour
         {
             Debug.Log($"Encounter cleared: {Name}");
             state = State.Cleared;
-            OnClear(this);
+            OnClear?.Invoke(this);
         }
     }
     public void MakeVisible()
@@ -101,6 +112,7 @@ public class Encounter : MonoBehaviour
         {
             Debug.Log($"Encounter made visible: {Name}");
             state = State.Visible;
+            OnVisible?.Invoke(this);
         }
     }
 

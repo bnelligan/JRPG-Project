@@ -21,6 +21,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip VillageTheme_SFX;
     AudioSource audioSource;
     Level level;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +29,20 @@ public class MusicManager : MonoBehaviour
         level = FindObjectOfType<Level>();
         audioSource.loop = true;
         CombatEvents.OnCombat += (sender, combatArgs) => PlayClip(BattleTheme);
-        CombatEvents.OnBattleComplete += (sender, resultsArgs) => PlayClip(AdventureTheme);
-        PlayClip(AdventureTheme);
+        CombatEvents.OnBattleComplete += (sender, resultsArgs) => PlayCurrentLevelTheme();
+        // PlayClip(AdventureTheme);
+        PlayCurrentLevelTheme();
     }
 
-
+    public void PlayCurrentLevelTheme()
+    {
+        PlayLevelTheme(level.CurrentLevelID);
+    }
+    public void PlayLevelTheme(Level.ID levelID)
+    {
+        AudioClip levelTheme = GetLevelTheme(levelID);
+        PlayClip(levelTheme);
+    }
     private void PlayClip(AudioClip clip)
     {
         Debug.Log("Playing music: " + clip.name);
@@ -40,10 +50,20 @@ public class MusicManager : MonoBehaviour
         audioSource.Play();
     }
 
-    private AudioClip GetLevelTheme()
+
+    private AudioClip GetLevelTheme(Level.ID levelID)
     {
-        AudioClip levelTheme = AdventureTheme;
-        // To Do -- Get theme from lookup
-        return levelTheme;
+        switch (levelID)
+        {
+            case Level.ID.Tavern:
+                return TavernTheme;
+            case Level.ID.Surface:
+                // Default theme
+            case Level.ID.None:
+                // Default theme
+            default:
+                return AdventureTheme;
+        }
+
     }
 }

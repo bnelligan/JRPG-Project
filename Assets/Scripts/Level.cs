@@ -6,42 +6,79 @@ using System.Linq;
 
 public class Level : MonoBehaviour
 {
+    public enum ID
+    {
+        None,
+        Tavern,
+        Surface
+    }
     public string CurrentLevelName { get; private set; }
-    public string CurrentLevelID { get; private set; }
+    public ID CurrentLevelID { get { return currentLevelID; } }
     public bool AllCleared { get; private set; }
     public bool ImportantCleared { get; private set; }
     Encounter[] EncounterList;
-    Dictionary<string, string> LevelSceneLookup = new Dictionary<string, string>
+    [SerializeField]
+    ID currentLevelID;
+
+    Dictionary<ID, string> SceneNameLookup = new Dictionary<ID, string>
     {
-        ["Tavern"] = "Tavern",
-        ["Surface"] = "Mock_LevelScene",
-        [""] = "",
-        [""] = "",
-        [""] = "",
+        [ID.Tavern] = "Tavern",
+        [ID.Surface] = "Mock_LevelScene"
+    };
+    Dictionary<string, ID> LevelIDLookup = new Dictionary<string, ID>
+    {
+        ["Tavern"] = ID.Tavern,
+        ["Mock_LevelScene"] = ID.Surface
     };
 
     // Start is called before the first frame update
     void Awake()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        InitEvents();
+        if(LevelIDLookup.ContainsKey(currentScene.name))
+        {
+            currentLevelID = LevelIDLookup[currentScene.name];
+        }
     }
     private void Start()
     {
-        FindEncounters();
+        RegisterEncounters();
     }
-    private void InitEvents()
+    private void RegisterEncounters()
     {
-        Encounter.OnClear += Encounter_OnClear;
+        EncounterList = FindObjectsOfType<Encounter>();
+        foreach(Encounter encounter in EncounterList)
+        {
+            encounter.OnClear.AddListener(Encounter_OnClear);
+            encounter.OnActivate.AddListener(Encounter_OnActivate);
+        }
     }
     private void Encounter_OnClear(Encounter encounter)
     {
         UpdateClearStatus();
     }
 
-    private void FindEncounters()
+    private void Encounter_OnActivate(Encounter encounter)
     {
-        EncounterList = FindObjectsOfType<Encounter>();
+        if(encounter.GetType() == typeof(Battle))
+        {
+            // Implement battle stuff
+        }
+        else if(encounter.GetType() == typeof(LevelExit))
+        {
+            Debug.LogWarning("Level Exit entered!");
+            LevelExit exit = encounter as LevelExit;
+            LoadLevel(exit.NextLevelID);
+        }
+    }
+
+    public void LoadLevel(ID levelID)
+    {
+        string sceneName = SceneNameLookup[levelID];
+        if(sceneName != "")
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
     
     private void UpdateClearStatus()
