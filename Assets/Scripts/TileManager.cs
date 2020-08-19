@@ -128,7 +128,7 @@ public class TileManager : MonoBehaviour
             {
                 scanResults.Add(map.GetCellCenterWorld(leftPosition));
             }
-            else if(map.HasTile(rightPosition))
+            if(map.HasTile(rightPosition) && leftPosition != rightPosition)
             {
                 scanResults.Add(map.GetCellCenterWorld(rightPosition));
             }
@@ -145,19 +145,23 @@ public class TileManager : MonoBehaviour
 
     public Vector3 FindMove(Vector3 worldPosition, Vector2Int direction, uint spread)
     {
-        Vector3 availableMove = worldPosition;
+        // Default to current cell
+        Vector3Int currentCellPos = FloorMap.WorldToCell(worldPosition);
+        Vector3 availableMove = FloorMap.GetCellCenterWorld(currentCellPos);
         // Find floor tiles
         List<Vector3> FloorHits = TileHitscan(TileLayerKey.FLOOR, worldPosition, direction, spread);
-        availableMove = FloorHits[0];
-        Debug.Log($"Floor tiles: {FloorHits}");
+        Debug.Log($"Floor tile hits: {FloorHits.Count}");
         // Find wall tiles 
         List<Vector3> WallHits = TileHitscan(TileLayerKey.ENVIRONMENT, worldPosition, direction, spread);
-        Debug.Log($"Wall tiles: {WallHits.ToString()}");
-
+        Debug.Log($"Wall tile hits: {WallHits.Count}");
+        // Find object tiles
+        List<Vector3> InteractableHits = TileHitscan(TileLayerKey.INTERACTABLE, worldPosition, direction, spread);
+        Debug.Log($"Interactable tile hits: {InteractableHits.Count}");
+         
         // Find floors that are not shared with walls
         foreach (Vector3 FloorMove in FloorHits)
         {
-            bool blocked = WallHits.Contains(FloorMove);
+            bool blocked = WallHits.Contains(FloorMove) || InteractableHits.Contains(FloorMove);
             if(blocked)
             {
                 Debug.Log("Blocked move: " + FloorMove);
