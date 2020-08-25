@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tavern.unity
+    guid: bd490d0b0644a6849b98f47a7d4196d8
+  - enabled: 1
     path: Assets/Scenes/Mock_LevelScene.unity
     guid: be71e342298a98949a7893af97c75413
   m_configObjects: {}

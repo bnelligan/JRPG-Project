@@ -28,12 +28,27 @@ public class MusicManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         level = FindObjectOfType<Level>();
         audioSource.loop = true;
-        CombatEvents.OnCombat += (sender, combatArgs) => PlayClip(BattleTheme);
-        CombatEvents.OnBattleComplete += (sender, resultsArgs) => PlayCurrentLevelTheme();
+        CombatEvents.OnCombat += CombatEvents_OnCombat; //1 (sender, combatArgs) => PlayClip(BattleTheme);
+        CombatEvents.OnBattleComplete += CombatEvents_OnBattleComplete; // += (sender, resultsArgs) => PlayCurrentLevelTheme();
         // PlayClip(AdventureTheme);
         PlayCurrentLevelTheme();
     }
 
+    private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
+    {
+        PlayCurrentLevelTheme();
+    }
+
+    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
+    {
+        PlayClip(BattleTheme);
+    }
+   
+    private void OnDestroy()
+    {
+        CombatEvents.OnCombat -= CombatEvents_OnCombat;
+        CombatEvents.OnBattleComplete -= CombatEvents_OnBattleComplete;
+    }
     public void PlayCurrentLevelTheme()
     {
         PlayLevelTheme(level.CurrentLevelID);
