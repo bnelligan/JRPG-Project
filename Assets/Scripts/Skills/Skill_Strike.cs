@@ -14,7 +14,7 @@ public class Skill_Strike : BaseSkill
         SkillID = "SKILL_STRIKE";
         SkillDescription = "Deal weak melee damage to target enemy";
         SkillType = E_SkillType.MELEE;
-        SpCost = 1;
+        SpCost = 2;
         RecoveryTime = 1f;
         DamageMod = 1f;
         AccuracyMod = -0.1f;

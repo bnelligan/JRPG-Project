@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3739557985118885904}
   - component: {fileID: 3739557985118885906}
   - component: {fileID: 3739557985118885907}
+  - component: {fileID: 8975231853949316196}
   - component: {fileID: 3739557985118885901}
   - component: {fileID: 3739557985118885900}
   m_Layer: 9
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterID: FLAN_GREEN
+  IsHostile: 0
 --- !u!50 &3739557985118885904
 Rigidbody2D:
   serializedVersion: 4
@@ -173,6 +175,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76cca8814ad20314a97d7c00e23a0d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8975231853949316196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739557985118885909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7c5d1694e93874da8c373adc70f5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3739557985118885901

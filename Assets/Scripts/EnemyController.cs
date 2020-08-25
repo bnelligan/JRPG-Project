@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
 
     private void EndTurn()
     {
-        // battle.BeginNextTurn();
+        battle.BeginNextTurn();
     }
 
     private int ChooseSkill()

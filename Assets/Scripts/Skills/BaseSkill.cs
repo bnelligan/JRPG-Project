@@ -53,12 +53,12 @@ public abstract class BaseSkill : MonoBehaviour
     {
         if(SpCost > 0)
         {
-            ownerStats.LoseSP((uint)SpCost);
+            ownerStats.LoseSP((uint)Mathf.Abs(SpCost));
         }
         // Gain SP when cost is negative
         else if(SpCost < 0)
         {
-            ownerStats.GainSP((uint)SpCost);
+            ownerStats.GainSP((uint)Mathf.Abs(SpCost));
         }
         owner.DelayTurnTimer(RecoveryTime);
     }
