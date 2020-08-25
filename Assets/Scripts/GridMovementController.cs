@@ -41,6 +41,13 @@ public class GridMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Check for exit key
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        
+        // Check movement input
         Vector2Int MoveVec = Vector2Int.zero;
         if (EnableInput == true)
         {
@@ -68,11 +75,7 @@ public class GridMovementController : MonoBehaviour
                 MoveVec += Vector2Int.down;
             }
 
-            // Check for exit key
-            if(Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
+            
         }
 
         //Debug.Log($"Move vector: " + MoveVec);
