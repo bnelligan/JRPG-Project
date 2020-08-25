@@ -161,7 +161,7 @@ public class TileManager : MonoBehaviour
         // Find floors that are not shared with walls
         foreach (Vector3 FloorMove in FloorHits)
         {
-            bool blocked = WallHits.Contains(FloorMove) || InteractableHits.Contains(FloorMove);
+            bool blocked = WallHits.Contains(FloorMove);// || InteractableHits.Contains(FloorMove);
             if(blocked)
             {
                 Debug.Log("Blocked move: " + FloorMove);
