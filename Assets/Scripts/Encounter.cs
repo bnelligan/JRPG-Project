@@ -70,7 +70,7 @@ public class Encounter : MonoBehaviour
     private GameObject promptPrefab;
     [SerializeField] private float promptOffset_Y = 1.5f;
     private GameObject promptInstance;
-    bool IsPromptShowing { get { return promptInstance != null && promptInstance.activeInHierarchy == true; } }
+    public bool IsPromptShowing { get { return promptInstance != null && promptInstance.activeInHierarchy == true; } }
     private void Awake()
     {
         promptPrefab = Resources.Load<GameObject>("Prefabs/E-Button");

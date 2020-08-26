@@ -102,4 +102,14 @@ public class GridMovementController : MonoBehaviour
             rb.velocity = moveDirection * WalkSpeed;
         }
     }
+
+    public void DisableMovement()
+    {
+        EnableInput = false;
+    }
+
+    public void EnableMovement()
+    {
+        EnableInput = true;
+    }
 }
