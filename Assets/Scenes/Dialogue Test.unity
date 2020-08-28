@@ -2235,9 +2235,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   promptOffset_Y: 1.5
-  text: If you are a dreamer, come in. If you are a dreamer, a wisher, a liar, a
-    hope-er, a pray-er, a magic bean buyer... If you're a pretender, come sit by
-    my fire.
+  text:
+  - If you are a dreamer, come in. If you are a dreamer, a wisher, a liar, a hope-er,
+    a pray-er, a magic bean buyer... If you're a pretender, come sit by my fire.
+  - For we have some flax-golden tales to spin.
+  - Come in! Come in!
   textEl: {fileID: 898476570}
   speechBubble: {fileID: 325603245}
   speechBubbleButton: {fileID: 586127014}

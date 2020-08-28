@@ -7,32 +7,47 @@ using TMPro;
 public class Dialogue : Encounter
 {
     // The dialogue to be displayed
-    [SerializeField] private string text;
+    [SerializeField] private string[] text;
     // UI Elements
     [SerializeField] private TMP_Text textEl;
     [SerializeField] private Image speechBubble;
     [SerializeField] private Image speechBubbleButton;
     // Becomes true after the message finishes displaying itself
     private bool textFinished = false;
+    // Index of the message we're currently on
+    private int currentMessage = 0;
+    // Can you repeat this conversation or not?
+    [SerializeField] private const bool repeatable = true;
     IEnumerator co;
 
-    private void Update()
+    // Ryan P: I made this be LateUpdate so that I don't have to copy the code that's in Encounter's Update function.
+    private void LateUpdate()
     {
         bool ePressed = Input.GetKeyDown(KeyCode.E);
-        if (ePressed && IsPromptShowing && CanActivate)
-        {
-            Activate();
-        }
-
         if (ePressed && IsActive && textFinished)
         {
-            Clear();
+            currentMessage++;
+            if (currentMessage < text.Length)
+            {
+                speechBubbleButton.enabled = false;
+                DisplayText();
+            }
+            else
+            {
+                Clear();
+                currentMessage = 0;
+                textFinished = false;
+                if (repeatable)
+                {
+                    state = State.Visible;
+                }
+            }
         }
     }
 
     public void DisplayText()
     {
-        textEl.text = this.text;
+        textEl.text = this.text[currentMessage];
         speechBubble.enabled = true;
         co = RevealText();
         StartCoroutine(co);
@@ -72,7 +87,7 @@ public class Dialogue : Encounter
 
             counter += 1;
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 }
