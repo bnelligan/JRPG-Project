@@ -21,8 +21,9 @@ public class Dialogue : Encounter
     IEnumerator co;
 
     // Ryan P: I made this be LateUpdate so that I don't have to copy the code that's in Encounter's Update function.
-    private void LateUpdate()
+    protected override void Update()
     {
+        base.Update();
         bool ePressed = Input.GetKeyDown(KeyCode.E);
         if (ePressed && IsActive && textFinished)
         {
