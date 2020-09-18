@@ -31,6 +31,7 @@ public class Dialogue : Encounter
             if (currentMessage < text.Length)
             {
                 speechBubbleButton.enabled = false;
+                textFinished = false;
                 DisplayText();
             }
             else
