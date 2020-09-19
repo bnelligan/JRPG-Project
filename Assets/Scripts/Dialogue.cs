@@ -20,7 +20,6 @@ public class Dialogue : Encounter
     [SerializeField] private const bool repeatable = true;
     IEnumerator co;
 
-    // Ryan P: I made this be LateUpdate so that I don't have to copy the code that's in Encounter's Update function.
     protected override void Update()
     {
         base.Update();
