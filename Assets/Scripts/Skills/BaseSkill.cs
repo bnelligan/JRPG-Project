@@ -6,10 +6,10 @@ public abstract class BaseSkill : MonoBehaviour
 {
     public enum E_SkillType
     {
-        MELEE,
-        RANGED,
-        SPECIAL,
-        UTILITY
+        MELEE, // requires melee weapon
+        RANGED, // requires ranged weapon
+        SPECIAL,  // unique requirements and effects
+        UTILITY // status effect or buff skill
     }
     public string SkillID { get; protected set; }
     public string SkillName { get; protected set; }
