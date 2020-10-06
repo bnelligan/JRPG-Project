@@ -8,7 +8,7 @@ public abstract class BaseSkill : MonoBehaviour
     {
         MELEE,
         RANGED,
-        MAGIC,
+        SPECIAL,
         UTILITY
     }
     public string SkillID { get; protected set; }

@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Simple melee attack for 80% of melee damage
-/// </summary>
-public class Skill_Strike : BaseSkill
+public class Skill_Shluurp : BaseSkill
 {
+    public float StunChance = 0.6f;
     protected override void InitSkillInfo()
     {
         // Base skill info
-        SkillName = "Strike!";
-        SkillID = "SKILL_STRIKE";
-        SkillDescription = "Target is dealt weak melee damage";
+        SkillName = "Shluurp";
+        SkillID = "SKILL_SHLUURP";
+        SkillDescription = "Target is dealt weak crush damage with stun chance";
         SkillType = E_SkillType.MELEE;
         SpCost = 2;
         RecoveryTime = 1f;
-        DamageMod = 0.8f;
+        DamageMod = 0.7f;
         AccuracyMod = -0.1f;
         CritMod = 0f;
     }

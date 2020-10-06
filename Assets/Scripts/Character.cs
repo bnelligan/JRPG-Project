@@ -236,7 +236,7 @@ public class Character : MonoBehaviour
     //    }
     //}
 
-    public void AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageVariant dmgType)
+    public bool AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageVariant dmgType)
     {
         // Get base damage from type
         uint damageCalc = 0;
@@ -280,6 +280,7 @@ public class Character : MonoBehaviour
         {
             Debug.LogWarning("Missed...");
         }
+        return isHit;
     }
 
     // This should change to a character specific targeting system
