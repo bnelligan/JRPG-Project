@@ -280,7 +280,7 @@ public class Character : MonoBehaviour
         {
             Debug.LogWarning("Missed...");
         }
-        return isHit;
+        return IsHit;
     }
 
     // This should change to a character specific targeting system
