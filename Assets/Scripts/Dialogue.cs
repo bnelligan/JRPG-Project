@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,27 +8,40 @@ public class Dialogue : Encounter
     // The dialogue to be displayed
     [SerializeField] private string[] text;
     // UI Elements
-    [SerializeField] private TMP_Text textEl;
-    [SerializeField] private Image speechBubble;
-    [SerializeField] private Image speechBubbleButton;
+    [SerializeField] private GameObject speechBubbleObj;
+    private Image speechBubble;
+    private TMP_Text textEl;
+    private Image button;
+
     // Becomes true after the message finishes displaying itself
     private bool textFinished = false;
     // Index of the message we're currently on
     private int currentMessage = 0;
     // Can you repeat this conversation or not?
-    [SerializeField] private const bool repeatable = true;
+    [SerializeField] private bool repeatable = true;
+    [SerializeField] private bool timed = false;
+    [SerializeField] private float disappearTime = -1;
+    private float timer;
     IEnumerator co;
+
+    private void Start()
+    {
+        speechBubble = speechBubbleObj.GetComponent<Image>();
+        textEl = speechBubbleObj.GetComponentInChildren<TMP_Text>();
+        button = speechBubbleObj.GetComponentsInChildren<Image>()[1];
+        timer = disappearTime;
+    }
 
     protected override void Update()
     {
         base.Update();
         bool ePressed = Input.GetKeyDown(KeyCode.E);
-        if (ePressed && IsActive && textFinished)
+        if (ePressed && IsActive && textFinished || timed && timer <= 0)
         {
             currentMessage++;
             if (currentMessage < text.Length)
             {
-                speechBubbleButton.enabled = false;
+                button.enabled = false;
                 textFinished = false;
                 DisplayText();
             }
@@ -43,7 +55,11 @@ public class Dialogue : Encounter
                     state = State.Visible;
                 }
             }
+            timer = disappearTime;
         }
+
+        if(timed && IsActive)
+            timer -= Time.deltaTime;
     }
 
     public void DisplayText()
@@ -58,7 +74,7 @@ public class Dialogue : Encounter
     {
         textEl.text = "";
         speechBubble.enabled = false;
-        speechBubbleButton.enabled = false;
+        button.enabled = false;
     }
 
     IEnumerator RevealText()
@@ -82,7 +98,7 @@ public class Dialogue : Encounter
             if (visibleCount >= totalVisibleCharacters)
             {
                 textFinished = true;
-                speechBubbleButton.enabled = true;
+                button.enabled = true;
                 StopCoroutine(co);
             }
 
