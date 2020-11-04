@@ -18,10 +18,10 @@ public class Skill_Guard : BaseSkill
         AccuracyMod = 0f;
         CritMod = 0f;
     }
-    public override void Activate()
+    public override void ActivateSkill()
     {
         ownerStats.GainArmor(ArmorGain);
-        base.Activate();
+        base.ActivateSkill();
     }
     public override bool CanActivate()
     {

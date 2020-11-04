@@ -20,9 +20,9 @@ public class Skill_Strike : BaseSkill
         AccuracyMod = -0.1f;
         CritMod = 0f;
     }
-    public override void Activate()
+    public override void ActivateSkill()
     {
-        base.Activate();
+        base.ActivateSkill();
         owner.AttackTargetEnemy(DamageMod, AccuracyMod, CritMod, DamageVariant.MELEE);
     }
 }

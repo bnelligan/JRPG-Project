@@ -41,7 +41,7 @@ public abstract class BaseSkill : MonoBehaviour
         bool canActivate = CanActivate();
         if(canActivate)
         {
-            Activate();
+            ActivateSkill();
         }
         return canActivate;
     }
@@ -49,7 +49,7 @@ public abstract class BaseSkill : MonoBehaviour
     /// <summary>
     /// Activate the skill without checking conditions
     /// </summary>
-    public virtual void Activate()
+    public virtual void ActivateSkill()
     {
         if(SpCost > 0)
         {
