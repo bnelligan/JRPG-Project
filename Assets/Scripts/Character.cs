@@ -31,8 +31,6 @@ public class Character : MonoBehaviour
     public bool IsHostile = false;
     public float TurnTimer { get; private set; }
 
-    // linear speed mod calculation
-    private float speedMod { get { return Mathf.Max((10f - Stats.Reflex), 1f) / 10f; } }
 
     private void Awake()
     {
@@ -79,16 +77,16 @@ public class Character : MonoBehaviour
     public void LoadBaseStats_PLAYER_DEFAULT()
     {
         Stats.HP = 5;
-        Stats.Max_HP = 5;
+        Stats.HP_Max = 5;
         Stats.SP = 3;
-        Stats.Max_SP = 4;
+        Stats.SP_Max = 4;
         Stats.Armor = 0;
        
         Stats.Dodge = 20;
         Stats.Accuracy = 90;
-        Stats.MeleeDamage = 1;
-        Stats.RangedDamage = 1;
-        Stats.MagicDamage = 1;
+        Stats.Melee_Bonus = 1;
+        Stats.Ranged_Bonus = 1;
+        Stats.Magic_Bonus = 1;
        
         Stats.Strength = 3;
         Stats.Dexterity = 3;
@@ -100,16 +98,16 @@ public class Character : MonoBehaviour
     private void LoadBaseStats_ENEMY_DEFAULT()
     {
         Stats.HP = 5;
-        Stats.Max_HP = 5;
+        Stats.HP_Max = 5;
         Stats.SP = 2;
-        Stats.Max_SP = 4;
+        Stats.SP_Max = 4;
         Stats.Armor = 0;
         
         Stats.Dodge = 20;
         Stats.Accuracy = 90;
-        Stats.MeleeDamage = 1;
-        Stats.RangedDamage = 1;
-        Stats.MagicDamage = 1;
+        Stats.Melee_Bonus = 1;
+        Stats.Ranged_Bonus = 1;
+        Stats.Magic_Bonus = 1;
         
         Stats.Strength = 1;
         Stats.Dexterity = 1;
@@ -185,11 +183,11 @@ public class Character : MonoBehaviour
     }
     public void ResetTurnTimer()
     {
-        TurnTimer = 1f * speedMod;
+        TurnTimer = 1f * Stats.SpeedMod;
     }
     public void DelayTurnTimer(float flatDelay)
     {
-        TurnTimer += flatDelay * speedMod;
+        TurnTimer += flatDelay * Stats.SpeedMod;
     }
 
     public void AdvanceTurnTimer(float flatreduction)
@@ -242,15 +240,15 @@ public class Character : MonoBehaviour
         uint damageCalc = 0;
         if(dmgType == DamageVariant.MELEE)
         {
-            damageCalc = Stats.MeleeDamage;
+            damageCalc = Stats.Melee_Bonus;
         }
         else if(dmgType == DamageVariant.RANGED)
         {
-            damageCalc = Stats.RangedDamage;
+            damageCalc = Stats.Ranged_Bonus;
         }
         else if(dmgType == DamageVariant.MAGIC)
         {
-            damageCalc = Stats.MagicDamage;
+            damageCalc = Stats.Magic_Bonus;
         }
 
         // Modify by the damage mod, floor to int

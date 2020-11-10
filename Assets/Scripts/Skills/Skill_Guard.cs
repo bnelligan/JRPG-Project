@@ -25,6 +25,6 @@ public class Skill_Guard : BaseSkill
     }
     public override bool CanActivate()
     {
-        return base.CanActivate() && (ownerStats.Armor < ownerStats.Max_HP);
+        return base.CanActivate() && (ownerStats.Armor < ownerStats.HP);
     }
 }
