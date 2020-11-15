@@ -107,7 +107,6 @@ public class CharacterStats : MonoBehaviour
     public float SpeedMod { get { return Mathf.Max((10f - Reflex), 1f) / 10f; } }
     public void Awake()
     {
-        Debug.Log(JsonUtility.ToJson(new SerializedStats()));
         if(LoadJSON)
         {
             if (FileSource != "")
@@ -160,7 +159,7 @@ public class CharacterStats : MonoBehaviour
     {
         try
         {
-            TextAsset targetFile = Resources.Load<TextAsset>(FileSource);
+            TextAsset targetFile = Resources.Load<TextAsset>($"CharacterData/{FileSource}");
             if(targetFile == null)
             {
                 Debug.LogError($"Error loading stats from JSON file \"{FileSource}\". Check that it exists.");

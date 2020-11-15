@@ -150,13 +150,13 @@ public class TileManager : MonoBehaviour
         Vector3 availableMove = FloorMap.GetCellCenterWorld(currentCellPos);
         // Find floor tiles
         List<Vector3> FloorHits = TileHitscan(TileLayerKey.FLOOR, worldPosition, direction, spread);
-        Debug.Log($"Floor tile hits: {FloorHits.Count}");
+        // Debug.Log($"Floor tile hits: {FloorHits.Count}");
         // Find wall tiles 
         List<Vector3> WallHits = TileHitscan(TileLayerKey.ENVIRONMENT, worldPosition, direction, spread);
-        Debug.Log($"Wall tile hits: {WallHits.Count}");
+        // Debug.Log($"Wall tile hits: {WallHits.Count}");
         // Find object tiles
         List<Vector3> InteractableHits = TileHitscan(TileLayerKey.INTERACTABLE, worldPosition, direction, spread);
-        Debug.Log($"Interactable tile hits: {InteractableHits.Count}");
+        // Debug.Log($"Interactable tile hits: {InteractableHits.Count}");
          
         // Find floors that are not shared with walls
         foreach (Vector3 FloorMove in FloorHits)
