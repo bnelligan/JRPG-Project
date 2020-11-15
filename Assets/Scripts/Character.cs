@@ -77,16 +77,16 @@ public class Character : MonoBehaviour
     public void LoadBaseStats_PLAYER_DEFAULT()
     {
         Stats.HP = 5;
-        Stats.HP_Max = 5;
+        Stats.MaxHP = 5;
         Stats.SP = 3;
-        Stats.SP_Max = 4;
+        Stats.MaxSP = 4;
         Stats.Armor = 0;
        
         Stats.Dodge = 20;
         Stats.Accuracy = 90;
-        Stats.Melee_Bonus = 1;
-        Stats.Ranged_Bonus = 1;
-        Stats.Magic_Bonus = 1;
+        Stats.MeleeBonus = 1;
+        Stats.RangedBonus = 1;
+        Stats.MagicBonus = 1;
        
         Stats.Strength = 3;
         Stats.Dexterity = 3;
@@ -98,16 +98,16 @@ public class Character : MonoBehaviour
     private void LoadBaseStats_ENEMY_DEFAULT()
     {
         Stats.HP = 5;
-        Stats.HP_Max = 5;
+        Stats.MaxHP = 5;
         Stats.SP = 2;
-        Stats.SP_Max = 4;
+        Stats.MaxSP = 4;
         Stats.Armor = 0;
         
         Stats.Dodge = 20;
         Stats.Accuracy = 90;
-        Stats.Melee_Bonus = 1;
-        Stats.Ranged_Bonus = 1;
-        Stats.Magic_Bonus = 1;
+        Stats.MeleeBonus = 1;
+        Stats.RangedBonus = 1;
+        Stats.MagicBonus = 1;
         
         Stats.Strength = 1;
         Stats.Dexterity = 1;
@@ -240,15 +240,15 @@ public class Character : MonoBehaviour
         uint damageCalc = 0;
         if(dmgType == DamageVariant.MELEE)
         {
-            damageCalc = Stats.Melee_Bonus;
+            damageCalc = Stats.MeleeBonus;
         }
         else if(dmgType == DamageVariant.RANGED)
         {
-            damageCalc = Stats.Ranged_Bonus;
+            damageCalc = Stats.RangedBonus;
         }
         else if(dmgType == DamageVariant.MAGIC)
         {
-            damageCalc = Stats.Magic_Bonus;
+            damageCalc = Stats.MagicBonus;
         }
 
         // Modify by the damage mod, floor to int

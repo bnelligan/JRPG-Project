@@ -1,0 +1,22 @@
+{
+  "HP": 0,
+  "MaxHP": 0,
+  "SP": 0,
+  "MaxSP": 0,
+  "Armor": 0,
+  "BaseArmor": 0,
+  "Strength": 0,
+  "Dexterity": 0,
+  "Reflex": 0,
+  "Mind": 0,
+  "Dodge": 0,
+  "Accuracy": 0,
+  "CritChance": 0,
+  "CritBonus": 0,
+  "BaseDamage": 0,
+  "MeleeBonus": 0,
+  "RangedBonus": 0,
+  "MagicBonus": 0,
+  "Experience": 0,
+  "LVL": 0
+}
