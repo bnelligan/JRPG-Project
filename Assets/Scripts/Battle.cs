@@ -146,6 +146,7 @@ public class Battle : Encounter
             if(c.IsAlive && c.TurnTimer < bestRecoveryTimer && c != LastActiveCharacter)
             {
                 nextCharacter = c;
+                bestRecoveryTimer = c.TurnTimer;
             }
         }
         return nextCharacter;

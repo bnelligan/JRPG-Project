@@ -13,7 +13,7 @@ public class Skill_Strike : BaseSkill
         SkillName = "Strike!";
         SkillID = "SKILL_STRIKE";
         SkillDescription = "Target is dealt weak melee damage";
-        SkillType = E_SkillType.MELEE;
+        SkillType = E_SkillVariant.MELEE;
         SpCost = 2;
         RecoveryTime = 1f;
         DamageMod = 0.8f;
@@ -22,7 +22,14 @@ public class Skill_Strike : BaseSkill
     }
     public override void ActivateSkill()
     {
+        SkillArgs attackSkillArgs = GetSkillArgs();
+        owner.AttackTargetEnemy(attackSkillArgs);
         base.ActivateSkill();
-        owner.AttackTargetEnemy(DamageMod, AccuracyMod, CritMod, DamageVariant.MELEE);
+    }
+    public override SkillArgs GetSkillArgs()
+    {
+        SkillArgs args = base.GetSkillArgs();
+        args.TargetList.Add(owner.TargetEnemy);
+        return args;
     }
 }

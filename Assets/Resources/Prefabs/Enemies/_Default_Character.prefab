@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1313275949269913379}
   - component: {fileID: 1313275949269913378}
   m_Layer: 9
-  m_Name: Green_Spotted_Flan
+  m_Name: _Default_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313275949269913403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1313275951033627666}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -316790287
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fbb517cff167d8f4394c6546444250bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9679aa3b954e3084fa25b3436b6e13ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,7 +107,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1.5625, y: 2.75}
     newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e26aefc7f8d004095c27f417253140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterID: FLAN_GREEN
+  characterID: _DEFAULT_
   IsHostile: 0
 --- !u!50 &1313275949269913406
 Rigidbody2D:
@@ -216,8 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c503c65d7d58f74abf6f5fdcc598ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileSource: 
-  LoadFromFile: 0
+  FileSource: _DEFAULT_
+  LoadJSON: 1
+  BackupToFile: 0
 --- !u!1 &1313275951033627667
 GameObject:
   m_ObjectHideFlags: 0

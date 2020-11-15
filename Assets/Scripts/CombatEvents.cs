@@ -3,13 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DamageVariant
-{
-    STATUS,
-    MELEE,
-    RANGED,
-    MAGIC
-}
 public static class CombatEvents
 {
     public delegate void DamageEventHandler(object sender, DamageArgs dmgArgs);
@@ -53,7 +46,8 @@ public class DamageArgs : EventArgs
     public Character Source;
     public Character Target;
     public uint DamageAmount;
-    public DamageVariant DamageType;
+    public E_SkillVariant SkillType;
+    public E_DamageVariant DamageType;
     // TODO -- Include effects such as element type
 }
 
@@ -68,13 +62,16 @@ public class DeathArgs : EventArgs
     public Character Target;
 }
 
-public class AttackArgs : EventArgs
+public class SkillArgs : EventArgs
 {
+    public BaseSkill Skill;
     public Character Source;
     public List<Character> TargetList;
     public float DamageMod;
     public float AccuracyMod;
-    public DamageVariant DmgVariant;
+    public float CritMod;
+    public E_SkillVariant SkillType;
+    public E_DamageVariant DamageType;
 }
 
 public class CombatArgs : EventArgs

@@ -164,7 +164,7 @@ public class TileManager : MonoBehaviour
             bool blocked = WallHits.Contains(FloorMove);// || InteractableHits.Contains(FloorMove);
             if(blocked)
             {
-                Debug.Log("Blocked move: " + FloorMove);
+                // Debug.Log("Blocked move: " + FloorMove);
             }
             else
             {

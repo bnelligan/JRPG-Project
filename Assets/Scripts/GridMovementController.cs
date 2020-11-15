@@ -53,8 +53,8 @@ public class GridMovementController : MonoBehaviour
         {
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
-            Debug.Log($"InputX: {inputX}");
-            Debug.Log($"InputY: {inputY}");
+            // Debug.Log($"InputX: {inputX}");
+            // Debug.Log($"InputY: {inputY}");
             // Check x-axis input
             if (inputX > 0)
             {
