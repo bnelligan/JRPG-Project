@@ -121,6 +121,41 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &43551865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3739557985574324053, guid: d87acad16c9edbb4889e0fedebb01d78,
+    type: 3}
+  m_PrefabInstance: {fileID: 302636824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &43551866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43551865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995e3b145b1d7f649a46f8fd28f69a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Important: 0
+  TriggerCondition: 1
+  description: Slime First Battle
+  bountyExp: 25
+  bountyMoney: 35
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClear:
+    m_PersistentCalls:
+      m_Calls: []
+  promptOffset_Y: 1.5
+  LayoutSpread: {x: 1, y: 0}
+  BattleResultsGUI: {fileID: 2078140587}
 --- !u!1 &128956085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,7 +3891,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8082658380292319602, guid: 2cff7343687395d4ab7fc6b7edea0d22, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2cff7343687395d4ab7fc6b7edea0d22, type: 3}
 --- !u!1 &1024988181
 GameObject:
@@ -4372,6 +4408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6f4edf66836534db7427273d5a9106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2078140587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8082658380492920531, guid: 2cff7343687395d4ab7fc6b7edea0d22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1013540720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3848026749018748390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4517,6 +4559,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 373199660, guid: 77bb47b4f12a5bc44bad2afae694d433, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 373199660, guid: 77bb47b4f12a5bc44bad2afae694d433, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896860307510776805, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: FileSource
+      value: Player_Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896860307510776805, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: LoadJSON
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311544, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_Name

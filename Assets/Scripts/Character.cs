@@ -365,7 +365,7 @@ public class Character : MonoBehaviour
                 if (otherCharacter.Party.IsPlayerParty != this.Party.IsPlayerParty 
                     && battle.IsBattleActive == false)
                 {
-                    battle.StartBattle(Party, otherCharacter.Party);
+                    battle.StartBattle();
                 }
             }
         }
