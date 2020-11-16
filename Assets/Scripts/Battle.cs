@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Battle : Encounter
 {
-
+    // Properties
     public Party PlayerParty { get; private set; }
     public Party EnemyParty { get; private set; }
 
@@ -16,13 +17,16 @@ public class Battle : Encounter
     public Character ActiveCharacter { get; private set; }
 
     private SkillsPanel skillsPanel;
-
     [SerializeField]
     Vector2 LayoutSpread;
     [SerializeField]
     GameObject BattleResultsGUI;
     private void Start()
     {
+        EnemyParty = GetComponent<Party>();
+        PlayerParty = FindObjectsOfType<Party>()
+            .Where(p => p.IsPlayerParty == true)
+            .First();
         skillsPanel = FindObjectOfType<SkillsPanel>();
         // CombatEvents.OnCombat += CombatEvents_OnCombat; // BeginBattle(e.PlayerParty, e.EnemyParty);
     }
@@ -32,10 +36,6 @@ public class Battle : Encounter
     //    BeginBattle(combatArgs.PlayerParty, combatArgs.EnemyParty);
     //}
 
-    private void Update()
-    {
-        // Start next player turn if it's completed
-    }
     public Character[] AllCharactersInBattle
     {
         get
@@ -81,17 +81,15 @@ public class Battle : Encounter
         }
     }
 
-    public void StartBattle(Party playerParty, Party enemyParty)
+    public void StartBattle()
     {
         if (!IsBattleActive)
         {
             IsBattleActive = true;
-            PlayerParty = playerParty;
-            EnemyParty = enemyParty;
             CombatArgs combatArgs = new CombatArgs()
             {
-                PlayerParty = playerParty,
-                EnemyParty = enemyParty
+                PlayerParty = PlayerParty,
+                EnemyParty = EnemyParty
             };
 
             PrepareCharacters();
@@ -107,14 +105,19 @@ public class Battle : Encounter
     public void EndBattle()
     {
         bool victory = true;
+        bool isPartyAlive = false;
         foreach(Character c in EnemyParty.PartyCharacters)
         {
             // Only win if all characters are dead
-            if(!c.IsDead)
-            {
-                victory = false;
-            }
+            victory &= c.IsDead;
         }
+        foreach(Character c in PlayerParty.PartyCharacters)
+        {
+            // Only win if one of player characters is alive
+            isPartyAlive |= c.IsAlive;
+        }
+        victory &= isPartyAlive;
+
         CombatEvents.AlertCombatResolved(this, new BattleResultArgs() { IsPlayerVictory = victory });
         // Show results text
         // TO DO -- More detailed results
