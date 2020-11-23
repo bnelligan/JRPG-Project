@@ -62,7 +62,8 @@ public class Level : MonoBehaviour
     {
         if(encounter.GetType() == typeof(Battle))
         {
-            // Implement battle stuff
+            Battle battle = (Battle)encounter;
+            battle.StartBattle();
         }
         else if(encounter.GetType() == typeof(LevelExit))
         {

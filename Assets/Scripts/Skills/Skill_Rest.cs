@@ -6,7 +6,7 @@
         SkillName = "Rest";
         SkillID = "SKILL_REST";
         SkillDescription = "Take a break to recover some SP";
-        SkillType = E_SkillType.UTILITY;
+        SkillType = E_SkillVariant.UTILITY;
         SpCost = -1; // Negative SP cost means we recover SP
         RecoveryTime = 0.75f;
         DamageMod = 0f;

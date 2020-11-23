@@ -11,7 +11,8 @@ public class Skill_Shluurp : BaseSkill
         SkillName = "Shluurp";
         SkillID = "SKILL_SHLUURP";
         SkillDescription = "Target is dealt weak crush damage with stun chance";
-        SkillType = E_SkillType.MELEE;
+        SkillType = E_SkillVariant.MELEE;
+        DamageType = E_DamageVariant.CRUSH;
         SpCost = 2;
         RecoveryTime = 1f;
         DamageMod = 0.7f;
@@ -20,7 +21,14 @@ public class Skill_Shluurp : BaseSkill
     }
     public override void ActivateSkill()
     {
+        SkillArgs attackSkillArgs = GetSkillArgs();
+        owner.AttackTargetEnemy(attackSkillArgs);
         base.ActivateSkill();
-        owner.AttackTargetEnemy(DamageMod, AccuracyMod, CritMod, DamageVariant.MELEE);
+    }
+    public override SkillArgs GetSkillArgs()
+    {
+        SkillArgs args = base.GetSkillArgs();
+        args.TargetList.Add(owner.TargetEnemy);
+        return args;
     }
 }

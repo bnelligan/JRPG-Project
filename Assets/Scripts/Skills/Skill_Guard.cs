@@ -11,7 +11,7 @@ public class Skill_Guard : BaseSkill
         SkillName = "Guard";
         SkillID = "SKILL_GUARD";
         SkillDescription = "Gain 1 temporary armor";
-        SkillType = E_SkillType.UTILITY;
+        SkillType = E_SkillVariant.UTILITY;
         SpCost = 1;
         RecoveryTime = 0.75f; // Reduced recovery time
         DamageMod = 0f;

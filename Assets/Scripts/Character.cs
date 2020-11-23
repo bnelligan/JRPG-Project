@@ -63,58 +63,58 @@ public class Character : MonoBehaviour
     private void InitStats()
     {
         Stats = GetComponent<CharacterStats>();
-        if (characterID == "FLAN_GREEN")
-        {
-            LoadBaseStats_ENEMY_DEFAULT();
-        }
-        else if(characterID == "EXAMPLE_CHAR")
-        {
-            LoadBaseStats_PLAYER_DEFAULT();
+        //if (characterID == "FLAN_GREEN")
+        //{
+        //    LoadBaseStats_ENEMY_DEFAULT();
+        //}
+        //else if(characterID == "EXAMPLE_CHAR")
+        //{
+        //    LoadBaseStats_PLAYER_DEFAULT();
 
-        }
+        //}
     }
     
-    public void LoadBaseStats_PLAYER_DEFAULT()
-    {
-        Stats.HP = 5;
-        Stats.HP_Max = 5;
-        Stats.SP = 3;
-        Stats.SP_Max = 4;
-        Stats.Armor = 0;
+    //public void LoadBaseStats_PLAYER_DEFAULT()
+    //{
+    //    Stats.HP = 5;
+    //    Stats.MaxHP = 5;
+    //    Stats.SP = 3;
+    //    Stats.MaxSP = 4;
+    //    Stats.Armor = 0;
        
-        Stats.Dodge = 20;
-        Stats.Accuracy = 90;
-        Stats.Melee_Bonus = 1;
-        Stats.Ranged_Bonus = 1;
-        Stats.Magic_Bonus = 1;
+    //    Stats.Dodge = 20;
+    //    Stats.Accuracy = 90;
+    //    Stats.MeleeBonus = 1;
+    //    Stats.RangedBonus = 1;
+    //    Stats.MagicBonus = 1;
        
-        Stats.Strength = 3;
-        Stats.Dexterity = 3;
-        Stats.Reflex = 3;
-        Stats.Mind = 3;
-        Stats.Experience = 0;
-    }
+    //    Stats.Strength = 3;
+    //    Stats.Dexterity = 3;
+    //    Stats.Reflex = 3;
+    //    Stats.Mind = 3;
+    //    Stats.Experience = 0;
+    //}
 
-    private void LoadBaseStats_ENEMY_DEFAULT()
-    {
-        Stats.HP = 5;
-        Stats.HP_Max = 5;
-        Stats.SP = 2;
-        Stats.SP_Max = 4;
-        Stats.Armor = 0;
+    //private void LoadBaseStats_ENEMY_DEFAULT()
+    //{
+    //    Stats.HP = 5;
+    //    Stats.MaxHP = 5;
+    //    Stats.SP = 2;
+    //    Stats.MaxSP = 4;
+    //    Stats.Armor = 0;
         
-        Stats.Dodge = 20;
-        Stats.Accuracy = 90;
-        Stats.Melee_Bonus = 1;
-        Stats.Ranged_Bonus = 1;
-        Stats.Magic_Bonus = 1;
+    //    Stats.Dodge = 20;
+    //    Stats.Accuracy = 90;
+    //    Stats.MeleeBonus = 1;
+    //    Stats.RangedBonus = 1;
+    //    Stats.MagicBonus = 1;
         
-        Stats.Strength = 1;
-        Stats.Dexterity = 1;
-        Stats.Reflex = 1;
-        Stats.Mind = 1;
-        Stats.Experience = 0;
-    }
+    //    Stats.Strength = 1;
+    //    Stats.Dexterity = 1;
+    //    Stats.Reflex = 1;
+    //    Stats.Mind = 1;
+    //    Stats.Experience = 0;
+    //}
 
 
     
@@ -192,7 +192,14 @@ public class Character : MonoBehaviour
 
     public void AdvanceTurnTimer(float flatreduction)
     {
-        TurnTimer -= flatreduction;
+        if(TurnTimer < flatreduction)
+        {
+            flatreduction = 0;
+        }
+        else
+        {
+            TurnTimer -= flatreduction;
+        }
     }
 
     //public void DrainSP(int spCost)
@@ -234,25 +241,25 @@ public class Character : MonoBehaviour
     //    }
     //}
 
-    public bool AttackTargetEnemy(float damageMod, float accuracyMod, float CritMod, DamageVariant dmgType)
+    public bool AttackTargetEnemy(SkillArgs skillArgs)
     {
         // Get base damage from type
-        uint damageCalc = 0;
-        if(dmgType == DamageVariant.MELEE)
+        uint damageCalc = Stats.BaseDamage;
+        if(skillArgs.SkillType == E_SkillVariant.MELEE)
         {
-            damageCalc = Stats.Melee_Bonus;
+            damageCalc = (uint)Mathf.CeilToInt(damageCalc * CalcBonus(Stats.MeleeBonus));
         }
-        else if(dmgType == DamageVariant.RANGED)
+        else if(skillArgs.SkillType == E_SkillVariant.RANGED)
         {
-            damageCalc = Stats.Ranged_Bonus;
+            damageCalc = (uint)Mathf.CeilToInt(damageCalc * CalcBonus(Stats.RangedBonus));
         }
-        else if(dmgType == DamageVariant.MAGIC)
+        else if(skillArgs.SkillType == E_SkillVariant.MAGIC)
         {
-            damageCalc = Stats.Magic_Bonus;
+            damageCalc = (uint)Mathf.CeilToInt(damageCalc * CalcBonus(Stats.MagicBonus));
         }
 
-        // Modify by the damage mod, floor to int
-        damageCalc = (uint)Mathf.FloorToInt(damageCalc * damageMod);
+        // Modify by the damage mod, ceil(?) to int
+        damageCalc = (uint)Mathf.CeilToInt(damageCalc * skillArgs.DamageMod);
 
         // ROLL FOR ACCURACY!
         // (To Do...)
@@ -265,7 +272,8 @@ public class Character : MonoBehaviour
         DamageArgs dmgArgs = new DamageArgs()
         {
             DamageAmount = damageCalc,
-            DamageType = dmgType,
+            DamageType = skillArgs.DamageType,
+            SkillType = skillArgs.SkillType,
             Source = this,
             Target = TargetEnemy
         };
@@ -280,7 +288,14 @@ public class Character : MonoBehaviour
         }
         return IsHit;
     }
-
+    private float CalcBonus(int bonusPercent)
+    {
+        return (100f + bonusPercent) / 100f;
+    }
+    private float CalcBonus(uint bonusPercent)
+    {
+        return (100f + bonusPercent) / 100f;
+    }
     // This should change to a character specific targeting system
     public void FindTargetOpponent()
     {
@@ -350,7 +365,7 @@ public class Character : MonoBehaviour
                 if (otherCharacter.Party.IsPlayerParty != this.Party.IsPlayerParty 
                     && battle.IsBattleActive == false)
                 {
-                    battle.StartBattle(Party, otherCharacter.Party);
+                    battle.StartBattle();
                 }
             }
         }

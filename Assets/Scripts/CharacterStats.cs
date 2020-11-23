@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,7 +36,8 @@ public enum StatsKey
 public class CharacterStats : MonoBehaviour
 {
     public string FileSource = "";
-    public bool LoadFromFile = false;
+    public bool LoadJSON = false;
+    public bool BackupToFile = false;
     [SerializeField]
     private Dictionary<StatsKey, uint> statsTable = new Dictionary<StatsKey, uint>
     {
@@ -63,19 +63,20 @@ public class CharacterStats : MonoBehaviour
         [StatsKey.LVL] = 0,
     };
     public uint HP { get { return statsTable[StatsKey.HP]; } set { statsTable[StatsKey.HP] = value; } }
-    public uint HP_Max { get { return statsTable[StatsKey.HP_MAX]; } set { statsTable[StatsKey.HP_MAX] = value; } }
+    public uint MaxHP { get { return statsTable[StatsKey.HP_MAX]; } set { statsTable[StatsKey.HP_MAX] = value; } }
     public uint SP { get { return statsTable[StatsKey.SP]; } set { statsTable[StatsKey.SP] = value; } }
-    public uint SP_Max { get { return statsTable[StatsKey.SP_MAX]; } set { statsTable[StatsKey.SP_MAX] = value; } }
+    public uint MaxSP { get { return statsTable[StatsKey.SP_MAX]; } set { statsTable[StatsKey.SP_MAX] = value; } }
     public uint Armor { get { return statsTable[StatsKey.ARMOR]; } set { statsTable[StatsKey.ARMOR] = value; } }
-    public uint Armor_Base { get { return statsTable[StatsKey.ARMOR_BASE]; } set { statsTable[StatsKey.ARMOR_BASE] = value; } }
+    public uint BaseArmor { get { return statsTable[StatsKey.ARMOR_BASE]; } set { statsTable[StatsKey.ARMOR_BASE] = value; } }
     public uint Dodge { get { return statsTable[StatsKey.DODGE]; } set { statsTable[StatsKey.DODGE] = value; } }
     public uint Accuracy { get { return statsTable[StatsKey.ACCURACY]; } set { statsTable[StatsKey.ACCURACY] = value; } }
-    public uint Crit_Chance { get { return statsTable[StatsKey.CRIT_CHANCE]; } set { statsTable[StatsKey.CRIT_CHANCE] = value; } }
-    public uint Crit_Bonus { get { return statsTable[StatsKey.CRIT_BONUS]; } set { statsTable[StatsKey.CRIT_BONUS] = value; } }
-    public uint Melee_Bonus { get { return statsTable[StatsKey.DMG_MELEE_MOD]; } set { statsTable[StatsKey.DMG_MELEE_MOD] = value; } }
-    public uint Ranged_Bonus { get { return statsTable[StatsKey.DMG_RANGED_MOD]; } set { statsTable[StatsKey.DMG_RANGED_MOD] = value; } }
-    public uint Magic_Bonus { get { return statsTable[StatsKey.DMG_MAGIC_MOD]; } set { statsTable[StatsKey.DMG_MAGIC_MOD] = value; } }
-    public uint Damage_Base { get { return statsTable[StatsKey.DMG_BASE]; } set { statsTable[StatsKey.DMG_BASE] = value; } }
+    public uint CritChance { get { return statsTable[StatsKey.CRIT_CHANCE]; } set { statsTable[StatsKey.CRIT_CHANCE] = value; } }
+    public uint CritBonus { get { return statsTable[StatsKey.CRIT_BONUS]; } set { statsTable[StatsKey.CRIT_BONUS] = value; } }
+    public uint MeleeBonus { get { return statsTable[StatsKey.DMG_MELEE_MOD]; } set { statsTable[StatsKey.DMG_MELEE_MOD] = value; } }
+    public uint RangedBonus { get { return statsTable[StatsKey.DMG_RANGED_MOD]; } set { statsTable[StatsKey.DMG_RANGED_MOD] = value; } }
+    public uint MagicBonus { get { return statsTable[StatsKey.DMG_MAGIC_MOD]; } set { statsTable[StatsKey.DMG_MAGIC_MOD] = value; } }
+    public uint BaseDamage { get { return statsTable[StatsKey.DMG_BASE]; } set { statsTable[StatsKey.DMG_BASE] = value; } }
+    
     /// <summary>
     /// PRIMARY STAT -- Increase Melee Damage and Health
     /// </summary>
@@ -104,24 +105,66 @@ public class CharacterStats : MonoBehaviour
     public bool IsDead { get { return !IsAlive; } }
     // linear speed mod calculation
     public float SpeedMod { get { return Mathf.Max((10f - Reflex), 1f) / 10f; } }
-
     public void Awake()
     {
-        if(LoadFromFile)
+        if(LoadJSON)
         {
-            // TODO - Load stats from JSON file
-            LoadStatsFromJSON();
+            if (FileSource != "")
+            {
+                LoadStatsFromJSON();
+            }
+            else
+            {
+                Debug.LogError($"JSON stats missing filename");
+            }
         }
-        else
-        {
-            //LoadSerializedStats();
-        }
+
     }
+
+    private SerializedStats ToSerialized()
+    {
+        return new SerializedStats()
+        {
+            HP = this.HP,
+            MaxHP = this.MaxHP,
+            SP = this.SP,
+            MaxSP = this.MaxSP,
+            Armor = this.Armor,
+            BaseArmor = this.BaseArmor,
+
+            // Primary stats
+            Strength = this.Strength,
+            Dexterity = this.Dexterity,
+            Reflex = this.Reflex,
+            Mind = this.Mind,
+
+            // Secondary stats
+            Dodge = this.Dodge,
+            Accuracy = this.Accuracy,
+            CritChance = this.CritChance,
+            CritBonus = this.CritBonus,
+            BaseDamage = this.BaseDamage,
+            MeleeBonus = this.MeleeBonus,
+            RangedBonus = this.RangedBonus,
+            MagicBonus = this.MagicBonus,
+
+            // Progression stats
+            Experience = this.Experience,
+            LVL = this.LVL,
+    };
+    }
+
+
     private void LoadStatsFromJSON()
     {
         try
         {
-            TextAsset targetFile = Resources.Load<TextAsset>(FileSource);
+            TextAsset targetFile = Resources.Load<TextAsset>($"CharacterData/{FileSource}");
+            if(targetFile == null)
+            {
+                Debug.LogError($"Error loading stats from JSON file \"{FileSource}\". Check that it exists.");
+                return;
+            }
             SerializedStats serialStats = JsonUtility.FromJson<SerializedStats>(targetFile.text);
             PopulateFromSerialized(serialStats);
         }
@@ -135,11 +178,11 @@ public class CharacterStats : MonoBehaviour
     private void PopulateFromSerialized(SerializedStats serialStats)
     {
         HP = serialStats.HP;
-        HP_Max = serialStats.HP_Max;
+        MaxHP = serialStats.MaxHP;
         SP = serialStats.SP;
-        SP_Max = serialStats.SP_Max;
+        MaxSP = serialStats.MaxSP;
         Armor = serialStats.Armor;
-        Armor_Base = serialStats.Armor_Base;
+        BaseArmor = serialStats.BaseArmor;
 
         // Primary stats
         Strength = serialStats.Strength;
@@ -150,16 +193,16 @@ public class CharacterStats : MonoBehaviour
         // Secondary stats
         Dodge = serialStats.Dodge;
         Accuracy = serialStats.Accuracy;
-        Crit_Chance = serialStats.Crit_Chance;
-        Crit_Bonus = serialStats.Crit_Bonus;
-        Damage_Base = serialStats.Damage_Base;
-        Melee_Bonus = serialStats.Melee_Bonus;
-        Ranged_Bonus = serialStats.Ranged_Bonus;
-        Magic_Bonus = serialStats.Magic_Bonus;
+        CritChance = serialStats.CritChance;
+        CritBonus = serialStats.CritBonus;
+        BaseDamage = serialStats.BaseDamage;
+        MeleeBonus = serialStats.MeleeBonus;
+        RangedBonus = serialStats.RangedBonus;
+        MagicBonus = serialStats.MagicBonus;
 
         // Progression stats
         Experience = serialStats.Experience;
-        LVL = serialStats.Level;
+        LVL = serialStats.LVL;
 }
     public void LoseHealth(uint amount)
     {
@@ -175,9 +218,9 @@ public class CharacterStats : MonoBehaviour
 
     public void GainHealth(uint amount)
     {
-        if(HP + amount > HP_Max)
+        if(HP + amount > MaxHP)
         {
-            HP = HP_Max;
+            HP = MaxHP;
         }
         else
         {
@@ -199,9 +242,9 @@ public class CharacterStats : MonoBehaviour
 
     public void GainSP(uint amount)
     {
-        if (SP + amount > SP_Max)
+        if (SP + amount > MaxSP)
         {
-            SP = SP_Max;
+            SP = MaxSP;
         }
         else
         {
@@ -211,9 +254,9 @@ public class CharacterStats : MonoBehaviour
 
     public void GainArmor(uint amount)
     {
-        if(Armor + amount > HP_Max)
+        if(Armor + amount > MaxHP)
         {
-            Armor = HP_Max;
+            Armor = MaxHP;
         }
         else
         {
@@ -239,7 +282,7 @@ public class CharacterStats : MonoBehaviour
 
     public void ResetArmor()
     {
-        Armor = (uint)Mathf.Min(Armor_Base, HP);
+        Armor = (uint)Mathf.Min(BaseArmor, HP);
     }
 
     public uint this[StatsKey key]
@@ -263,11 +306,11 @@ public class CharacterStats : MonoBehaviour
         {
             // Core
             HP = this.HP,
-            HP_Max = this.HP_Max,
+            MaxHP = this.MaxHP,
             SP = this.SP,
-            SP_Max = this.SP_Max,
+            MaxSP = this.MaxSP,
             Armor = this.Armor,
-            Armor_Base = this.Armor_Base,
+            BaseArmor = this.BaseArmor,
 
             // Primary
             Strength = this.Strength,
@@ -278,10 +321,12 @@ public class CharacterStats : MonoBehaviour
             // Secondary
             Dodge = this.Dodge,
             Accuracy = this.Accuracy,
-            Damage_Base = this.Damage_Base,
-            Melee_Bonus = this.Melee_Bonus,
-            Ranged_Bonus = this.Ranged_Bonus,
-            Magic_Bonus = this.Magic_Bonus,
+            CritChance = this.CritChance,
+            CritBonus = this.CritBonus,
+            BaseDamage = this.BaseDamage,
+            MeleeBonus = this.MeleeBonus,
+            RangedBonus = this.RangedBonus,
+            MagicBonus = this.MagicBonus,
 
             // Progression
             Experience = this.Experience,
@@ -290,16 +335,17 @@ public class CharacterStats : MonoBehaviour
         };
     }
 
+
     [System.Serializable]
     private struct SerializedStats
     {
         // Core stats
         public uint HP;
-        public uint HP_Max;
+        public uint MaxHP;
         public uint SP;
-        public uint SP_Max;
+        public uint MaxSP;
         public uint Armor;
-        public uint Armor_Base;
+        public uint BaseArmor;
 
         // Primary stats
         public uint Strength;
@@ -310,15 +356,15 @@ public class CharacterStats : MonoBehaviour
         // Secondary stats
         public uint Dodge;
         public uint Accuracy;
-        public uint Crit_Chance;
-        public uint Crit_Bonus;
-        public uint Damage_Base;
-        public uint Melee_Bonus;
-        public uint Ranged_Bonus;
-        public uint Magic_Bonus;
+        public uint CritChance;
+        public uint CritBonus;
+        public uint BaseDamage;
+        public uint MeleeBonus;
+        public uint RangedBonus;
+        public uint MagicBonus;
 
         // Progression stats
         public uint Experience;
-        public uint Level;
+        public uint LVL;
     }
 }

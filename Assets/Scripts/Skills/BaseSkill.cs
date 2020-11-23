@@ -1,20 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
+
+public enum E_SkillVariant
+{
+    UTILITY, // status effect or buff skill
+    MELEE, // requires melee weapon
+    RANGED, // requires ranged weapon
+    MAGIC  // unique requirements and effects
+}
+public enum E_DamageVariant
+{
+    NONE,
+    PIERCE,
+    CRUSH,
+    SLASH
+}
 [RequireComponent(typeof(Character))]
 [RequireComponent(typeof(CharacterStats))]
 public abstract class BaseSkill : MonoBehaviour
 {
-    public enum E_SkillType
-    {
-        MELEE, // requires melee weapon
-        RANGED, // requires ranged weapon
-        SPECIAL,  // unique requirements and effects
-        UTILITY // status effect or buff skill
-    }
+
     public string SkillID { get; protected set; }
     public string SkillName { get; protected set; }
     public string SkillDescription { get; protected set; }  // Description should be a coded string with colored words and icons
-    public E_SkillType SkillType { get; protected set; }
+    public E_SkillVariant SkillType { get; protected set; }
+    public E_DamageVariant DamageType { get; protected set; }
     public int SpCost { get; protected set; }
     // public int HpCost; // TODO maybe?
     public float RecoveryTime { get; protected set; }
@@ -76,5 +87,20 @@ public abstract class BaseSkill : MonoBehaviour
     /// each skill will implement this and populate info
     /// </summary>
     protected abstract void InitSkillInfo();
+
+    public virtual SkillArgs GetSkillArgs()
+    {
+        return new SkillArgs()
+        {
+            Skill = this,
+            Source = owner,
+            TargetList = new List<Character>(),
+            DamageMod = this.DamageMod,
+            AccuracyMod = this.AccuracyMod,
+            CritMod = this.CritMod,
+            SkillType = this.SkillType,
+            DamageType = this.DamageType
+        };
+    }
 }
 

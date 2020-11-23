@@ -87,10 +87,10 @@ GameObject:
   - component: {fileID: 7719677286582850465}
   - component: {fileID: 7719677286582850466}
   - component: {fileID: 7719677286582850469}
+  - component: {fileID: 1896860307510776805}
   - component: {fileID: 7719677286582850471}
   - component: {fileID: 7719677286582850470}
   - component: {fileID: 1726713811465954659}
-  - component: {fileID: 1896860307510776805}
   - component: {fileID: 373199660}
   - component: {fileID: 373199665}
   - component: {fileID: 373199668}
@@ -196,6 +196,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterID: EXAMPLE_CHAR
   IsHostile: 0
+--- !u!114 &1896860307510776805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719677286582850494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c503c65d7d58f74abf6f5fdcc598ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileSource: _DEFAULT_
+  LoadJSON: 0
+  BackupToFile: 0
 --- !u!114 &7719677286582850471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,20 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7c5d1694e93874da8c373adc70f5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1896860307510776805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719677286582850494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c503c65d7d58f74abf6f5fdcc598ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FileSource: 
-  LoadFromFile: 0
 --- !u!61 &373199660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -286,7 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FileSource: 
-  LoadFromFile: 0
+  LoadJSON: 0
+  BackupToFile: 0
 --- !u!114 &373199668
 MonoBehaviour:
   m_ObjectHideFlags: 0
