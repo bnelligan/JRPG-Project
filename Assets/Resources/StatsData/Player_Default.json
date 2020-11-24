@@ -15,7 +15,7 @@
   "Accuracy": 5,
   "CritChance": 5,
   "CritBonus": 5,
-  "BaseDamage": 10,
+  "BaseDamage": 2,
   "MeleeBonus": 20,
   "RangedBonus": 0,
   "MagicBonus": 0

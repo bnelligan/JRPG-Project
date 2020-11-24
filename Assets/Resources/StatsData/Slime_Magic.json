@@ -1,0 +1,22 @@
+  {
+  "LVL": 1,
+  "Experience": 15,
+  "HP": 2,
+  "MaxHP": 2,
+  "SP": 3,
+  "MaxSP": 1,
+  "Armor": 0,
+  "BaseArmor": 0,
+  "Strength": 1,
+  "Dexterity": 1,
+  "Reflex": 2,
+  "Mind": 3,
+  "Dodge": 0,
+  "Accuracy": 0,
+  "CritChance": 0,
+  "CritBonus": 0,
+  "BaseDamage": 1,
+  "MeleeBonus": 0,
+  "RangedBonus": 0,
+  "MagicBonus": 0
+}

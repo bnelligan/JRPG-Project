@@ -159,7 +159,7 @@ public class CharacterStats : MonoBehaviour
     {
         try
         {
-            TextAsset targetFile = Resources.Load<TextAsset>($"CharacterData/{FileSource}");
+            TextAsset targetFile = Resources.Load<TextAsset>($"StatsData/{FileSource}");
             if(targetFile == null)
             {
                 Debug.LogError($"Error loading stats from JSON file \"{FileSource}\". Check that it exists.");
