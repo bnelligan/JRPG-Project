@@ -125,8 +125,8 @@ public class Character : MonoBehaviour
         if(skillIndex < Skills.Length)
         {
             activated = Skills[skillIndex].TryActivate();
-            
-            
+            Debug.Log($"{CharacterName} activating skill {Skills[skillIndex].SkillID}");
+
         }
         battle.BeginNextTurn();
     }
