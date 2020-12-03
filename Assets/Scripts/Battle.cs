@@ -17,6 +17,9 @@ public class Battle : Encounter
     public Character ActiveCharacter { get; private set; }
 
     private SkillsPanel skillsPanel;
+
+    [SerializeField]
+    private bool EnableLayoutSpread = false;
     [SerializeField]
     Vector2 LayoutSpread;
     [SerializeField]
@@ -52,8 +55,16 @@ public class Battle : Encounter
     private void PrepareCharacters()
     {
         ActiveCharacter = null;
-        PlayerParty.PrepareForBattle(new Vector2(LayoutSpread.x, -LayoutSpread.y));
-        EnemyParty.PrepareForBattle(new Vector2(LayoutSpread.x, LayoutSpread.y));
+        if(EnableLayoutSpread)
+        {
+            PlayerParty.PrepareForBattle(new Vector2(LayoutSpread.x, -LayoutSpread.y));
+            EnemyParty.PrepareForBattle(new Vector2(LayoutSpread.x, LayoutSpread.y));
+        }
+        else
+        {
+            PlayerParty.PrepareForBattle(Vector2.zero);
+            EnemyParty.PrepareForBattle(Vector2.zero);
+        }
     }
     
     public void BeginNextTurn()

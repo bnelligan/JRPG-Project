@@ -51,13 +51,15 @@ public class Party : MonoBehaviour
         {
             Debug.Log("Preparing Enemy party...");
         }
-
         Vector3 startPosition = new Vector3((1f - PartyCharacters.Length) / 2f * layout.x, layout.y, 0);
 
         for(int i = 0; i < PartyCharacters.Length; i++)
         {
-            // partyMember.CombatPrepare();
-            PartyCharacters[i].transform.localPosition = startPosition + new Vector3(layout.x * i, 0f, 0f);
+            if (layout != Vector2.zero)
+            {
+                // partyMember.CombatPrepare();
+                PartyCharacters[i].transform.localPosition = startPosition + new Vector3(layout.x * i, 0f, 0f);
+            }
             GridMovementController controller = PartyCharacters[i].GetComponent<GridMovementController>();
             if(controller)
             {
