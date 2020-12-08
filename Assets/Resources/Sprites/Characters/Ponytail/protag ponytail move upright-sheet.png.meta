@@ -1,9 +1,27 @@
 fileFormatVersion: 2
 guid: d79e9b7354582f747bf1add860a28dca
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -916690036951002145
+    second: protag ponytail move upright-sheet_0
+  - first:
+      213: 1736117326175477985
+    second: protag ponytail move upright-sheet_1
+  - first:
+      213: -331107139531460989
+    second: protag ponytail move upright-sheet_2
+  - first:
+      213: -4657829384554719520
+    second: protag ponytail move upright-sheet_3
+  - first:
+      213: -607335254137311942
+    second: protag ponytail move upright-sheet_4
+  - first:
+      213: -8033008644612428657
+    second: protag ponytail move upright-sheet_5
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -57,6 +75,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -96,7 +115,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: protag ponytail move upright-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3556aa4434743f0800000000000000
+      internalID: -916690036951002145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: protag ponytail move upright-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 2
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e02713828de71810800000000000000
+      internalID: 1736117326175477985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: protag ponytail move upright-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ea1a59fcba76bf0800000000000000
+      internalID: -331107139531460989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: protag ponytail move upright-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e65d3d5ad01c5fb0800000000000000
+      internalID: -4657829384554719520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: protag ponytail move upright-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3de29dddcf4297f0800000000000000
+      internalID: -607335254137311942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: protag ponytail move upright-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 2
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ceb3cc235058090800000000000000
+      internalID: -8033008644612428657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
