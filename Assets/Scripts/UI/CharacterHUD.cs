@@ -7,8 +7,8 @@ public class CharacterHUD : MonoBehaviour
 {
     // Icon Paths
     string baseIconPrefabPath = "Prefabs/Icon";
-    string heartIconPath = "Sprites/Heart";
-    string stamIconPath = "Sprites/Stam";
+    string heartIconPath = "Sprites/UI/HUD/Red Heart Sheet";
+    string stamIconPath = "Sprites/UI/HUD/SP-Sheet";
 
     // Private objects
     [SerializeField]
@@ -21,8 +21,8 @@ public class CharacterHUD : MonoBehaviour
 
     // HUD Parameters
     public float HudOffsetY;
-    public float IconOffsetX { get; private set; } = 0.625f;
-    public float IconOffsetY { get; private set; } = 0.625f;
+    public float IconOffsetX { get; private set; } = 1.0f;
+    public float IconOffsetY { get; private set; } = 1.0f;
     
     uint heartsRow = 1;
     uint stamRow = 0;

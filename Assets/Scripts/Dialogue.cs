@@ -32,11 +32,10 @@ public class Dialogue : Encounter
         timer = disappearTime;
     }
 
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
-        bool ePressed = Input.GetKeyDown(KeyCode.E);
-        if (ePressed && IsActive && textFinished || timed && timer <= 0)
+        // bool ePressed = Input.GetKeyDown(KeyCode.E);
+        if (IsActive && textFinished || timed && timer <= 0)
         {
             currentMessage++;
             if (currentMessage < text.Length)

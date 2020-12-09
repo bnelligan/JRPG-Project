@@ -76,10 +76,9 @@ public class Encounter : MonoBehaviour
         promptPrefab = Resources.Load<GameObject>("Prefabs/E-Button");
     }
 
-    protected virtual void Update()
+    public void OnInteract()
     {
-        bool ePressed = Input.GetKeyDown(KeyCode.E);
-        if(ePressed && IsPromptShowing && CanActivate)
+        if (IsPromptShowing && CanActivate)
         {
             Activate();
         }

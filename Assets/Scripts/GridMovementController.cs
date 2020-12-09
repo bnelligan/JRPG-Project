@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GridMovementController : MonoBehaviour
 {
@@ -12,13 +13,19 @@ public class GridMovementController : MonoBehaviour
     private float lastMoveTime;
     private float lerpDuration = .4f;
     Vector3 targetPos;
+    Vector2 inputVec;
+    Vector2Int moveVec = Vector2Int.zero;
     TileManager tileManager;
     Rigidbody2D rb;
+    PlayerInputManager inputManager;
+
     private void Start()
     {
         targetPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
         tileManager = FindObjectOfType<TileManager>();
+
+        inputManager = GetComponent<PlayerInputManager>();
     }
     void Update()
     {
@@ -38,52 +45,45 @@ public class GridMovementController : MonoBehaviour
         //float posY = Mathf.Lerp(moveStartPosition.y, targetPos.y, t);
         //transform.position = new Vector3(posX, posY, transform.position.z);
     }
-
-    private void FixedUpdate()
+    public void OnMove(InputValue input)
     {
-        // Check for exit key
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-        
-        // Check movement input
-        Vector2Int MoveVec = Vector2Int.zero;
         if (EnableInput == true)
         {
-            float inputX = Input.GetAxisRaw("Horizontal");
-            float inputY = Input.GetAxisRaw("Vertical");
-            // Debug.Log($"InputX: {inputX}");
-            // Debug.Log($"InputY: {inputY}");
+            float inputX = inputVec.x;
+            float inputY = inputVec.y;
+            inputVec = input.Get<Vector2>(); // Check movement input
+            moveVec = Vector2Int.zero;
+            Debug.Log($"InputX: {inputX}");
+            Debug.Log($"InputY: {inputY}");
             // Check x-axis input
             if (inputX > 0)
             {
-                MoveVec += Vector2Int.right;
+                moveVec += Vector2Int.right;
             }
             else if (inputX < 0)
             {
-                MoveVec += Vector2Int.left;
+                moveVec += Vector2Int.left;
             }
 
             // Check y-axis input
             if (inputY > 0)
             {
-                MoveVec += Vector2Int.up;
+                moveVec += Vector2Int.up;
             }
             else if (inputY < 0)
             {
-                MoveVec += Vector2Int.down;
+                moveVec += Vector2Int.down;
             }
 
-            
         }
 
-        //Debug.Log($"Move vector: " + MoveVec);
-        targetPos = tileManager.FindMove(transform.position, MoveVec, 1);
+        //Debug.Log($"Move vector: " + MoveVec);[
+        targetPos = tileManager.FindMove(transform.position, moveVec, 1);
+        
         //Debug.Log($"Target position: {targetPos}");
         float moveDistance = Vector3.Distance(transform.position, targetPos);
         Vector3 moveDirection = targetPos - transform.position;
-        Vector3 moveVec3 = new Vector3(MoveVec.x, MoveVec.y, 0);
+        Vector3 moveVec3 = new Vector3(moveVec.x, moveVec.y, 0);
         moveDirection.Normalize();
         bool isOppositeMovement = Vector3.Dot(moveVec3, moveDirection) < 0;
 
@@ -101,6 +101,18 @@ public class GridMovementController : MonoBehaviour
             lastMoveTime = Time.time;
             rb.velocity = moveDirection * WalkSpeed;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        // Check for exit key
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Application.Quit();
+        //}
+        
+        
+       
     }
 
     public void DisableMovement()
