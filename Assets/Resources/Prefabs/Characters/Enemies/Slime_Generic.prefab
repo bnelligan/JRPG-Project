@@ -22,13 +22,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1313275949269913378, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
-      propertyPath: FileSource
-      value: Slime_Normal
+      propertyPath: LoadJSON
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913378, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
-      propertyPath: LoadJSON
-      value: 1
+      propertyPath: FileSource
+      value: Slime_Normal
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913400, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
@@ -36,6 +36,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d3c9064c2d766f04f972eb672fc9e28c,
         type: 3}
+    - target: {fileID: 1313275949269913400, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913401, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -48,13 +53,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913402, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
+      propertyPath: IsHostile
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913402, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
       propertyPath: characterID
       value: SLIME_GENERIC
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913403, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: m_Name
-      value: Slime_Normal Variant
+      value: Slime_Generic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
@@ -73,6 +88,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -85,16 +105,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
