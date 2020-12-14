@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Undercut_Move_R
+  m_Name: Undercut_Right_Down
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
