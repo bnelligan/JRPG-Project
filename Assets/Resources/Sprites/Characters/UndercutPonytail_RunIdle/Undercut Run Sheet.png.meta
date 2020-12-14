@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: 3dafd36ff783f4d4ba42fc4b3e8f903e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1175537899607618645
+    second: Undercut Run Sheet_0
+  - first:
+      213: -8815768838313575126
+    second: Undercut Run Sheet_1
+  - first:
+      213: 5582439068208280702
+    second: Undercut Run Sheet_2
+  - first:
+      213: 8969414044263007844
+    second: Undercut Run Sheet_3
+  - first:
+      213: -2696830862939130397
+    second: Undercut Run Sheet_4
+  - first:
+      213: -5566448290203699397
+    second: Undercut Run Sheet_5
+  - first:
+      213: -3775023646943675803
+    second: Undercut Run Sheet_6
+  - first:
+      213: -6381464348315227885
+    second: Undercut Run Sheet_7
+  - first:
+      213: 5890234565178836801
+    second: Undercut Run Sheet_8
+  - first:
+      213: 8900618380190585759
+    second: Undercut Run Sheet_9
+  - first:
+      213: 8316082469125919532
+    second: Undercut Run Sheet_10
+  - first:
+      213: -270685082254899113
+    second: Undercut Run Sheet_11
+  - first:
+      213: 2054967666627474717
+    second: Undercut Run Sheet_12
+  - first:
+      213: 7301980007622376156
+    second: Undercut Run Sheet_13
+  - first:
+      213: 6377438919343723908
+    second: Undercut Run Sheet_14
+  - first:
+      213: -2244652859195661719
+    second: Undercut Run Sheet_15
+  - first:
+      213: -6028212425984054370
+    second: Undercut Run Sheet_16
+  - first:
+      213: -9036651374383366333
+    second: Undercut Run Sheet_17
+  - first:
+      213: 1225178840441789915
+    second: Undercut Run Sheet_18
+  - first:
+      213: -847220391310225539
+    second: Undercut Run Sheet_19
+  - first:
+      213: -4866895253982336141
+    second: Undercut Run Sheet_20
+  - first:
+      213: -9056857588593331099
+    second: Undercut Run Sheet_21
+  - first:
+      213: -6888975410693483730
+    second: Undercut Run Sheet_22
+  - first:
+      213: 1426529395855810708
+    second: Undercut Run Sheet_23
+  - first:
+      213: 2693953105363640579
+    second: Undercut Run Sheet_24
+  - first:
+      213: 4538158675440728280
+    second: Undercut Run Sheet_25
+  - first:
+      213: 2919130487915285175
+    second: Undercut Run Sheet_26
+  - first:
+      213: 2583184011556903768
+    second: Undercut Run Sheet_27
+  - first:
+      213: -1336084587793255585
+    second: Undercut Run Sheet_28
+  - first:
+      213: -8161092441080862387
+    second: Undercut Run Sheet_29
+  - first:
+      213: 6499708706035849694
+    second: Undercut Run Sheet_30
+  - first:
+      213: 2073302465014196664
+    second: Undercut Run Sheet_31
+  - first:
+      213: 3940909681899046256
+    second: Undercut Run Sheet_32
+  - first:
+      213: 4230718371681116881
+    second: Undercut Run Sheet_33
+  - first:
+      213: -3658609478926848168
+    second: Undercut Run Sheet_34
+  - first:
+      213: -6019494504219426029
+    second: Undercut Run Sheet_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Undercut Run Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554fe1ecd79505010800000000000000
+      internalID: 1175537899607618645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d7c5213f818a580800000000000000
+      internalID: -8815768838313575126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7431d861cec87d40800000000000000
+      internalID: 5582439068208280702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46642bf1d82c97c70800000000000000
+      internalID: 8969414044263007844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5f33b5e9ee29ad0800000000000000
+      internalID: -2696830862939130397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37f3d9b5c000c2b0800000000000000
+      internalID: -5566448290203699397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56af8397efb6c9bc0800000000000000
+      internalID: -3775023646943675803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319e9d35cfb7077a0800000000000000
+      internalID: -6381464348315227885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147463511215eb150800000000000000
+      internalID: 5890234565178836801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9392906249558b70800000000000000
+      internalID: 8900618380190585759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c239a17f1f8a86370800000000000000
+      internalID: 8316082469125919532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75803321a555e3cf0800000000000000
+      internalID: -270685082254899113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d157e328436b48c10800000000000000
+      internalID: 2054967666627474717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdaf55f1128d55560800000000000000
+      internalID: 7301980007622376156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485db3478e6318850800000000000000
+      internalID: 6377438919343723908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962e3930e1469d0e0800000000000000
+      internalID: -2244652859195661719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9bef96ccbc775ca0800000000000000
+      internalID: -6028212425984054370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f75d6047d579280800000000000000
+      internalID: -9036651374383366333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd9bd20aa5b00110800000000000000
+      internalID: 1225178840441789915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f8c79fa811e34f0800000000000000
+      internalID: -847220391310225539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b295b6d80557cb0800000000000000
+      internalID: -4866895253982336141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564f79a22049f4280800000000000000
+      internalID: -9056857588593331099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23d6330d517560a0800000000000000
+      internalID: -6888975410693483730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49063ad6dec0cc310800000000000000
+      internalID: 1426529395855810708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301a2ce7318d26520800000000000000
+      internalID: 2693953105363640579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d870086547cafe30800000000000000
+      internalID: 4538158675440728280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba043966b5d28820800000000000000
+      internalID: 2919130487915285175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b51561c2059d320800000000000000
+      internalID: 2583184011556903768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5375b27526457de0800000000000000
+      internalID: -1336084587793255585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49ef360aa9fdbe80800000000000000
+      internalID: -8161092441080862387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9d7c691aa933a50800000000000000
+      internalID: 6499708706035849694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9ec1b6b99d5cc10800000000000000
+      internalID: 2073302465014196664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0758d71d97ce0b630800000000000000
+      internalID: 3940909681899046256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2a5c891f786ba30800000000000000
+      internalID: 4230718371681116881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f20b420120a3dc0800000000000000
+      internalID: -3658609478926848168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Run Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313c59c14a5767ca0800000000000000
+      internalID: -6019494504219426029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

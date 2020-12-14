@@ -1,0 +1,1700 @@
+fileFormatVersion: 2
+guid: 089ca40253bedc945a3438f9f5ef0534
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5500781925218845913
+    second: Ponytail Idle Sheet_0
+  - first:
+      213: 6793277477844961387
+    second: Ponytail Idle Sheet_1
+  - first:
+      213: 2932925104135809243
+    second: Ponytail Idle Sheet_2
+  - first:
+      213: 5294993052202360711
+    second: Ponytail Idle Sheet_3
+  - first:
+      213: -3976689816457020521
+    second: Ponytail Idle Sheet_4
+  - first:
+      213: 201831836802365450
+    second: Ponytail Idle Sheet_5
+  - first:
+      213: -646450499309867840
+    second: Ponytail Idle Sheet_6
+  - first:
+      213: -4753002773287984138
+    second: Ponytail Idle Sheet_7
+  - first:
+      213: 5934450904097914312
+    second: Ponytail Idle Sheet_8
+  - first:
+      213: 4632068569814019445
+    second: Ponytail Idle Sheet_9
+  - first:
+      213: -5914639319816046368
+    second: Ponytail Idle Sheet_10
+  - first:
+      213: 1263237550363682643
+    second: Ponytail Idle Sheet_11
+  - first:
+      213: 4611773764469861930
+    second: Ponytail Idle Sheet_12
+  - first:
+      213: 1240367356544964585
+    second: Ponytail Idle Sheet_13
+  - first:
+      213: 1952776057673680587
+    second: Ponytail Idle Sheet_14
+  - first:
+      213: 1801121225418136752
+    second: Ponytail Idle Sheet_15
+  - first:
+      213: -8549211057781978659
+    second: Ponytail Idle Sheet_16
+  - first:
+      213: 225853881633408484
+    second: Ponytail Idle Sheet_17
+  - first:
+      213: 3791684153287534740
+    second: Ponytail Idle Sheet_18
+  - first:
+      213: 3606837192455973721
+    second: Ponytail Idle Sheet_19
+  - first:
+      213: -2066882332686754046
+    second: Ponytail Idle Sheet_20
+  - first:
+      213: 5657722058499250287
+    second: Ponytail Idle Sheet_21
+  - first:
+      213: 2050343406383494336
+    second: Ponytail Idle Sheet_22
+  - first:
+      213: 6614106292963993940
+    second: Ponytail Idle Sheet_23
+  - first:
+      213: 4874201310191071610
+    second: Ponytail Idle Sheet_24
+  - first:
+      213: -5289817716596952896
+    second: Ponytail Idle Sheet_25
+  - first:
+      213: 2334609809699084318
+    second: Ponytail Idle Sheet_26
+  - first:
+      213: 1914398552615120182
+    second: Ponytail Idle Sheet_27
+  - first:
+      213: -8443705069105598132
+    second: Ponytail Idle Sheet_28
+  - first:
+      213: -9034199969022577678
+    second: Ponytail Idle Sheet_29
+  - first:
+      213: -2743600732656602023
+    second: Ponytail Idle Sheet_30
+  - first:
+      213: 6849953713261609342
+    second: Ponytail Idle Sheet_31
+  - first:
+      213: -5565701724725184481
+    second: Ponytail Idle Sheet_32
+  - first:
+      213: -7377818871950482211
+    second: Ponytail Idle Sheet_33
+  - first:
+      213: 3336065947973332678
+    second: Ponytail Idle Sheet_34
+  - first:
+      213: -5624802746910758063
+    second: Ponytail Idle Sheet_35
+  - first:
+      213: -3095244201454052137
+    second: Ponytail Idle Sheet_36
+  - first:
+      213: 76809906179405996
+    second: Ponytail Idle Sheet_37
+  - first:
+      213: 612124806364519131
+    second: Ponytail Idle Sheet_38
+  - first:
+      213: -7794770172365646139
+    second: Ponytail Idle Sheet_39
+  - first:
+      213: 7223084228565891876
+    second: Ponytail Idle Sheet_40
+  - first:
+      213: -2194042482602792533
+    second: Ponytail Idle Sheet_41
+  - first:
+      213: 3819599518268266271
+    second: Ponytail Idle Sheet_42
+  - first:
+      213: -6337533786625392587
+    second: Ponytail Idle Sheet_43
+  - first:
+      213: 4415229497385117280
+    second: Ponytail Idle Sheet_44
+  - first:
+      213: 4875154633954008645
+    second: Ponytail Idle Sheet_45
+  - first:
+      213: 3425479719529009201
+    second: Ponytail Idle Sheet_46
+  - first:
+      213: 3026097914503826925
+    second: Ponytail Idle Sheet_47
+  - first:
+      213: -5444273478373380690
+    second: Ponytail Idle Sheet_48
+  - first:
+      213: 5987166221553523763
+    second: Ponytail Idle Sheet_49
+  - first:
+      213: 4272366639344139264
+    second: Ponytail Idle Sheet_50
+  - first:
+      213: 2772172869174695503
+    second: Ponytail Idle Sheet_51
+  - first:
+      213: 4321390431642716363
+    second: Ponytail Idle Sheet_52
+  - first:
+      213: -3163995560723837862
+    second: Ponytail Idle Sheet_53
+  - first:
+      213: -8721642005741930871
+    second: Ponytail Idle Sheet_54
+  - first:
+      213: 8040647060108993284
+    second: Ponytail Idle Sheet_55
+  - first:
+      213: 6871551140144473463
+    second: Ponytail Idle Sheet_56
+  - first:
+      213: -6265297504778689657
+    second: Ponytail Idle Sheet_57
+  - first:
+      213: 8809519575360290718
+    second: Ponytail Idle Sheet_58
+  - first:
+      213: 1475118439129640970
+    second: Ponytail Idle Sheet_59
+  - first:
+      213: -1266319787416330140
+    second: Ponytail Idle Sheet_60
+  - first:
+      213: -769612858287582099
+    second: Ponytail Idle Sheet_61
+  - first:
+      213: -4587133565436092376
+    second: Ponytail Idle Sheet_62
+  - first:
+      213: -4956939969526064742
+    second: Ponytail Idle Sheet_63
+  - first:
+      213: 8981779691265775455
+    second: Ponytail Idle Sheet_64
+  - first:
+      213: 1818642242107531688
+    second: Ponytail Idle Sheet_65
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d40f8f3404b65c40800000000000000
+      internalID: 5500781925218845913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b684c9fafd1964e50800000000000000
+      internalID: 6793277477844961387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd827d8c7d7d3b820800000000000000
+      internalID: 2932925104135809243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fdeac70289b7940800000000000000
+      internalID: 5294993052202360711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b7a2c6ea5ffc8c0800000000000000
+      internalID: -3976689816457020521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0838f87cfc0dc200800000000000000
+      internalID: 201831836802365450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cce2c722b85707f0800000000000000
+      internalID: -646450499309867840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f329b10921f90eb0800000000000000
+      internalID: -4753002773287984138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd70cbb7a76b5250800000000000000
+      internalID: 5934450904097914312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d240f82d9684040800000000000000
+      internalID: 4632068569814019445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e87ecf20eafaeda0800000000000000
+      internalID: -5914639319816046368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357ac50fbdbe78110800000000000000
+      internalID: 1263237550363682643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e21b7fdcf400040800000000000000
+      internalID: 4611773764469861930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e75addf98ba63110800000000000000
+      internalID: 1240367356544964585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6078b6a77a91b10800000000000000
+      internalID: 1952776057673680587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcd676363edef810800000000000000
+      internalID: 1801121225418136752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9401fa6d91b5980800000000000000
+      internalID: -8549211057781978659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e507e1a8e4622300800000000000000
+      internalID: 225853881633408484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4986e21f5a4ce9430800000000000000
+      internalID: 3791684153287534740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b6103115f0e0230800000000000000
+      internalID: 3606837192455973721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20fdcaf1875f053e0800000000000000
+      internalID: -2066882332686754046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f685dbe7c34448e40800000000000000
+      internalID: 5657722058499250287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c47d050778447c10800000000000000
+      internalID: 2050343406383494336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4596bc261a60acb50800000000000000
+      internalID: 6614106292963993940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71bea95444a4a340800000000000000
+      internalID: 4874201310191071610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0bbab30dac696b0800000000000000
+      internalID: -5289817716596952896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18914ca043366020800000000000000
+      internalID: 2334609809699084318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d6527375f419a10800000000000000
+      internalID: 1914398552615120182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41bbcfe9fee1da80800000000000000
+      internalID: -8443705069105598132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f370905ef210a280800000000000000
+      internalID: -9034199969022577678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954708c7ba5cce9d0800000000000000
+      internalID: -2743600732656602023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7183de0c9cef0f50800000000000000
+      internalID: 6849953713261609342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18f9fb05c7a2c2b0800000000000000
+      internalID: -5565701724725184481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4e73843d8bc9990800000000000000
+      internalID: -7377818871950482211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce2a30fd461c4e20800000000000000
+      internalID: 3336065947973332678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b2eb204bfa0f1b0800000000000000
+      internalID: -5624802746910758063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc5e3f4ccb7b05d0800000000000000
+      internalID: -3095244201454052137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8fd05e332e01100800000000000000
+      internalID: 76809906179405996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdadf89a444be7800800000000000000
+      internalID: 612124806364519131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6d552a3d963d390800000000000000
+      internalID: -7794770172365646139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b756a16dc8d3460800000000000000
+      internalID: 7223084228565891876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba928529cf13d81e0800000000000000
+      internalID: -2194042482602792533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1712a65681f10530800000000000000
+      internalID: 3819599518268266271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5304828499e8c08a0800000000000000
+      internalID: -6337533786625392587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0666771c5db064d30800000000000000
+      internalID: 4415229497385117280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e9de55f4708a340800000000000000
+      internalID: 4875154633954008645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130d4dbe7afb98f20800000000000000
+      internalID: 3425479719529009201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded0d81350cdef920800000000000000
+      internalID: 3026097914503826925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead697dcd1e0274b0800000000000000
+      internalID: -5444273478373380690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c5ae605ffa61350800000000000000
+      internalID: 5987166221553523763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c365092de7a4b30800000000000000
+      internalID: 4272366639344139264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f461223798cb87620800000000000000
+      internalID: 2772172869174695503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc806dda3b9a8fb30800000000000000
+      internalID: 4321390431642716363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c84241dca3714d0800000000000000
+      internalID: -3163995560723837862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98670a51ec086f680800000000000000
+      internalID: -8721642005741930871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403e51666ed169f60800000000000000
+      internalID: 8040647060108993284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775ed3cda57ac5f50800000000000000
+      internalID: 6871551140144473463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78366874d113d09a0800000000000000
+      internalID: -6265297504778689657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f33330163b14a70800000000000000
+      internalID: 8809519575360290718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0073f5a76ca87410800000000000000
+      internalID: 1475118439129640970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4606003dcd02d6ee0800000000000000
+      internalID: -1266319787416330140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d641237de29c155f0800000000000000
+      internalID: -769612858287582099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82029ee635a3750c0800000000000000
+      internalID: -4587133565436092376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9996775c59653bb0800000000000000
+      internalID: -4956939969526064742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57d6bcaa01b5ac70800000000000000
+      internalID: 8981779691265775455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Idle Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1e65ecb7d1d3910800000000000000
+      internalID: 1818642242107531688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

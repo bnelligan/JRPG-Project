@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: a1f1cda5b5717a54bb449ae604c11aea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5310314184814113096
+    second: Ponytail Run Sheet_0
+  - first:
+      213: -3158331714186617829
+    second: Ponytail Run Sheet_1
+  - first:
+      213: 7075582419852666937
+    second: Ponytail Run Sheet_2
+  - first:
+      213: 4564002416967856625
+    second: Ponytail Run Sheet_3
+  - first:
+      213: 6910021367322165184
+    second: Ponytail Run Sheet_4
+  - first:
+      213: 5809244468970484303
+    second: Ponytail Run Sheet_5
+  - first:
+      213: -7747564690286001637
+    second: Ponytail Run Sheet_6
+  - first:
+      213: 7232639015332664676
+    second: Ponytail Run Sheet_7
+  - first:
+      213: 6145710831019768150
+    second: Ponytail Run Sheet_8
+  - first:
+      213: -4589761690272504270
+    second: Ponytail Run Sheet_9
+  - first:
+      213: 8309745608549764201
+    second: Ponytail Run Sheet_10
+  - first:
+      213: -245182772107944510
+    second: Ponytail Run Sheet_11
+  - first:
+      213: 633095641360918830
+    second: Ponytail Run Sheet_12
+  - first:
+      213: -1189611279391758233
+    second: Ponytail Run Sheet_13
+  - first:
+      213: 5593508248879375767
+    second: Ponytail Run Sheet_14
+  - first:
+      213: 6498860451667230066
+    second: Ponytail Run Sheet_15
+  - first:
+      213: 4005230335407735874
+    second: Ponytail Run Sheet_16
+  - first:
+      213: -5484060568349337639
+    second: Ponytail Run Sheet_17
+  - first:
+      213: 281270105296879060
+    second: Ponytail Run Sheet_18
+  - first:
+      213: 5119600703952065825
+    second: Ponytail Run Sheet_19
+  - first:
+      213: 1680071620153567966
+    second: Ponytail Run Sheet_20
+  - first:
+      213: -2089417027108636206
+    second: Ponytail Run Sheet_21
+  - first:
+      213: 6318067767023313528
+    second: Ponytail Run Sheet_22
+  - first:
+      213: 8462587368356159455
+    second: Ponytail Run Sheet_23
+  - first:
+      213: 8207978673758715642
+    second: Ponytail Run Sheet_24
+  - first:
+      213: -3647433227938299551
+    second: Ponytail Run Sheet_25
+  - first:
+      213: 5440183074878383550
+    second: Ponytail Run Sheet_26
+  - first:
+      213: 5767311073146978430
+    second: Ponytail Run Sheet_27
+  - first:
+      213: -2678204816809742712
+    second: Ponytail Run Sheet_28
+  - first:
+      213: -9093080681686013276
+    second: Ponytail Run Sheet_29
+  - first:
+      213: -3505241554803578534
+    second: Ponytail Run Sheet_30
+  - first:
+      213: 5879180398969896572
+    second: Ponytail Run Sheet_31
+  - first:
+      213: 8331598981220154970
+    second: Ponytail Run Sheet_32
+  - first:
+      213: 6945960938410268284
+    second: Ponytail Run Sheet_33
+  - first:
+      213: -8825261971043345654
+    second: Ponytail Run Sheet_34
+  - first:
+      213: -4824430729332271483
+    second: Ponytail Run Sheet_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8413097ad9602b940800000000000000
+      internalID: 5310314184814113096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c5e0d1a0a5b24d0800000000000000
+      internalID: -3158331714186617829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938215a09b4813260800000000000000
+      internalID: 7075582419852666937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1b4616408965f30800000000000000
+      internalID: 4564002416967856625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfb89d92d355ef50800000000000000
+      internalID: 6910021367322165184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42736ad0159e9050800000000000000
+      internalID: 5809244468970484303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12c42966fe1b7490800000000000000
+      internalID: -7747564690286001637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465d8814dde7f5460800000000000000
+      internalID: 7232639015332664676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659343f7073f94550800000000000000
+      internalID: 6145710831019768150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2366c9f6f04ed40c0800000000000000
+      internalID: -4589761690272504270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c8873aa95225370800000000000000
+      internalID: 8309745608549764201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdd57b519fe89cf0800000000000000
+      internalID: -245182772107944510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e296a2ca12539c800800000000000000
+      internalID: 633095641360918830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7686e0f18d6ad7fe0800000000000000
+      internalID: -1189611279391758233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7952caedd1220ad40800000000000000
+      internalID: 5593508248879375767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27db57af527903a50800000000000000
+      internalID: 6498860451667230066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244c899f4cf659730800000000000000
+      internalID: 4005230335407735874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d79fc808f3b4e3b0800000000000000
+      internalID: -5484060568349337639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd3828aba547e300800000000000000
+      internalID: 281270105296879060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12517e627b97c0740800000000000000
+      internalID: 5119600703952065825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edae774bc30d05710800000000000000
+      internalID: 1680071620153567966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d97987b846e003e0800000000000000
+      internalID: -2089417027108636206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8722548d8294ea750800000000000000
+      internalID: 6318067767023313528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf9393ff56217570800000000000000
+      internalID: 8462587368356159455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afebe55bd1998e170800000000000000
+      internalID: 8207978673758715642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16108caddc6b16dc0800000000000000
+      internalID: -3647433227938299551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5e73beea96f7b40800000000000000
+      internalID: 5440183074878383550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e704a105dda990050800000000000000
+      internalID: 5767311073146978430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ea05aa8ea15dad0800000000000000
+      internalID: -2678204816809742712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa63261c43eec180800000000000000
+      internalID: -9093080681686013276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59aef1a061ea5fc0800000000000000
+      internalID: -3505241554803578534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e3a037c6b079150800000000000000
+      internalID: 5879180398969896572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e32a67129cf9370800000000000000
+      internalID: 8331598981220154970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76dea51ca2056060800000000000000
+      internalID: 6945960938410268284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b923edefe568580800000000000000
+      internalID: -8825261971043345654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponytail Run Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586dba600dd2c0db0800000000000000
+      internalID: -4824430729332271483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

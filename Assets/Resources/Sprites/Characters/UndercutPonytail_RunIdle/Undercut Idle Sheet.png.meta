@@ -1,0 +1,1700 @@
+fileFormatVersion: 2
+guid: 7e3eac89d47a5294bb830a6bac604262
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2308691128866976654
+    second: Undercut Idle Sheet_0
+  - first:
+      213: -6008785913320787216
+    second: Undercut Idle Sheet_1
+  - first:
+      213: -3266910062169535466
+    second: Undercut Idle Sheet_2
+  - first:
+      213: -4877986967351624817
+    second: Undercut Idle Sheet_3
+  - first:
+      213: 3179462087552119124
+    second: Undercut Idle Sheet_4
+  - first:
+      213: 5252587868290127565
+    second: Undercut Idle Sheet_5
+  - first:
+      213: 2059412111016712718
+    second: Undercut Idle Sheet_6
+  - first:
+      213: -3469122755885067078
+    second: Undercut Idle Sheet_7
+  - first:
+      213: 1478062694279511402
+    second: Undercut Idle Sheet_8
+  - first:
+      213: -8281148031557784233
+    second: Undercut Idle Sheet_9
+  - first:
+      213: 8146961342660291199
+    second: Undercut Idle Sheet_10
+  - first:
+      213: -3407554043488942206
+    second: Undercut Idle Sheet_11
+  - first:
+      213: 4621510570841053343
+    second: Undercut Idle Sheet_12
+  - first:
+      213: 8542930195531753531
+    second: Undercut Idle Sheet_13
+  - first:
+      213: 1835969421015743682
+    second: Undercut Idle Sheet_14
+  - first:
+      213: -7514479505256973741
+    second: Undercut Idle Sheet_15
+  - first:
+      213: -4371512047717043576
+    second: Undercut Idle Sheet_16
+  - first:
+      213: 4995536337776564213
+    second: Undercut Idle Sheet_17
+  - first:
+      213: 4992147070395991451
+    second: Undercut Idle Sheet_18
+  - first:
+      213: 7159073996898160937
+    second: Undercut Idle Sheet_19
+  - first:
+      213: -4644712761224779938
+    second: Undercut Idle Sheet_20
+  - first:
+      213: 5722164429164482073
+    second: Undercut Idle Sheet_21
+  - first:
+      213: -6938055813948975595
+    second: Undercut Idle Sheet_22
+  - first:
+      213: -979207334756806755
+    second: Undercut Idle Sheet_23
+  - first:
+      213: 6266787899179771717
+    second: Undercut Idle Sheet_24
+  - first:
+      213: 5303939129021019516
+    second: Undercut Idle Sheet_25
+  - first:
+      213: 6218145736633435709
+    second: Undercut Idle Sheet_26
+  - first:
+      213: 719711492612865785
+    second: Undercut Idle Sheet_27
+  - first:
+      213: 5937261160723422177
+    second: Undercut Idle Sheet_28
+  - first:
+      213: -8134231346912078578
+    second: Undercut Idle Sheet_29
+  - first:
+      213: -957006996688112852
+    second: Undercut Idle Sheet_30
+  - first:
+      213: -1496579309854033454
+    second: Undercut Idle Sheet_31
+  - first:
+      213: 4792113332622845221
+    second: Undercut Idle Sheet_32
+  - first:
+      213: -9173541034147171122
+    second: Undercut Idle Sheet_33
+  - first:
+      213: -5414469377830768376
+    second: Undercut Idle Sheet_34
+  - first:
+      213: -6597739287510919795
+    second: Undercut Idle Sheet_35
+  - first:
+      213: -8238784403797697817
+    second: Undercut Idle Sheet_36
+  - first:
+      213: -6228751551311282287
+    second: Undercut Idle Sheet_37
+  - first:
+      213: 4646748886756582357
+    second: Undercut Idle Sheet_38
+  - first:
+      213: 4314591190431001936
+    second: Undercut Idle Sheet_39
+  - first:
+      213: 6997560616439361276
+    second: Undercut Idle Sheet_40
+  - first:
+      213: 7236854653342656064
+    second: Undercut Idle Sheet_41
+  - first:
+      213: -2868092897673671633
+    second: Undercut Idle Sheet_42
+  - first:
+      213: 6472893948346639836
+    second: Undercut Idle Sheet_43
+  - first:
+      213: -551790247886970494
+    second: Undercut Idle Sheet_44
+  - first:
+      213: 4431048180780403634
+    second: Undercut Idle Sheet_45
+  - first:
+      213: 2588644351297253779
+    second: Undercut Idle Sheet_46
+  - first:
+      213: 6023023517400355629
+    second: Undercut Idle Sheet_47
+  - first:
+      213: -8533299220070111887
+    second: Undercut Idle Sheet_48
+  - first:
+      213: 4627514197302848087
+    second: Undercut Idle Sheet_49
+  - first:
+      213: -3801008582503605511
+    second: Undercut Idle Sheet_50
+  - first:
+      213: 8463539717107422166
+    second: Undercut Idle Sheet_51
+  - first:
+      213: 8164489328142102205
+    second: Undercut Idle Sheet_52
+  - first:
+      213: 8076065709578244587
+    second: Undercut Idle Sheet_53
+  - first:
+      213: -5636994976883163682
+    second: Undercut Idle Sheet_54
+  - first:
+      213: 2240820538406187386
+    second: Undercut Idle Sheet_55
+  - first:
+      213: -5075628635033691002
+    second: Undercut Idle Sheet_56
+  - first:
+      213: -86580509193616249
+    second: Undercut Idle Sheet_57
+  - first:
+      213: 4136756148473750825
+    second: Undercut Idle Sheet_58
+  - first:
+      213: 6912017397948268500
+    second: Undercut Idle Sheet_59
+  - first:
+      213: 6980474931873263282
+    second: Undercut Idle Sheet_60
+  - first:
+      213: -3212055876091268110
+    second: Undercut Idle Sheet_61
+  - first:
+      213: 1579254826004101302
+    second: Undercut Idle Sheet_62
+  - first:
+      213: -8391651994595945101
+    second: Undercut Idle Sheet_63
+  - first:
+      213: -7804108773729831806
+    second: Undercut Idle Sheet_64
+  - first:
+      213: -4008703311715760925
+    second: Undercut Idle Sheet_65
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cc9c776a1e5ffd0800000000000000
+      internalID: -2308691128866976654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2b4293c018c9ca0800000000000000
+      internalID: -6008785913320787216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c4c377b9a99a2d0800000000000000
+      internalID: -3266910062169535466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b7508a2b8ed4cb0800000000000000
+      internalID: -4877986967351624817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451bd515ce7bf1c20800000000000000
+      internalID: 3179462087552119124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc695f836d0f4e840800000000000000
+      internalID: 5252587868290127565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ad94b5760849c10800000000000000
+      internalID: 2059412111016712718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab41f35db333bdfc0800000000000000
+      internalID: -3469122755885067078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d79487032238410800000000000000
+      internalID: 1478062694279511402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75da29e9db3731d80800000000000000
+      internalID: -8281148031557784233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 220
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2b1c3d22df0170800000000000000
+      internalID: 8146961342660291199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28745e4c6afe5b0d0800000000000000
+      internalID: -3407554043488942206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9891bcd067e22040800000000000000
+      internalID: 4621510570841053343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38e0ad10c59e8670800000000000000
+      internalID: 8542930195531753531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc7f16067caa7910800000000000000
+      internalID: 1835969421015743682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a743114b437b790800000000000000
+      internalID: -7514479505256973741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8823c7034f44553c0800000000000000
+      internalID: -4371512047717043576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f75abbe4d5b35540800000000000000
+      internalID: 4995536337776564213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95c57d9f4ba74540800000000000000
+      internalID: 4992147070395991451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921d9d9aed32a5360800000000000000
+      internalID: 7159073996898160937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5729773a5aaa8fb0800000000000000
+      internalID: -4644712761224779938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 176
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e89b22b36396f40800000000000000
+      internalID: 5722164429164482073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516dcb12ff217bf90800000000000000
+      internalID: -6938055813948975595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f0d5afd182962f0800000000000000
+      internalID: -979207334756806755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547a355346a18f650800000000000000
+      internalID: 6266787899179771717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75b79f49806b9940800000000000000
+      internalID: 5303939129021019516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3645a13a9a4b4650800000000000000
+      internalID: 6218145736633435709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9feb4f11acdecf900800000000000000
+      internalID: 719711492612865785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb94a79193656250800000000000000
+      internalID: 5937261160723422177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05557edfa76d1f80800000000000000
+      internalID: -8134231346912078578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2377daf43708b2f0800000000000000
+      internalID: -957006996688112852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d973f10c051b3be0800000000000000
+      internalID: -1496579309854033454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 132
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525e562bfa1018240800000000000000
+      internalID: 4792113332622845221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4303f680901b080800000000000000
+      internalID: -9173541034147171122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801ba27b9c0fbd4b0800000000000000
+      internalID: -5414469377830768376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85d547031f1074a0800000000000000
+      internalID: -6597739287510919795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea1c965c35f9ad80800000000000000
+      internalID: -8238784403797697817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f7de527770f89a0800000000000000
+      internalID: -6228751551311282287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d361933e719c7040800000000000000
+      internalID: 4646748886756582357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d6ba8f3d180eb30800000000000000
+      internalID: 4314591190431001936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfea1255e445c1160800000000000000
+      internalID: 6997560616439361276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0462f97f6f87e6460800000000000000
+      internalID: 7236854653342656064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c075394bc7238d0800000000000000
+      internalID: -2868092897673671633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 88
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd52afb40c654d950800000000000000
+      internalID: 6472893948346639836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2812c2c61b5a758f0800000000000000
+      internalID: -551790247886970494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb8e0ef7de3e7d30800000000000000
+      internalID: 4431048180780403634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391f4e08256bce320800000000000000
+      internalID: 2588644351297253779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23d87c4af3169350800000000000000
+      internalID: 6023023517400355629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1756a991291a39980800000000000000
+      internalID: -8533299220070111887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a205315ab383040800000000000000
+      internalID: 4627514197302848087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa59a335da104bc0800000000000000
+      internalID: -3801008582503605511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3199ce788847570800000000000000
+      internalID: 8463539717107422166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbea06069c71e4170800000000000000
+      internalID: 8164489328142102205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1df1a59f2f31070800000000000000
+      internalID: 8076065709578244587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 44
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddb7324fee55c1b0800000000000000
+      internalID: -5636994976883163682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71b915486ef81f10800000000000000
+      internalID: 2240820538406187386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c1405f5aebf89b0800000000000000
+      internalID: -5075628635033691002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784ca015c776ccef0800000000000000
+      internalID: -86580509193616249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925e030bcc5b86930800000000000000
+      internalID: 4136756148473750825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfb606b33b6cef50800000000000000
+      internalID: 6912017397948268500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be23d567f0afd060800000000000000
+      internalID: 6980474931873263282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3bfdae23c7c63d0800000000000000
+      internalID: -3212055876091268110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8bbc1a5e3aae510800000000000000
+      internalID: 1579254826004101302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3751967c8fcda8b80800000000000000
+      internalID: -8391651994595945101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284f2511b6c32b390800000000000000
+      internalID: -7804108773729831806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Undercut Idle Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e40047b3993e58c0800000000000000
+      internalID: -4008703311715760925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
