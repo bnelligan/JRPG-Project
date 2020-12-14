@@ -6248,6 +6248,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_Sawful
       objectReference: {fileID: 0}
+    - target: {fileID: 627143285563800213, guid: 73870214f20df194f9b6fd0956f32b1e,
+        type: 3}
+      propertyPath: IsHostile
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73870214f20df194f9b6fd0956f32b1e, type: 3}
 --- !u!1 &1381003308
