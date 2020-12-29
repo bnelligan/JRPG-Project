@@ -36,9 +36,12 @@ public class GridMovementController : MonoBehaviour
         {
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
+            if(inputX != moveVec.x || inputY != moveVec.y)
+            {
+                Debug.Log($"InputX: {inputX}");
+                Debug.Log($"InputY: {inputY}");
+            }
             moveVec = Vector2Int.zero;
-            Debug.Log($"InputX: {inputX}");
-            Debug.Log($"InputY: {inputY}");
             // Check x-axis input
             if (inputX > 0)
             {
@@ -77,7 +80,7 @@ public class GridMovementController : MonoBehaviour
         moveDirection.Normalize();
         bool isOppositeMovement = Vector3.Dot(moveVec3, moveDirection) < 0;
 
-        if (moveVec3 == Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement || targetPos == currentTilePos)
+        if (moveVec3 == Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement )//|| targetPos == currentTilePos)
         {
             rb.velocity = Vector2.zero;
             // lastMoveTime -= moveDistance * Time.deltaTime; // Go back in time to speed up lerp
