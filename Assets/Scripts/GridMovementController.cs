@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+// using UnityEngine.InputSystem;
 
 public class GridMovementController : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class GridMovementController : MonoBehaviour
     Vector2Int moveVec = Vector2Int.zero;
     TileManager tileManager;
     Rigidbody2D rb;
-    PlayerInputManager inputManager;
+    // PlayerInputManager inputManager;
 
     private void Start()
     {
@@ -26,33 +26,14 @@ public class GridMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tileManager = FindObjectOfType<TileManager>();
 
-        inputManager = GetComponent<PlayerInputManager>();
+        // inputManager = GetComponent<PlayerInputManager>();
     }
-    void Update()
-    {
-        //if (transform.position == targetPos)
-        //{
-        //    moveStartPosition = transform.position;
-        //    targetPos = transform.position + MoveVec;
-        //    moveStartTime = Time.time;
-        //}
-
-        //float t = (Time.time - moveStartTime) / WalkSpeed;
-        //if(t > 1f)
-        //{
-        //    t = 1f;
-        //}
-        //float posX = Mathf.Lerp(moveStartPosition.x, targetPos.x, t);
-        //float posY = Mathf.Lerp(moveStartPosition.y, targetPos.y, t);
-        //transform.position = new Vector3(posX, posY, transform.position.z);
-    }
-    public void OnMove(InputValue input)
+    private void Update()
     {
         if (EnableInput == true)
         {
-            float inputX = inputVec.x;
-            float inputY = inputVec.y;
-            inputVec = input.Get<Vector2>(); // Check movement input
+            float inputX = Input.GetAxisRaw("Horizontal");
+            float inputY = Input.GetAxisRaw("Vertical");
             moveVec = Vector2Int.zero;
             Debug.Log($"InputX: {inputX}");
             Debug.Log($"InputY: {inputY}");
@@ -89,7 +70,7 @@ public class GridMovementController : MonoBehaviour
         moveDirection.Normalize();
         bool isOppositeMovement = Vector3.Dot(moveVec3, moveDirection) < 0;
 
-        if (moveVec3 == Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement)
+        if (moveVec3 == Vector3.zero || moveDistance < LowMoveThreshold || isOppositeMovement || targetPos == currentTilePos)
         {
             rb.velocity = Vector2.zero;
             // lastMoveTime -= moveDistance * Time.deltaTime; // Go back in time to speed up lerp

@@ -20,6 +20,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 271572234329859703, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3c9064c2d766f04f972eb672fc9e28c,
+        type: 3}
+    - target: {fileID: 271572234329859703, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 271572234329859703, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -316790287
+      objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913378, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: LoadJSON
@@ -123,6 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1313275949269913405, guid: 24e83cff4b587884fb3dc266c30fbbbc, type: 3}
+    - {fileID: 8874628963282228858, guid: 24e83cff4b587884fb3dc266c30fbbbc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24e83cff4b587884fb3dc266c30fbbbc, type: 3}
 --- !u!1 &2637836172829240701 stripped
 GameObject:
