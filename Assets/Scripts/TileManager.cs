@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 
-public class TileManager : MonoBehaviour
+public class   TileManager : MonoBehaviour
 {
     private enum TileLayerKey
     {
@@ -142,7 +142,10 @@ public class TileManager : MonoBehaviour
         }
         return scanResults;
     }
-
+    public Vector3 FindTilePos(Vector3 TileWorldPosition)
+    {
+        return FloorMap.WorldToCell(TileWorldPosition);
+    }
     public Vector3 FindMove(Vector3 worldPosition, Vector2Int direction, uint spread)
     {
         // Default to current cell

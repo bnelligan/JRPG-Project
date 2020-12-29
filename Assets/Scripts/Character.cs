@@ -47,6 +47,7 @@ public class Character : MonoBehaviour
         InitEvents();
         InitStats();
     }
+    
     private void InitEvents()
     {
         CombatEvents.OnDamage += CombatEvents_OnDamage;

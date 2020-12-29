@@ -84,7 +84,7 @@ public class Battle : Encounter
             ActiveCharacter.Activate();
 
             // Friendly AI may need implementation
-            EnemyController enemyAi = ActiveCharacter.GetComponent<EnemyController>();
+            CombatController enemyAi = ActiveCharacter.GetComponent<CombatController>();
             if(enemyAi != null)
             {
                 enemyAi.Activate();

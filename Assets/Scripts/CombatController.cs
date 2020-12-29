@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class CombatController : MonoBehaviour
 {
     public enum SkillPattern
     {
@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour
         }
         return idx;
     }
+
     IEnumerator DoAttackAfterDelay(int skillIndex)
     {
         yield return new WaitForSeconds(AttackDelay);

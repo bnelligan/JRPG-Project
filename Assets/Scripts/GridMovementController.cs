@@ -13,6 +13,7 @@ public class GridMovementController : MonoBehaviour
     private float lastMoveTime;
     private float lerpDuration = .4f;
     Vector3 targetPos;
+    Vector3 currentTilePos;
     Vector2 inputVec;
     Vector2Int moveVec = Vector2Int.zero;
     TileManager tileManager;
@@ -79,6 +80,7 @@ public class GridMovementController : MonoBehaviour
 
         //Debug.Log($"Move vector: " + MoveVec);[
         targetPos = tileManager.FindMove(transform.position, moveVec, 1);
+        currentTilePos = tileManager.FindTilePos(transform.position);//.FindMove(transform.position, Vector2Int.zero, 0);
         
         //Debug.Log($"Target position: {targetPos}");
         float moveDistance = Vector3.Distance(transform.position, targetPos);
@@ -109,10 +111,7 @@ public class GridMovementController : MonoBehaviour
         //if(Input.GetKeyDown(KeyCode.Escape))
         //{
         //    Application.Quit();
-        //}
-        
-        
-       
+        //}       
     }
 
     public void DisableMovement()
