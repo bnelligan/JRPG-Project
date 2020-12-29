@@ -9,6 +9,7 @@ public class CharacterHUD : MonoBehaviour
     string baseIconPrefabPath = "Prefabs/Icon";
     string heartIconPath = "Sprites/UI/HUD/Red Heart Sheet";
     string stamIconPath = "Sprites/UI/HUD/SP-Sheet";
+    string armorIconPath = "Sprites/UI/HUD/Armor In Out-Sheet";
 
     // Private objects
     [SerializeField]
@@ -18,6 +19,7 @@ public class CharacterHUD : MonoBehaviour
 
     List<GameObject> heartList = new List<GameObject>();
     List<GameObject> stamList = new List<GameObject>();
+    List<GameObject> armorList = new List<GameObject>();
 
     // HUD Parameters
     public float HudOffsetY;
@@ -58,6 +60,7 @@ public class CharacterHUD : MonoBehaviour
     {
         DrawHearts();
         DrawStam();
+        DrawArmor();
     }
 
     private void DrawHearts()
@@ -77,6 +80,15 @@ public class CharacterHUD : MonoBehaviour
             Destroy(stam);
         }
         stamList = DrawIcons(stamIconPath, stamRow, numStam);
+    }
+    private void DrawArmor()
+    {
+        uint numArmor = targetStats.Armor;
+        foreach (GameObject armor in armorList)
+        {
+            Destroy(armor);
+        }
+        armorList = DrawArmorIcons(armorIconPath, numArmor);
     }
 
     private List<GameObject> DrawIcons(string iconSpritePath, uint row, uint count)
@@ -98,6 +110,34 @@ public class CharacterHUD : MonoBehaviour
         else
         {
             Debug.LogError("Invalid icon path: " + iconSpritePath);
+        }
+        return iconsDrawn;
+    }
+
+    private List<GameObject> DrawArmorIcons(string armorSpritePath, uint count)
+    {
+        if (count > heartList.Count)
+        {
+            count = (uint) heartList.Count;
+        }
+
+        Sprite iconSprite = Resources.Load<Sprite>(armorSpritePath);
+        List<GameObject> iconsDrawn = new List<GameObject>();
+
+        if (armorSpritePath != null)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                Vector3 pos = heartList[i].transform.localPosition;
+                GameObject iconInstance = GameObject.Instantiate(BaseIconPrefab, HUD_Group.transform);
+                iconInstance.transform.localPosition = pos;
+                iconInstance.GetComponent<SpriteRenderer>().sprite = iconSprite;
+                iconsDrawn.Add(iconInstance);
+            }
+        }
+        else
+        {
+            Debug.LogError("Invalid icon path: " + armorSpritePath);
         }
         return iconsDrawn;
     }

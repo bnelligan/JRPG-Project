@@ -5,7 +5,7 @@
   "MaxHP": 5,
   "SP": 3,
   "MaxSP": 3,
-  "Armor": 0,
+  "Armor": 1,
   "BaseArmor": 0,
   "Strength": 2,
   "Dexterity": 1,
