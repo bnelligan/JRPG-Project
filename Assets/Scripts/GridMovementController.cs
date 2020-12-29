@@ -18,6 +18,7 @@ public class GridMovementController : MonoBehaviour
     Vector2Int moveVec = Vector2Int.zero;
     TileManager tileManager;
     Rigidbody2D rb;
+    Animator animator;
     // PlayerInputManager inputManager;
 
     private void Start()
@@ -25,6 +26,7 @@ public class GridMovementController : MonoBehaviour
         targetPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
         tileManager = FindObjectOfType<TileManager>();
+        animator = GetComponent<Animator>();
 
         // inputManager = GetComponent<PlayerInputManager>();
     }
@@ -57,6 +59,11 @@ public class GridMovementController : MonoBehaviour
                 moveVec += Vector2Int.down;
             }
 
+            if(moveVec != Vector2Int.zero)
+            {
+                animator.SetFloat("Horizontal", inputX);
+                animator.SetFloat("Vertical", inputY);
+            }
         }
 
         //Debug.Log($"Move vector: " + MoveVec);[

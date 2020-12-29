@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         Skills = GetComponents<BaseSkill>();
         Party = GetComponentInParent<Party>();
         battle = FindObjectOfType<Battle>();
