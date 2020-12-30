@@ -133,6 +133,7 @@ public class CharacterHUD : MonoBehaviour
                 GameObject iconInstance = GameObject.Instantiate(BaseIconPrefab, HUD_Group.transform);
                 iconInstance.transform.localPosition = pos;
                 iconInstance.GetComponent<SpriteRenderer>().sprite = armorSprite;
+                iconInstance.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 iconsDrawn.Add(iconInstance);
             }
         }
