@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     public string CharacterName { get; private set; }
     
     public CharacterStats Stats { get; private set; }
+    public CharacterHUD charHUD { get; private set; }
     public Party Party { get; private set; }
     public Character TargetEnemy { get; private set; }
     public BaseSkill[] Skills { get; private set; }
@@ -39,6 +40,7 @@ public class Character : MonoBehaviour
         Party = GetComponentInParent<Party>();
         battle = FindObjectOfType<Battle>();
         Stats = GetComponent<CharacterStats>();
+        charHUD = GetComponent<CharacterHUD>();
 
         origColor = sprite.color;
         CharacterName = characterID;
@@ -162,6 +164,7 @@ public class Character : MonoBehaviour
         {
             Die(damageInfo.Source);
         }
+        charHUD.RefreshHUD = true;
     }
 
     //public void LoseHealth(uint amount, Character source)

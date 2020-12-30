@@ -53,7 +53,7 @@ public class CharacterHUD : MonoBehaviour
             //heartList.Clear();
             //stamList.Clear();
             DrawHUD();
-            // RefreshHUD = false;
+            RefreshHUD = false;
         }
     }
 
