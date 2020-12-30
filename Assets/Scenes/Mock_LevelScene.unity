@@ -4956,16 +4956,6 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2.75
       objectReference: {fileID: 0}
-    - target: {fileID: 1206388365331421946, guid: 77bb47b4f12a5bc44bad2afae694d433,
-        type: 3}
-      propertyPath: FileSource
-      value: Player_Default
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206388365331421946, guid: 77bb47b4f12a5bc44bad2afae694d433,
-        type: 3}
-      propertyPath: BackupToFile
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311544, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}
       propertyPath: m_Name

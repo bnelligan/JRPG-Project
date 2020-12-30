@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -316790287
       objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913378, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: FileSource
+      value: Player_Default
+      objectReference: {fileID: 0}
     - target: {fileID: 1313275949269913400, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: m_Size.x
