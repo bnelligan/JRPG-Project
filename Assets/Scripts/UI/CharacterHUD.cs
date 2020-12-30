@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(CharacterStats))]
 public class CharacterHUD : MonoBehaviour
@@ -121,7 +122,7 @@ public class CharacterHUD : MonoBehaviour
             count = (uint) heartList.Count;
         }
 
-        Sprite iconSprite = Resources.Load<Sprite>(armorSpritePath);
+        Sprite armorSprite = Resources.LoadAll<Sprite>(armorSpritePath).Single(s => s.name == "Armor In Out-Sheet_8");
         List<GameObject> iconsDrawn = new List<GameObject>();
 
         if (armorSpritePath != null)
@@ -131,7 +132,7 @@ public class CharacterHUD : MonoBehaviour
                 Vector3 pos = heartList[i].transform.localPosition;
                 GameObject iconInstance = GameObject.Instantiate(BaseIconPrefab, HUD_Group.transform);
                 iconInstance.transform.localPosition = pos;
-                iconInstance.GetComponent<SpriteRenderer>().sprite = iconSprite;
+                iconInstance.GetComponent<SpriteRenderer>().sprite = armorSprite;
                 iconsDrawn.Add(iconInstance);
             }
         }
