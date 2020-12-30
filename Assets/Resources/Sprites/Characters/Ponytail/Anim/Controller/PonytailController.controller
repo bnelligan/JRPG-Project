@@ -372,7 +372,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 8983658387662093075}
     m_Threshold: 0
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 0, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -380,7 +380,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: -3591412688511985974}
     m_Threshold: 0.14285715
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 1, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -388,7 +388,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 5165672052249055324}
     m_Threshold: 0.2857143
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -396,7 +396,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1974708516910899198}
     m_Threshold: 0.42857143
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -404,7 +404,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: -7542991606125231716}
     m_Threshold: 0.5714286
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -412,7 +412,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: -4217337213074151338}
     m_Threshold: 0.71428573
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: -1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -420,7 +420,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: -34643122962887811}
     m_Threshold: 0.85714287
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: -1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -428,7 +428,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: -5201124127640333543}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: -1, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
