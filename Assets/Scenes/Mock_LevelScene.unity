@@ -4675,10 +4675,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 16
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_UpscaleRT: 0
-  m_PixelSnapping: 1
+  m_RefResolutionX: 400
+  m_RefResolutionY: 300
+  m_UpscaleRT: 1
+  m_PixelSnapping: 0
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
@@ -4955,6 +4955,11 @@ PrefabInstance:
     - target: {fileID: 373199660, guid: 77bb47b4f12a5bc44bad2afae694d433, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206388365331421922, guid: 77bb47b4f12a5bc44bad2afae694d433,
+        type: 3}
+      propertyPath: characterID
+      value: Player_Default
       objectReference: {fileID: 0}
     - target: {fileID: 7719677285927311544, guid: 77bb47b4f12a5bc44bad2afae694d433,
         type: 3}

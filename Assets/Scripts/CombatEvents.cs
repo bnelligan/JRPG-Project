@@ -51,6 +51,11 @@ public class DamageArgs : EventArgs
     // TODO -- Include effects such as element type
 }
 
+public class HealArgs : EventArgs
+{
+
+}
+
 public class DeathArgs : EventArgs
 {
     public DeathArgs(Character source, Character target)
@@ -83,4 +88,6 @@ public class CombatArgs : EventArgs
 public class BattleResultArgs : EventArgs
 {
     public bool IsPlayerVictory;
+    public int ExpReward;
+    public int MoneyReward;
 }

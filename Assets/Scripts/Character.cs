@@ -146,7 +146,7 @@ public class Character : MonoBehaviour
     /// Called by abilities, environment, and anything else that can deal damage to a character
     /// </summary>
     /// <param name="damageInfo"></param>
-    public void TakeDamage(DamageArgs damageInfo)
+    public void RecieveDamage(DamageArgs damageInfo)
     {
         // TODO - Check for immunity and debuffs before taking damage
         // Lose armor first
@@ -167,16 +167,7 @@ public class Character : MonoBehaviour
         charHUD.RefreshHUD = true;
     }
 
-    //public void LoseHealth(uint amount, Character source)
-    //{
-    //    HP_Current -= (int)amount;
-    //    if (HP_Current <= 0)
-    //    {
-    //        Die(source);
-    //    }
-    //}
-
-    public void GainHealth(uint amount)
+    public void RecieveHeal(HealArgs healInfo)
     {
 
     }
@@ -205,45 +196,6 @@ public class Character : MonoBehaviour
             TurnTimer -= flatreduction;
         }
     }
-
-    //public void DrainSP(int spCost)
-    //{
-    //    if(spCost < 0)
-    //    {
-    //        Debug.LogWarning("Negative SP drain is not allowed. No SP will be lost.");
-    //        spCost = 0;
-    //    }
-
-    //    if(spCost > 0)
-    //    {
-    //        Debug.LogWarning("Excessive SP drain attempted! Setting SP_Current to zero.");
-    //       // SP_Current = 0;
-    //    }
-    //    else
-    //    {
-    //      //  SP_Current -= spCost;
-    //    }
-    //}
-
-    //public void RecoverSP(int spRecovery)
-    //{
-    //    if(spRecovery < 0)
-    //    {
-    //        Debug.LogWarning("Negative SP recovery not allowed. No SP will be recovered.");
-    //        spRecovery = 0;
-    //    }
-
-    //    if(SP_Current + spRecovery > SP_Max)
-    //    {
-    //        Debug.LogWarning($"{CharacterName} SP is at the max! Cannot exceed maximum SP with a recovery.");
-    //        SP_Current = SP_Max;
-    //    }
-    //    else
-    //    {
-    //        Debug.Log($"{CharacterName} recovered {spRecovery} SP!");
-    //        SP_Current += spRecovery;
-    //    }
-    //}
 
     public bool AttackTargetEnemy(SkillArgs skillArgs)
     {
@@ -284,7 +236,7 @@ public class Character : MonoBehaviour
         if(IsHit)
         {
             Debug.Log("Hit!");
-            TargetEnemy.TakeDamage(dmgArgs);
+            TargetEnemy.RecieveDamage(dmgArgs);
         }
         else
         {

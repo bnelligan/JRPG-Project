@@ -26,7 +26,7 @@ public class GridMovementController : MonoBehaviour
         targetPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
         tileManager = FindObjectOfType<TileManager>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         // inputManager = GetComponent<PlayerInputManager>();
     }
@@ -67,6 +67,7 @@ public class GridMovementController : MonoBehaviour
                 animator.SetFloat("Horizontal", inputX);
                 animator.SetFloat("Vertical", inputY);
             }
+            animator.SetFloat("MoveSpeed", moveVec.magnitude);
         }
 
         //Debug.Log($"Move vector: " + MoveVec);[
