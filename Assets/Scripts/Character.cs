@@ -131,7 +131,6 @@ public class Character : MonoBehaviour
         {
             Die(damageInfo.Source);
         }
-        charHUD.RefreshHUD = true;
     }
 
     public void ReceiveHeal(HealArgs healInfo)

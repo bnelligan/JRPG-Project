@@ -7,7 +7,7 @@ using System.Linq;
 public class CharacterHUD : MonoBehaviour
 {
     // Icon Paths
-    string baseIconPrefabPath = "Prefabs/Icon";
+    string iconPrefabPath = "Prefabs/Icon";
     string heartIconPath = "Sprites/UI/HUD/Red Heart Sheet";
     string stamIconPath = "Sprites/UI/HUD/SP-Sheet";
     string armorIconPath = "Sprites/UI/HUD/Armor In Out-Sheet";
@@ -15,7 +15,7 @@ public class CharacterHUD : MonoBehaviour
     // Private objects
     [SerializeField]
     GameObject HUD_Group;
-    GameObject BaseIconPrefab;
+    GameObject iconPrefab;
     CharacterStats targetStats;
 
     List<GameObject> heartList = new List<GameObject>();
@@ -29,31 +29,19 @@ public class CharacterHUD : MonoBehaviour
     
     uint heartsRow = 1;
     uint stamRow = 0;
-
-    public bool RefreshHUD = true;
     
     // Start is called before the first frame update
     void Start()
     {
         targetStats = GetComponent<CharacterStats>();
-        BaseIconPrefab = Resources.Load<GameObject>(baseIconPrefabPath);
-        if(BaseIconPrefab == null)
-        {
-            Debug.LogError("Invalid base icon prefab: " + baseIconPrefabPath);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(RefreshHUD)
+        if(targetStats.HP != heartList.Count || targetStats.SP != stamList.Count || targetStats.Armor != armorList.Count)
         {
-            //heartList.ForEach(Destroy);
-            //stamList.ForEach(Destroy);
-            //heartList.Clear();
-            //stamList.Clear();
             DrawHUD();
-            RefreshHUD = false;
         }
     }
 
@@ -67,7 +55,8 @@ public class CharacterHUD : MonoBehaviour
     private void DrawHearts()
     {
         uint numHearts = targetStats.HP;
-        foreach(GameObject heart in heartList)
+        iconPrefabPath = "Prefabs/Heart Icon Variant";
+        foreach (GameObject heart in heartList)
         {
             Destroy(heart);
         }
@@ -85,6 +74,7 @@ public class CharacterHUD : MonoBehaviour
     private void DrawArmor()
     {
         uint numArmor = targetStats.Armor;
+        iconPrefabPath = "Prefabs/Armor Icon Variant";
         foreach (GameObject armor in armorList)
         {
             Destroy(armor);
@@ -97,20 +87,28 @@ public class CharacterHUD : MonoBehaviour
         Vector3 startPosition = new Vector3((1f - count) / 2f * IconOffsetX, HudOffsetY + IconOffsetY * row, HUD_Group.transform.position.z);
         Sprite iconSprite = Resources.Load<Sprite>(iconSpritePath);
         List<GameObject> iconsDrawn = new List<GameObject>();
-        if (iconSprite != null)
+        iconPrefab = Resources.Load<GameObject>(iconPrefabPath);
+        if (iconPrefab != null)
         {
-            for(int i = 0; i < count; i++)
+            if (iconSprite != null)
             {
-                Vector3 pos = startPosition + new Vector3((IconOffsetX * i), 0, 0);
-                GameObject iconInstance = GameObject.Instantiate(BaseIconPrefab, HUD_Group.transform);
-                iconInstance.transform.localPosition = pos;
-                iconInstance.GetComponent<SpriteRenderer>().sprite = iconSprite;
-                iconsDrawn.Add(iconInstance);
+                for (int i = 0; i < count; i++)
+                {
+                    Vector3 pos = startPosition + new Vector3((IconOffsetX * i), 0, 0);
+                    GameObject iconInstance = GameObject.Instantiate(iconPrefab, HUD_Group.transform);
+                    iconInstance.transform.localPosition = pos;
+                    iconInstance.GetComponent<SpriteRenderer>().sprite = iconSprite;
+                    iconsDrawn.Add(iconInstance);
+                }
+            }
+            else
+            {
+                Debug.LogError("Invalid icon path: " + iconSpritePath);
             }
         }
         else
-        {
-            Debug.LogError("Invalid icon path: " + iconSpritePath);
+        { 
+            Debug.LogError("Invalid icon prefab: " + iconPrefabPath);
         }
         return iconsDrawn;
     }
@@ -124,13 +122,14 @@ public class CharacterHUD : MonoBehaviour
 
         Sprite armorSprite = Resources.LoadAll<Sprite>(armorSpritePath).Single(s => s.name == "Armor In Out-Sheet_8");
         List<GameObject> iconsDrawn = new List<GameObject>();
+        iconPrefab = Resources.Load<GameObject>(iconPrefabPath);
 
         if (armorSpritePath != null)
         {
             for (int i = 0; i < count; i++)
             {
                 Vector3 pos = heartList[i].transform.localPosition;
-                GameObject iconInstance = GameObject.Instantiate(BaseIconPrefab, HUD_Group.transform);
+                GameObject iconInstance = GameObject.Instantiate(iconPrefab, HUD_Group.transform);
                 iconInstance.transform.localPosition = pos;
                 iconInstance.GetComponent<SpriteRenderer>().sprite = armorSprite;
                 iconInstance.GetComponent<SpriteRenderer>().sortingOrder = 1;
