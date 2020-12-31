@@ -66,60 +66,7 @@ public class Character : MonoBehaviour
     private void InitStats()
     {
         Stats = GetComponent<CharacterStats>();
-        //if (characterID == "FLAN_GREEN")
-        //{
-        //    LoadBaseStats_ENEMY_DEFAULT();
-        //}
-        //else if(characterID == "EXAMPLE_CHAR")
-        //{
-        //    LoadBaseStats_PLAYER_DEFAULT();
-
-        //}
     }
-    
-    //public void LoadBaseStats_PLAYER_DEFAULT()
-    //{
-    //    Stats.HP = 5;
-    //    Stats.MaxHP = 5;
-    //    Stats.SP = 3;
-    //    Stats.MaxSP = 4;
-    //    Stats.Armor = 0;
-       
-    //    Stats.Dodge = 20;
-    //    Stats.Accuracy = 90;
-    //    Stats.MeleeBonus = 1;
-    //    Stats.RangedBonus = 1;
-    //    Stats.MagicBonus = 1;
-       
-    //    Stats.Strength = 3;
-    //    Stats.Dexterity = 3;
-    //    Stats.Reflex = 3;
-    //    Stats.Mind = 3;
-    //    Stats.Experience = 0;
-    //}
-
-    //private void LoadBaseStats_ENEMY_DEFAULT()
-    //{
-    //    Stats.HP = 5;
-    //    Stats.MaxHP = 5;
-    //    Stats.SP = 2;
-    //    Stats.MaxSP = 4;
-    //    Stats.Armor = 0;
-        
-    //    Stats.Dodge = 20;
-    //    Stats.Accuracy = 90;
-    //    Stats.MeleeBonus = 1;
-    //    Stats.RangedBonus = 1;
-    //    Stats.MagicBonus = 1;
-        
-    //    Stats.Strength = 1;
-    //    Stats.Dexterity = 1;
-    //    Stats.Reflex = 1;
-    //    Stats.Mind = 1;
-    //    Stats.Experience = 0;
-    //}
-
-
     
     public void ActivateSkill(int skillIndex)
     {
@@ -146,11 +93,31 @@ public class Character : MonoBehaviour
     /// Called by abilities, environment, and anything else that can deal damage to a character
     /// </summary>
     /// <param name="damageInfo"></param>
-    public void RecieveDamage(DamageArgs damageInfo)
+    public void ReceiveDamage(DamageArgs damageInfo)
     {
         // TODO - Check for immunity and debuffs before taking damage
         // Lose armor first
-        damageInfo.DamageAmount = Stats.LoseArmor(damageInfo.DamageAmount);
+        switch (damageInfo.DamageType)
+        {
+            case E_DamageVariant.CRUSH:
+                if(Stats.Armor > 0)
+                {
+                    damageInfo.DamageAmount = (uint)Math.Floor(damageInfo.DamageAmount * CalcBonus(50));
+                }
+                break;
+            case E_DamageVariant.SLASH:
+                if(Stats.Armor == 0)
+                {
+                    damageInfo.DamageAmount = (uint)Math.Floor(damageInfo.DamageAmount * CalcBonus(50));
+                }
+                break;
+        }
+
+        // Skip armor damage if piercing type
+        if(damageInfo.DamageType != E_DamageVariant.PIERCE)
+        {
+            damageInfo.DamageAmount = Stats.LoseArmor(damageInfo.DamageAmount);
+        }
 
         // Lose health if there is overflow damage
         if(damageInfo.DamageAmount > 0)
@@ -167,7 +134,7 @@ public class Character : MonoBehaviour
         charHUD.RefreshHUD = true;
     }
 
-    public void RecieveHeal(HealArgs healInfo)
+    public void ReceiveHeal(HealArgs healInfo)
     {
 
     }
@@ -236,7 +203,7 @@ public class Character : MonoBehaviour
         if(IsHit)
         {
             Debug.Log("Hit!");
-            TargetEnemy.RecieveDamage(dmgArgs);
+            TargetEnemy.ReceiveDamage(dmgArgs);
         }
         else
         {

@@ -214,6 +214,10 @@ public class CharacterStats : MonoBehaviour
         {
             HP -= amount;
         }
+        if(Armor < HP)
+        {
+            Armor = HP;
+        }
     }
 
     public void GainHealth(uint amount)
