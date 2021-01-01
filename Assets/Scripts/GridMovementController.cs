@@ -10,6 +10,7 @@ public class GridMovementController : MonoBehaviour
     private float WalkSpeed = 5f;
     private float LowMoveThreshold = 0.3f;
     public bool EnableInput = true;
+    private bool isMoving = false;
     private float lastMoveTime;
     private float lerpDuration = .4f;
     Vector3 targetPos;
@@ -19,6 +20,11 @@ public class GridMovementController : MonoBehaviour
     TileManager tileManager;
     Rigidbody2D rb;
     Animator animator;
+    AudioSource audio;
+
+    // Audio
+    [SerializeField]
+    AudioClip walkingSFX;
     // PlayerInputManager inputManager;
 
     private void Start()
@@ -27,7 +33,7 @@ public class GridMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tileManager = FindObjectOfType<TileManager>();
         animator = GetComponentInChildren<Animator>();
-
+        audio = GetComponent<AudioSource>();
         // inputManager = GetComponent<PlayerInputManager>();
     }
     private void Update()
@@ -60,6 +66,19 @@ public class GridMovementController : MonoBehaviour
             else if (inputY < 0)
             {
                 moveVec += Vector2Int.down;
+            }
+
+            if (moveVec.magnitude > 0 && isMoving == false)
+            {
+                audio.clip = walkingSFX;
+                audio.loop = true;
+                audio.Play();
+                isMoving = true;
+            }
+            else if(moveVec.magnitude == 0 && isMoving == true)
+            {
+                audio.Stop();
+                isMoving = false;
             }
 
             if(moveVec != Vector2Int.zero)

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableInput: 1
+  walkingSFX: {fileID: 8300000, guid: 1401912b48575344cb4e362e5eac817f, type: 3}
 --- !u!1001 &1489433469051651356
 PrefabInstance:
   m_ObjectHideFlags: 0

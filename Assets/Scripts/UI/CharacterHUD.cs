@@ -65,6 +65,7 @@ public class CharacterHUD : MonoBehaviour
     private void DrawStam()
     {
         uint numStam = targetStats.SP;
+        iconPrefabPath = "Prefabs/Stam Icon Variant";
         foreach (GameObject stam in stamList)
         {
             Destroy(stam);
