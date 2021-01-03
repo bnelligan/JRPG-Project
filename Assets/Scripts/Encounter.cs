@@ -127,7 +127,7 @@ public class Encounter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (CanActivate)
+        if (CanActivate && collision.tag == "Player")
         {
             if (TriggerCondition == Trigger.TriggerEnter)
             {
@@ -144,7 +144,7 @@ public class Encounter : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (CanActivate)
+        if (CanActivate && collision.tag == "Player")
         {
             if (TriggerCondition == Trigger.TriggerExit)
             {
