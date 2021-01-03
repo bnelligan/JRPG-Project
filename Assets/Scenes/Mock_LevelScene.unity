@@ -453,31 +453,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &635553131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6277192111628568557, guid: b14ad7296e945124387d27d132b49c4e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6277192111213415199}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &635553136
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635553131}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9f068a56bdf5b3843b6e8d230468eb70, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &693585603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1247,6 +1222,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Computer1
       objectReference: {fileID: 0}
+    - target: {fileID: 6024262055180050238, guid: bebbe7ce876cf9f4ab18b4162672322e,
+        type: 3}
+      propertyPath: speechBubbleObj
+      value: 
+      objectReference: {fileID: 887609480}
+    - target: {fileID: 6024262055180050238, guid: bebbe7ce876cf9f4ab18b4162672322e,
+        type: 3}
+      propertyPath: OnClear.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2115639298}
+    - target: {fileID: 6024262055180050238, guid: bebbe7ce876cf9f4ab18b4162672322e,
+        type: 3}
+      propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2115639298}
     - target: {fileID: 6024262055180050239, guid: bebbe7ce876cf9f4ab18b4162672322e,
         type: 3}
       propertyPath: m_RootOrder
@@ -1876,31 +1866,6 @@ PrefabInstance:
       propertyPath: OnActivate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2115639298}
-    - target: {fileID: 6277192111628568554, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.1576896
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568554, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.045741796
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568554, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568554, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 2.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568554, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.25
-      objectReference: {fileID: 0}
     - target: {fileID: 6277192111628568555, guid: b14ad7296e945124387d27d132b49c4e,
         type: 3}
       propertyPath: m_RootOrder
@@ -1955,27 +1920,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568556, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568556, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277192111628568556, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2688924828301944653, guid: 6fb6f2c79eefff64181fdb76031fc6db,
-        type: 3}
-    - target: {fileID: 6277192111628568556, guid: b14ad7296e945124387d27d132b49c4e,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6277192111628568557, guid: b14ad7296e945124387d27d132b49c4e,
         type: 3}

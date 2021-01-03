@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6277192111628568556}
   - component: {fileID: 6277192111628568553}
   - component: {fileID: 6277192111628568554}
+  - component: {fileID: 635553136}
   m_Layer: 0
   m_Name: Computer2
   m_TagString: Untagged
@@ -72,12 +73,13 @@ SpriteRenderer:
   m_SortingLayerID: -522083329
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6fb6f2c79eefff64181fdb76031fc6db, type: 3}
+  m_Sprite: {fileID: 2688924828301944653, guid: 6fb6f2c79eefff64181fdb76031fc6db,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 0.46}
+  m_Size: {x: 1.25, y: 2.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -155,7 +157,7 @@ MonoBehaviour:
         m_CallState: 2
   promptOffset_Y: 1.5
   text:
-  - These computers are running a complicated program, which you can't understand...
+  - This computer is running a complicated program, which you can't understand...
   speechBubbleObj: {fileID: 0}
   repeatable: 1
   timed: 0
@@ -173,16 +175,35 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.045741796, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 2.875}
-    newSize: {x: 0.8, y: 0.46}
+    oldSize: {x: 1.25, y: 2.875}
+    newSize: {x: 1.25, y: 2.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 2.875}
+  m_Size: {x: 1.1576896, y: 2.875}
   m_EdgeRadius: 0
+--- !u!95 &635553136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6277192111628568557}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f068a56bdf5b3843b6e8d230468eb70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

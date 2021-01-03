@@ -157,7 +157,7 @@ MonoBehaviour:
         m_CallState: 2
   promptOffset_Y: 1.5
   text:
-  - These computers are running a complicated program, which you can't understand...
+  - This computer is running a complicated program, which you can't understand...
   speechBubbleObj: {fileID: 0}
   repeatable: 1
   timed: 0
