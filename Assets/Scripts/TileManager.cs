@@ -12,7 +12,8 @@ public class   TileManager : MonoBehaviour
         INTERACTABLE,
         FLOOR,
         ENVIRONMENT,
-        CHARACTER
+        CHARACTER,
+        BATTLE
     }
 
     Grid grid;
@@ -23,6 +24,7 @@ public class   TileManager : MonoBehaviour
         [TileLayerKey.ENVIRONMENT] = 15,
         [TileLayerKey.INTERACTABLE] = 18,
         [TileLayerKey.FLOOR] = 25,
+        [TileLayerKey.BATTLE] = 12
     };
 
     // Layer props
@@ -30,12 +32,14 @@ public class   TileManager : MonoBehaviour
     public int InteractableLayer { get { return LayerLookup[TileLayerKey.INTERACTABLE]; } }
     public int WallLayer { get { return LayerLookup[TileLayerKey.ENVIRONMENT]; } }
     public int FloorLayer { get { return LayerLookup[TileLayerKey.FLOOR]; } }
+    public int BattleLayer { get { return LayerLookup[TileLayerKey.BATTLE]; } }
 
     // Tilemap props
     Tilemap CharacterMap { get { return MapLookup[TileLayerKey.CHARACTER]; } }
     Tilemap InteractableMap { get { return MapLookup[TileLayerKey.INTERACTABLE]; } }
     Tilemap WallMap { get { return MapLookup[TileLayerKey.ENVIRONMENT]; } }
     Tilemap FloorMap { get { return MapLookup[TileLayerKey.FLOOR]; } }
+    Tilemap BattleMap { get { return MapLookup[TileLayerKey.BATTLE]; } }
     
     // Used for hitscan and rotation
     Dictionary<Vector2Int, string> moves_L = new Dictionary<Vector2Int, string>()
@@ -66,6 +70,7 @@ public class   TileManager : MonoBehaviour
     void Awake()
     {
         InitMapLookup();
+        InitEvents();
         //FloorMap = GetComponentsInChildren<Tilemap>().Where(t => t.gameObject.layer == FloorLayer).FirstOrDefault();
     }
 
@@ -77,17 +82,41 @@ public class   TileManager : MonoBehaviour
             [TileLayerKey.INTERACTABLE] = FindMap(TileLayerKey.INTERACTABLE),
             [TileLayerKey.ENVIRONMENT] = FindMap(TileLayerKey.ENVIRONMENT),
             [TileLayerKey.CHARACTER] = FindMap(TileLayerKey.CHARACTER),
-
+            [TileLayerKey.BATTLE] = FindMap(TileLayerKey.BATTLE)
         };
     }
+
+    private void InitEvents()
+    {
+        CombatEvents.OnCombat += CombatEvents_OnCombat;
+        CombatEvents.OnBattleComplete += CombatEvents_OnBattleComplete;
+    }
+
+    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
+    {
+        // Hide the level tilemaps when combat starts 
+        DeactivateTileLayer(TileLayerKey.FLOOR);
+        DeactivateTileLayer(TileLayerKey.INTERACTABLE);
+        DeactivateTileLayer(TileLayerKey.ENVIRONMENT);
+
+        // Show Battle tiulemap when combat starts
+        ActivateTileLayer(TileLayerKey.BATTLE);
+    }
+
+    private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
+    {
+        // Hide the level tilemaps when combat starts 
+        ActivateTileLayer(TileLayerKey.FLOOR);
+        ActivateTileLayer(TileLayerKey.INTERACTABLE);
+        ActivateTileLayer(TileLayerKey.ENVIRONMENT);
+
+        // Show Battle tiulemap when combat starts
+        DeactivateTileLayer(TileLayerKey.BATTLE);
+    }
+
     private Tilemap FindMap(TileLayerKey mapLayer)
     {
         return GetComponentsInChildren<Tilemap>().Where(t => t.gameObject.layer == LayerLookup[mapLayer]).FirstOrDefault();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /// <summary>
@@ -178,7 +207,14 @@ public class   TileManager : MonoBehaviour
 
         return availableMove;
     }
-    
+    private void DeactivateTileLayer(TileLayerKey tileLayerKey)
+    {
+        MapLookup[tileLayerKey].gameObject.SetActive(false);
+    }
+    private void ActivateTileLayer(TileLayerKey tileLayerKey)
+    {
+        MapLookup[tileLayerKey].gameObject.SetActive(true);
+    }
     // +X, +Y, -X, -Y
     void CodedTransform(ref Vector2Int vec, string code)
     {

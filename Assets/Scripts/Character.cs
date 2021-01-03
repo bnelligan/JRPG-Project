@@ -53,8 +53,31 @@ public class Character : MonoBehaviour
     private void InitEvents()
     {
         CombatEvents.OnDamage += CombatEvents_OnDamage;
+        CombatEvents.OnCombat += CombatEvents_OnCombat;
+        CombatEvents.OnBattleComplete += CombatEvents_OnBattleComplete;
     }
 
+    private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
+    {
+        Show();
+    }
+
+    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
+    {
+        if(combatArgs.EnemyParty != Party && combatArgs.PlayerParty != Party)
+        {
+            Hide();
+        }
+    }
+
+    private void Hide()
+    {
+        sprite.enabled = false;
+    }
+    private void Show()
+    {
+        sprite.enabled = true;
+    }
     private void CombatEvents_OnDamage(object sender, DamageArgs dmgArgs)
     {
         if(dmgArgs.Target == this)

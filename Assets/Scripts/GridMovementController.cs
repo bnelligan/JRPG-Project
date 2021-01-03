@@ -34,6 +34,7 @@ public class GridMovementController : MonoBehaviour
         tileManager = FindObjectOfType<TileManager>();
         animator = GetComponentInChildren<Animator>();
         audio = GetComponent<AudioSource>();
+        
         // inputManager = GetComponent<PlayerInputManager>();
     }
     private void Update()
@@ -86,6 +87,16 @@ public class GridMovementController : MonoBehaviour
                 animator.SetFloat("Horizontal", inputX);
                 animator.SetFloat("Vertical", inputY);
             }
+            animator.SetFloat("MoveSpeed", moveVec.magnitude);
+        }
+        else if(isMoving == true)
+        {
+            audio.Stop();
+            isMoving = false;
+            moveVec = Vector2Int.zero;
+            animator.SetFloat("Horizontal", 0f);
+            animator.SetFloat("Vertical", 0f);
+            animator.SetFloat("MoveSpeed", 0f);
             animator.SetFloat("MoveSpeed", moveVec.magnitude);
         }
 
