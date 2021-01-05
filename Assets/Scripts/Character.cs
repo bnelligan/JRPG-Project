@@ -31,7 +31,9 @@ public class Character : MonoBehaviour
     public bool IsActive { get { return battle.ActiveCharacter == this; } }
     public bool IsHostile = false;
     public float TurnTimer { get; private set; }
-
+    private Vector3 levelPosition;
+    private Vector3 battlePosition;
+    bool inCombat = false;
 
     private void Awake()
     {
@@ -49,7 +51,17 @@ public class Character : MonoBehaviour
         InitEvents();
         InitStats();
     }
-    
+
+    private void Update()
+    {
+        if(!inCombat)
+        {
+            levelPosition = transform.position;
+        }
+    }
+
+
+
     private void InitEvents()
     {
         CombatEvents.OnDamage += CombatEvents_OnDamage;
@@ -60,6 +72,11 @@ public class Character : MonoBehaviour
     private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
     {
         Show();
+        if (inCombat == true)
+        {
+            transform.position = levelPosition;
+            inCombat = false;
+        }
     }
 
     private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
@@ -68,15 +85,23 @@ public class Character : MonoBehaviour
         {
             Hide();
         }
+        else
+        {
+            inCombat = true;
+            levelPosition = transform.position;
+            transform.position = battlePosition;
+        }
     }
 
     private void Hide()
     {
         sprite.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     }
     private void Show()
     {
         sprite.enabled = true;
+        GetComponent<Collider2D>().enabled = true;
     }
     private void CombatEvents_OnDamage(object sender, DamageArgs dmgArgs)
     {
@@ -261,6 +286,11 @@ public class Character : MonoBehaviour
     {
         FindTargetOpponent();
         Stats.GainSP(1);
+    }
+
+    public void SetBattlePosition(Vector3 battlePos)
+    {
+        battlePosition = battlePos;
     }
 
     private IEnumerator ShakeAndFlash()

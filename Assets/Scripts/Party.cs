@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Party : MonoBehaviour
 {
@@ -15,15 +16,41 @@ public class Party : MonoBehaviour
     public bool IsActiveParty { get { return battle != null && battle.ActiveParty == this; } }
     public bool IsPlayerParty;
 
+    public Vector2 PartyBattleOffset;
+    public Vector2 BattlePos_0;
+    public Vector2 BattlePos_1;
+    public Vector2 BattlePos_2;
+    public Vector2 BattlePos_3;
+
     private void Awake()
     {
         battle = FindObjectOfType<Battle>();
         PartyCharacters = GetComponentsInChildren<Character>();
+        AssignBattlePositions();
         PrintParty();
     }
 
+    private void AssignBattlePositions()
+    {
+        if(PartyCharacters.Length > 0)
+        {
+            PartyCharacters[0].SetBattlePosition(BattlePos_0 + PartyBattleOffset);
+        }
+        if (PartyCharacters.Length > 1)
+        {
+            PartyCharacters[1].SetBattlePosition(BattlePos_1 + PartyBattleOffset);
 
-    
+        }
+        if (PartyCharacters.Length > 2)
+        {
+            PartyCharacters[2].SetBattlePosition(BattlePos_2 + PartyBattleOffset);
+
+        }
+        if (PartyCharacters.Length > 3)
+        {
+            PartyCharacters[3].SetBattlePosition(BattlePos_3 + PartyBattleOffset);
+        }
+    }
 
     public void AdvanceTurnTimers(float timerAmount)
     {

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6277192111628568553}
   - component: {fileID: 6277192111628568554}
   - component: {fileID: 635553136}
-  m_Layer: 0
+  - component: {fileID: 672661155}
+  m_Layer: 18
   m_Name: Computer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,3 +208,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &672661155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6277192111628568557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704ec3d83c48aee43add8c899c30bba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
