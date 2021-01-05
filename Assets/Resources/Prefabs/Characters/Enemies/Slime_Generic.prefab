@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73de974c02c33a847b65b765ea44e996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
+  sfx: {fileID: 8300000, guid: 5dce8b29c007eb54a907519141a1e625, type: 3}
   StunChance: 0.6
 --- !u!1001 &3936932780954722886
 PrefabInstance:
@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: IsHostile
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913402, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: takeDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 8343a57cd81c9a340b31a7ddc2f2979a, type: 3}
     - target: {fileID: 1313275949269913402, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: characterID

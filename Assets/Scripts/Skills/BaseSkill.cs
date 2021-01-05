@@ -73,10 +73,7 @@ public abstract class BaseSkill : MonoBehaviour
         {
             ownerStats.GainSP((uint)Mathf.Abs(SpCost));
         }
-        if (sfx != null)
-        {
-            owner.audioSrc.PlayOneShot(sfx);
-        }
+        if (sfx != null) { owner.audioSrc.PlayOneShot(sfx); }
         owner.DelayTurnTimer(RecoveryTime);
     }
     

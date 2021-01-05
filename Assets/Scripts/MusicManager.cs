@@ -8,6 +8,8 @@ public class MusicManager : MonoBehaviour
     public AudioClip AdventureTheme;
     public AudioClip BattleTheme;
     public AudioClip EvilTheme;
+    public AudioClip AlchemyLabTheme;
+    public AudioClip VarsiiTheme;
 
     public AudioClip TavernTheme;
     public AudioClip TavernBand_1;
@@ -58,6 +60,10 @@ public class MusicManager : MonoBehaviour
         AudioClip levelTheme = GetLevelTheme(levelID);
         PlayClip(levelTheme);
     }
+    // Might need changing later - Ryan
+    public void PlaySpecialTheme(AudioClip clip){
+        PlayClip(clip);
+    }
     private void PlayClip(AudioClip clip)
     {
         Debug.Log("Playing music: " + clip.name);
@@ -73,7 +79,7 @@ public class MusicManager : MonoBehaviour
             case Level.ID.Tavern:
                 return TavernTheme;
             case Level.ID.Surface:
-                // Default theme
+                return AlchemyLabTheme;
             case Level.ID.None:
                 // Default theme
             default:

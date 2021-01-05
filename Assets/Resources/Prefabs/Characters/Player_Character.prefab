@@ -67,11 +67,21 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 2.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913402, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: takeDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fa27947e3ce48f4dbed2ed0420a4855, type: 3}
     - target: {fileID: 1313275949269913403, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: m_Name
       value: Player_Character
       objectReference: {fileID: 0}
+    - target: {fileID: 1313275949269913405, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 220b41f6516b1284190c8ca6460d0421, type: 3}
     - target: {fileID: 1313275949269913407, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}
       propertyPath: m_RootOrder

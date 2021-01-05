@@ -11,8 +11,6 @@ public class Character : MonoBehaviour
     private string characterID;
     [SerializeField]
     private AudioClip takeDamage;
-    [SerializeField]
-    private AudioClip dealDamage;
     public string CharacterName { get; private set; }
     
     public CharacterStats Stats { get; private set; }
@@ -114,7 +112,7 @@ public class Character : MonoBehaviour
         if(dmgArgs.Target == this)
         {
             StartCoroutine(ShakeAndFlash());
-            audioSrc.PlayOneShot(takeDamage);
+            if (takeDamage != null) { audioSrc.PlayOneShot(takeDamage); }
         }
     }
 
