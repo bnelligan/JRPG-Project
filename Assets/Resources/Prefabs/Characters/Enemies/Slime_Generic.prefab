@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73de974c02c33a847b65b765ea44e996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 0}
   StunChance: 0.6
 --- !u!1001 &3936932780954722886
 PrefabInstance:
@@ -141,6 +142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EnableInput
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946089702936021362, guid: 24e83cff4b587884fb3dc266c30fbbbc,
+        type: 3}
+      propertyPath: UseRandomSkill
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7064128271570797275, guid: 24e83cff4b587884fb3dc266c30fbbbc,
         type: 3}

@@ -9,6 +9,10 @@ public class Character : MonoBehaviour
 {
     [SerializeField]
     private string characterID;
+    [SerializeField]
+    private AudioClip takeDamage;
+    [SerializeField]
+    private AudioClip dealDamage;
     public string CharacterName { get; private set; }
     
     public CharacterStats Stats { get; private set; }
@@ -16,6 +20,7 @@ public class Character : MonoBehaviour
     public Party Party { get; private set; }
     public Character TargetEnemy { get; private set; }
     public BaseSkill[] Skills { get; private set; }
+    public AudioSource audioSrc { get; private set; }
 
     Battle battle;
     SpriteRenderer sprite;
@@ -41,6 +46,7 @@ public class Character : MonoBehaviour
         battle = FindObjectOfType<Battle>();
         Stats = GetComponent<CharacterStats>();
         charHUD = GetComponent<CharacterHUD>();
+        audioSrc = GetComponent<AudioSource>();
 
         origColor = sprite.color;
         CharacterName = characterID;
@@ -83,6 +89,7 @@ public class Character : MonoBehaviour
         if(dmgArgs.Target == this)
         {
             StartCoroutine(ShakeAndFlash());
+            audioSrc.PlayOneShot(takeDamage);
         }
     }
 

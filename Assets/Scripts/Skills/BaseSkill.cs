@@ -20,6 +20,8 @@ public enum E_DamageVariant
 [RequireComponent(typeof(CharacterStats))]
 public abstract class BaseSkill : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip sfx;
 
     public string SkillID { get; protected set; }
     public string SkillName { get; protected set; }
@@ -70,6 +72,10 @@ public abstract class BaseSkill : MonoBehaviour
         else if(SpCost < 0)
         {
             ownerStats.GainSP((uint)Mathf.Abs(SpCost));
+        }
+        if (sfx != null)
+        {
+            owner.audioSrc.PlayOneShot(sfx);
         }
         owner.DelayTurnTimer(RecoveryTime);
     }
