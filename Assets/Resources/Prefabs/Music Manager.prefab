@@ -143,6 +143,7 @@ MonoBehaviour:
   AdventureTheme: {fileID: 8300000, guid: f79e1a124f58d174a8ecde5d4c158513, type: 3}
   BattleTheme: {fileID: 8300000, guid: 6a801feacfcb0624687decfe7bc9dcfe, type: 3}
   EvilTheme: {fileID: 8300000, guid: 6a801feacfcb0624687decfe7bc9dcfe, type: 3}
+  TavernTheme: {fileID: 8300000, guid: f0a62bf4d26955749b0af445d907de22, type: 3}
   TavernBand_1: {fileID: 8300000, guid: 38ebf007d165e774f972ea53dab0604c, type: 3}
   TavernBand_2: {fileID: 8300000, guid: cbd36618b5861cc4790c3442ca3eeb27, type: 3}
   VictoryTheme_Full: {fileID: 8300000, guid: 53e9e048e21ec124aa9a91c1cdb2f55c, type: 3}
