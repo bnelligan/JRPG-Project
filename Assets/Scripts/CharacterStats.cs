@@ -214,7 +214,7 @@ public class CharacterStats : MonoBehaviour
         {
             HP -= amount;
         }
-        if(Armor < HP)
+        if(HP < Armor)
         {
             Armor = HP;
         }
