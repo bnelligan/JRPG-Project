@@ -17,6 +17,7 @@ public class CharacterHUD : MonoBehaviour
     GameObject HUD_Group;
     GameObject iconPrefab;
     CharacterStats targetStats;
+    Character character;
 
     List<GameObject> heartList = new List<GameObject>();
     List<GameObject> stamList = new List<GameObject>();
@@ -26,7 +27,8 @@ public class CharacterHUD : MonoBehaviour
     public float HudOffsetY;
     public float IconOffsetX { get; private set; } = 1.0f;
     public float IconOffsetY { get; private set; } = 1.0f;
-    
+    public bool IsHidden { get; private set; }
+
     uint heartsRow = 1;
     uint stamRow = 0;
     
@@ -34,6 +36,7 @@ public class CharacterHUD : MonoBehaviour
     void Start()
     {
         targetStats = GetComponent<CharacterStats>();
+        character = GetComponent<Character>();
     }
 
     // Update is called once per frame
@@ -43,6 +46,26 @@ public class CharacterHUD : MonoBehaviour
         {
             DrawHUD();
         }
+
+        if(character.InCombat == true && IsHidden == true)
+        {
+            ShowHUD();
+        }
+        else if(character.InCombat == false && IsHidden == false)
+        {
+            HideHUD();
+        }
+    }
+    private void ShowHUD()
+    {
+        HUD_Group.SetActive(true);
+        IsHidden = false;
+    }
+
+    private void HideHUD()
+    {
+        HUD_Group.SetActive(false);
+        IsHidden = true;
     }
 
     private void DrawHUD()

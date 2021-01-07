@@ -24,11 +24,13 @@ public class Character : MonoBehaviour
     SpriteRenderer sprite;
     Color origColor;
     Coroutine flashingCoroutine;
+    Animator animator;
 
     public int Armor { get; protected set; }
 
     
     public int Lvl { get; private set; }
+    public bool InCombat { get; private set; }
     public bool IsDead { get { return Stats.IsDead; } }
     public bool IsAlive { get { return !IsDead; } }
     public bool IsActive { get { return battle.ActiveCharacter == this; } }
@@ -36,11 +38,11 @@ public class Character : MonoBehaviour
     public float TurnTimer { get; private set; }
     private Vector3 levelPosition;
     private Vector3 battlePosition;
-    bool inCombat = false;
 
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
         Skills = GetComponents<BaseSkill>();
         Party = GetComponentInParent<Party>();
         battle = FindObjectOfType<Battle>();
@@ -58,7 +60,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if(!inCombat)
+        if(!InCombat)
         {
             levelPosition = transform.position;
         }
@@ -76,10 +78,11 @@ public class Character : MonoBehaviour
     private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
     {
         Show();
-        if (inCombat == true)
+        if (InCombat == true)
         {
             transform.position = levelPosition;
-            inCombat = false;
+            InCombat = false;
+            animator.SetBool("InCombat", false);
         }
     }
 
@@ -91,9 +94,10 @@ public class Character : MonoBehaviour
         }
         else
         {
-            inCombat = true;
+            InCombat = true;
             levelPosition = transform.position;
             transform.position = battlePosition;
+            animator.SetBool("InCombat", true);
         }
     }
 

@@ -71,7 +71,7 @@ public class Battle : Encounter
     {
         LastActiveCharacter = ActiveCharacter;
         ActiveCharacter = FindNextActiveCharacter();
-        if(ActiveCharacter == null)
+        if (ActiveCharacter == null || PlayerParty.IsDead || EnemyParty.IsDead)
         {
             EndBattle();
         }

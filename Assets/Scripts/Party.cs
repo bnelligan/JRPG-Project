@@ -15,6 +15,7 @@ public class Party : MonoBehaviour
 
     public bool IsActiveParty { get { return battle != null && battle.ActiveParty == this; } }
     public bool IsPlayerParty;
+    public bool IsDead { get { return PartyCharacters.All(p => p.IsDead == true); } }
 
     public Vector2 PartyBattleOffset;
     public Vector2 BattlePos_0;
