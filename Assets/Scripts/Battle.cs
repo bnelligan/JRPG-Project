@@ -132,15 +132,15 @@ public class Battle : Encounter
         CombatEvents.AlertCombatResolved(this, new BattleResultArgs() { IsPlayerVictory = victory });
         // Show results text
         // TO DO -- More detailed results
-        BattleResultsGUI.gameObject.SetActive(true);
-        if(victory)
-        {
-            BattleResultsGUI.GetComponentInChildren<TextMeshProUGUI>().text = "WIN!";
-        }
-        else
-        {
-            BattleResultsGUI.GetComponentInChildren<TextMeshProUGUI>().text = "LOSE...";
-        }
+        //BattleResultsGUI.gameObject.SetActive(true);
+        //if(victory)
+        //{
+        //    BattleResultsGUI.GetComponentInChildren<TextMeshProUGUI>().text = "WIN!";
+        //}
+        //else
+        //{
+        //    BattleResultsGUI.GetComponentInChildren<TextMeshProUGUI>().text = "LOSE...";
+        //}
         IsBattleActive = false;
     }
 

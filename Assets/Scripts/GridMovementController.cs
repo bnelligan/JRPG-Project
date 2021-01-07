@@ -130,10 +130,10 @@ public class GridMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         // Check for exit key
-        //if(Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    Application.Quit();
-        //}       
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void DisableMovement()
