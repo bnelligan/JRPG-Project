@@ -29,6 +29,44 @@ public class Party : MonoBehaviour
         PartyCharacters = GetComponentsInChildren<Character>();
         AssignBattlePositions();
         PrintParty();
+        InitEvents();
+    }
+    private void OnDestroy()
+    {
+        RemitEvents();
+    }
+    private void InitEvents()
+    {
+        CombatEvents.OnCombat += CombatEvents_OnCombat;
+        CombatEvents.OnBattleComplete += CombatEvents_OnBattleComplete;
+    }
+
+    private void CombatEvents_OnCombat(object sender, CombatArgs combatArgs)
+    {
+        foreach(Character character in PartyCharacters)
+        {
+            GridMovementController controller = character.GetComponent<GridMovementController>();
+            if (controller)
+            {
+                controller.EnableInput = false;
+            }
+        }
+    }
+    private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
+    {
+        foreach (Character character in PartyCharacters)
+        {
+            GridMovementController controller = character.GetComponent<GridMovementController>();
+            if (controller)
+            {
+                controller.EnableInput = true;
+            }
+        }
+    }
+
+    private void RemitEvents()
+    {
+
     }
 
     private void AssignBattlePositions()
@@ -87,11 +125,6 @@ public class Party : MonoBehaviour
             {
                 // partyMember.CombatPrepare();
                 PartyCharacters[i].transform.localPosition = startPosition + new Vector3(layout.x * i, 0f, 0f);
-            }
-            GridMovementController controller = PartyCharacters[i].GetComponent<GridMovementController>();
-            if(controller)
-            {
-                controller.EnableInput = false;
             }
         }
     }

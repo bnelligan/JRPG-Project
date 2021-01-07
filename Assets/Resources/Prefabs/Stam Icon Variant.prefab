@@ -83,5 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stam Icon Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5250173614737330099, guid: 904cdbc28d4348b4693943edd9d75153,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 950b024c3d5651940b5e66c0a7b041d3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904cdbc28d4348b4693943edd9d75153, type: 3}

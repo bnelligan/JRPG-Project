@@ -30,11 +30,11 @@ public class DisableDuringBattle : MonoBehaviour
     {
         if (collider2)
         {
-            collider2.enabled = false;
+            collider2.enabled = true;
         }
         if (sprite)
         {
-            sprite.enabled = false;
+            sprite.enabled = true;
         }
     }
 

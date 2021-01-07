@@ -258,9 +258,9 @@ public class CharacterStats : MonoBehaviour
 
     public void GainArmor(uint amount)
     {
-        if(Armor + amount > MaxHP)
+        if(Armor + amount > HP)
         {
-            Armor = MaxHP;
+            Armor = HP;
         }
         else
         {

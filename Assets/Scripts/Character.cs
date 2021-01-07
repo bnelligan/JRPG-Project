@@ -77,7 +77,10 @@ public class Character : MonoBehaviour
 
     private void CombatEvents_OnBattleComplete(object sender, BattleResultArgs combatArgs)
     {
-        Show();
+        if(IsAlive) // Don't show dead characters -- at least for now
+        {
+            Show();
+        }
         if (InCombat == true)
         {
             transform.position = levelPosition;
@@ -198,6 +201,12 @@ public class Character : MonoBehaviour
     public void Die(Character killer)
     {
         CombatEvents.AlertCharacterKilled(this, new DeathArgs(killer, this));
+        // To Do -- Death sprites and interactions
+        Stats.HP = 0;
+        Stats.SP = 0;
+        Stats.Armor = 0;
+        sprite.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     }
     public void ResetTurnTimer()
     {
